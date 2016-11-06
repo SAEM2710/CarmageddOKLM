@@ -33,13 +33,13 @@ public class SProjectile : MonoBehaviour
 	
 	}
 
-    void OnTriggerEnter(Collider _Collider)
+    void OnTriggerEnter(Collider _cCollider)
     {
-        if (_Collider.CompareTag("AI"))
+        if (_cCollider.CompareTag("AI"))
         {
             if (m_bIsSpawnByPlayer)
             {
-                Destroy(_Collider.gameObject);
+                Destroy(_cCollider.gameObject);
                 Destroy(gameObject);
             }
             else
@@ -47,7 +47,7 @@ public class SProjectile : MonoBehaviour
                 //Destroy projectile allie ?
             }
         }
-        else if(_Collider.CompareTag("PlayerCollider"))
+        else if(_cCollider.CompareTag("PlayerCollider"))
         {
             if (!m_bIsSpawnByPlayer)
             {

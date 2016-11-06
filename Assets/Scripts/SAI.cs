@@ -12,7 +12,7 @@ public class SAI : SEntity
         GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl>().target = goPlayer.transform;
         m_rRigidbody = GetComponent<Rigidbody>();
 
-        m_fShootFrequence = 3f; //A VOIR
+        //m_fShootFrequence = 3f; //A VOIR
     }
 	
 	// Update is called once per frame

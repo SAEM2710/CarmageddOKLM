@@ -22,19 +22,9 @@ public class SPlayer : SEntity
 	// Update is called once per frame
 	void Update ()
     {
+        Debug.Log("Speed : " + m_ccCarController.CurrentSpeed);
         Shoot();
 	}
-
-    void OnCollisionEnter(Collision _Collision)
-    {
-        if(_Collision.gameObject.CompareTag("AI"))
-        {
-            if (m_ccCarController.CurrentSpeed > m_fMinSpeedToKill)
-            {
-                Destroy(_Collision.gameObject);
-            }
-        }
-    }
 
     protected override void Shoot()
     {
@@ -59,4 +49,44 @@ public class SPlayer : SEntity
             m_fTime += Time.deltaTime;
         }
     }
+
+    #region Collisions
+
+    void OnCollisionEnter(Collision _cCollision)
+    {
+        if (_cCollision.gameObject.CompareTag("AI"))
+        {
+            if (m_ccCarController.CurrentSpeed > m_fMinSpeedToKill)
+            {
+                Destroy(_cCollision.gameObject);
+            }
+        }
+    }
+
+    void OnCollisionStay(Collision _cCollision)
+    {
+        if (_cCollision.gameObject.CompareTag("AI"))
+        {
+            if (m_ccCarController.CurrentSpeed > m_fMinSpeedToKill)
+            {
+                Destroy(_cCollision.gameObject);
+            }
+        }
+    }
+
+    #endregion
+
+    #region Triggers
+
+    void OnTriggerEnter(Collider _cCollider)
+    {
+        if (_cCollider.CompareTag("Bonus"))
+        {
+            Debug.Log("Drop Bonus");
+            //Do something
+            Destroy(_cCollider.gameObject);
+        }
+    }
+
+    #endregion
 }
