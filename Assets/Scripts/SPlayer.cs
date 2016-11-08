@@ -20,7 +20,7 @@ public class SPlayer : SEntity
     }
 	
 	// Update is called once per frame
-	void Update ()
+	void FixedUpdate ()
     {
         Debug.Log("Speed : " + m_ccCarController.CurrentSpeed);
         Shoot();
