@@ -22,7 +22,7 @@ public class SPlayer : SEntity
 	// Update is called once per frame
 	void FixedUpdate ()
     {
-        Debug.Log("Speed : " + m_ccCarController.CurrentSpeed);
+        //Debug.Log("Speed : " + m_ccCarController.CurrentSpeed);
         Shoot();
 	}
 
@@ -60,6 +60,10 @@ public class SPlayer : SEntity
             {
                 Destroy(_cCollision.gameObject);
             }
+            else if(_cCollision.gameObject.GetComponent<SAI>().bIsTouchingObstacle)
+            {
+                Destroy(_cCollision.gameObject);
+            }
         }
     }
 
@@ -68,6 +72,10 @@ public class SPlayer : SEntity
         if (_cCollision.gameObject.CompareTag("AI"))
         {
             if (m_ccCarController.CurrentSpeed > m_fMinSpeedToKill)
+            {
+                Destroy(_cCollision.gameObject);
+            }
+            else if (_cCollision.gameObject.GetComponent<SAI>().bIsTouchingObstacle)
             {
                 Destroy(_cCollision.gameObject);
             }

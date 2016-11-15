@@ -4,6 +4,23 @@ using System.Collections;
 public class SAI : SEntity
 {
     private Rigidbody m_rRigidbody;
+    private bool m_bIsTouchingObstacle;
+
+    #region Getters/Setters
+
+    public bool bIsTouchingObstacle
+    {
+        get
+        {
+            return m_bIsTouchingObstacle;
+        }
+        set
+        {
+            m_bIsTouchingObstacle = value;
+        }
+    }
+
+    #endregion
 
     // Use this for initialization
     void Start ()
@@ -11,6 +28,7 @@ public class SAI : SEntity
         GameObject goPlayer = GameObject.FindGameObjectWithTag("Player");
         GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl>().target = goPlayer.transform;
         m_rRigidbody = GetComponent<Rigidbody>();
+        m_bIsTouchingObstacle = false;
 
         //m_fShootFrequence = 3f; //A VOIR
     }
@@ -39,4 +57,32 @@ public class SAI : SEntity
         }
         m_fTime += Time.deltaTime;
     }
+
+    #region Collisions
+
+    void OnCollisionEnter(Collision _cCollision)
+    {
+        if (_cCollision.gameObject.CompareTag("Obstacle"))
+        {
+            m_bIsTouchingObstacle = true;
+        }
+    }
+
+    void OnCollisionStay(Collision _cCollision)
+    {
+        if (_cCollision.gameObject.CompareTag("Obstacle"))
+        {
+            m_bIsTouchingObstacle = true;
+        }
+    }
+
+    void OnCollisionExit(Collision _cCollision)
+    {
+        if (_cCollision.gameObject.CompareTag("Obstacle"))
+        {
+            m_bIsTouchingObstacle = false;
+        }
+    }
+
+    #endregion
 }
