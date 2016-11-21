@@ -3,6 +3,12 @@ using System.Collections;
 
 public class SAI : SEntity
 {
+    #region Visible Variables
+
+    [SerializeField] private GameObject m_goBloodPuddle;
+    
+    #endregion
+
     private Rigidbody m_rRigidbody;
     private bool m_bIsTouchingObstacle;
 
@@ -56,6 +62,24 @@ public class SAI : SEntity
             rProjectileRb.velocity = transform.TransformDirection(Vector3.forward * m_fShootForce) + m_rRigidbody.velocity;
         }
         m_fTime += Time.deltaTime;
+    }
+
+    public override void Death()
+    {
+        base.Death();
+
+        if (m_fLife <= 0f)
+        {
+            GameObject goFXDestruction, goBloodPuddle;
+            goFXDestruction = Instantiate(m_goFXDestruction, transform.position, transform.rotation) as GameObject;
+            goBloodPuddle = Instantiate(m_goBloodPuddle, transform.position, transform.rotation) as GameObject;
+            Destroy(gameObject);
+        }
+    }
+
+    private void DropShield()
+    {
+
     }
 
     #region Collisions

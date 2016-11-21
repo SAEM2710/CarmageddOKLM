@@ -40,7 +40,7 @@ public class SProjectile : MonoBehaviour
             if (m_bIsSpawnByPlayer)
             {
                 _cCollider.GetComponentInParent<SAI>().LoseLife(10f); //TO CHANGE
-                Destroy(gameObject);
+                //_cCollider.gameObject.GetComponent<SAI>().Death();
             }
             else
             {

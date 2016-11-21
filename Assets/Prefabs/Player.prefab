@@ -10447,7 +10447,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010490100162}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.06, z: 0}
   m_LocalScale: {x: 0.33, y: 0.33, z: 0.33}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -28741,10 +28741,10 @@ MonoBehaviour:
   - {fileID: 146000011791496668}
   - {fileID: 146000011384489056}
   m_WheelMeshes:
-  - {fileID: 1000012693026970}
   - {fileID: 1000013755623176}
-  - {fileID: 1000012341485556}
+  - {fileID: 1000012693026970}
   - {fileID: 1000012764247970}
+  - {fileID: 1000012341485556}
   m_WheelEffects:
   - {fileID: 114000010128332480}
   - {fileID: 114000014054681268}
@@ -28779,6 +28779,8 @@ MonoBehaviour:
   m_fShootFrequence: 0.2
   m_fShootForce: 50
   m_fLife: 1000
+  m_goFXDestruction: {fileID: 1000012095620428, guid: 4f5e463c6fc9873428a1ecfd0fb302ca,
+    type: 2}
   m_fMinSpeedToKill: 30
 --- !u!114 &114000012366763796
 MonoBehaviour:

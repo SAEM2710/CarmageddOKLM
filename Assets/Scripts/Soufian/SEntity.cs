@@ -9,6 +9,7 @@ public class SEntity : MonoBehaviour
     [SerializeField] protected float m_fShootFrequence;
     [SerializeField] protected float m_fShootForce;
     [SerializeField] protected float m_fLife;
+    [SerializeField] protected GameObject m_goFXDestruction;
 
     #endregion
 
@@ -41,11 +42,8 @@ public class SEntity : MonoBehaviour
         m_fLife -= _fDamage;
     }
 
-    protected virtual void Death()
+    public virtual void Death()
     {
-        if(m_fLife <= 0f)
-        {
-            Destroy(gameObject);
-        }
+
     }
 }

@@ -7,11 +7,11 @@ public class SSpawn : MonoBehaviour
 
     [SerializeField] private int m_iMaxCptIA;
     [SerializeField] private float m_fFrequence;
-    [SerializeField] private GameObject m_goIA;
+    [SerializeField] private GameObject[] m_goTabAI;
 
     #endregion
 
-    private int m_iCurrentCptIA;
+    private int m_iCurrentCptAI;
     private float m_fTime;
 
     // Use this for initialization
@@ -28,15 +28,20 @@ public class SSpawn : MonoBehaviour
 
     void SpawnIA()
     {
-        if (m_iCurrentCptIA < m_iMaxCptIA)
+        int RandomInt;
+        RandomInt = Random.Range(0, m_goTabAI.Length);
+        GameObject RandomAI;
+        RandomAI = m_goTabAI[RandomInt];
+
+        if (m_iCurrentCptAI < m_iMaxCptIA)
         {
             if (m_fTime > m_fFrequence)
             {
                 m_fTime = 0f;
 
                 GameObject goIA;
-                goIA = Instantiate(m_goIA, transform.position, transform.rotation) as GameObject;
-                ++m_iCurrentCptIA;
+                goIA = Instantiate(RandomAI, transform.position, transform.rotation) as GameObject;
+                ++m_iCurrentCptAI;
             }
             m_fTime += Time.deltaTime;
         }

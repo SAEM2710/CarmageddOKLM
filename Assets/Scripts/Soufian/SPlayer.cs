@@ -77,11 +77,11 @@ public class SPlayer : SEntity
         {
             if (m_ccCarController.CurrentSpeed > m_fMinSpeedToKill)
             {
-                Destroy(_cCollision.gameObject);
+                _cCollision.gameObject.GetComponent<SAI>().LoseLife(10f);
             }
             else if(_cCollision.gameObject.GetComponent<SAI>().bIsTouchingObstacle)
             {
-                Destroy(_cCollision.gameObject);
+                _cCollision.gameObject.GetComponent<SAI>().LoseLife(10f);
             }
         }
     }
@@ -92,11 +92,11 @@ public class SPlayer : SEntity
         {
             if (m_ccCarController.CurrentSpeed > m_fMinSpeedToKill)
             {
-                Destroy(_cCollision.gameObject);
+                _cCollision.gameObject.GetComponent<SAI>().LoseLife(10f);
             }
             else if (_cCollision.gameObject.GetComponent<SAI>().bIsTouchingObstacle)
             {
-                Destroy(_cCollision.gameObject);
+                _cCollision.gameObject.GetComponent<SAI>().LoseLife(10f);
             }
         }
     }
