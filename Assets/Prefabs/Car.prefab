@@ -2105,6 +2105,7 @@ MonoBehaviour:
     type: 2}
   m_fShootFrequence: 0.2
   m_fShootForce: 50
+  m_fLife: 1000
   m_fMinSpeedToKill: 30
 --- !u!114 &114000012848200134
 MonoBehaviour:
