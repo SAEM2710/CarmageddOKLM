@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-enum BonusType
+public enum BonusType
 {
     Poison,
     Fire,
@@ -11,9 +11,9 @@ enum BonusType
 
 public class Bonus : MonoBehaviour
 {
-    public BonusType m_btBonus;
+    private BonusType m_btBonus;
 
-    /*public BonusType btBonus
+    public BonusType btBonus
     {
         get
         {
@@ -23,14 +23,25 @@ public class Bonus : MonoBehaviour
         {
             m_btBonus = value;
         }
-    }*/
+    }
 
     // Use this for initialization
     void Start ()
     {
-        int RandomBonus;
-        RandomBonus = Random.Range(0, 4);
-        switch(RandomBonus)
+        int IDBonus;
+        IDBonus = Random.Range(0, 4);
+        RandomBonus(IDBonus);
+	}
+	
+	// Update is called once per frame
+	void Update ()
+    {
+	
+	}
+
+    private void RandomBonus(int _BonusID)
+    {
+        switch (_BonusID)
         {
             case 0:
                 m_btBonus = BonusType.Poison;
@@ -45,10 +56,5 @@ public class Bonus : MonoBehaviour
                 m_btBonus = BonusType.Thorn;
                 break;
         }
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    }
 }

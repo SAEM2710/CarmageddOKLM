@@ -90,7 +90,7 @@ public class SPlayer : SEntity
     {
         if (_cCollider.CompareTag("Bonus"))
         {
-            Debug.Log("Drop Bonus : " + _cCollider.GetComponent<Bonus>().m_btBonus);
+            Debug.Log("Drop Bonus : " + _cCollider.GetComponent<Bonus>().btBonus);
             //Do something
             Destroy(_cCollider.gameObject);
         }
