@@ -8,7 +8,12 @@ TagManager:
   - PlayerCollider
   - Bonus
   - Obstacle
-  - Shield
+  - FxTemporaire
+  - PoisonBox
+  - FireBox
+  - ThornBox
+  - BladeBox
+  - ShieldBox
   layers:
   - Default
   - TransparentFX

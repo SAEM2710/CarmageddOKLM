@@ -28,9 +28,9 @@ public class SShield : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        int IDShield;
-        IDShield = Random.Range(0, 4);
-        RandomShield(IDShield);
+        string ShieldTag;
+        ShieldTag = tag;
+        SetShieldType(ShieldTag);
 	}
 	
 	// Update is called once per frame
@@ -39,20 +39,20 @@ public class SShield : MonoBehaviour
 	
 	}
 
-    private void RandomShield(int _ShieldID)
+    private void SetShieldType(string _ShieldTag)
     {
-        switch (_ShieldID)
+        switch (_ShieldTag)
         {
-            case 0:
+            case "PoisonBox":
                 m_btShield = ShieldType.Poison;
                 break;
-            case 1:
+            case "FireBox":
                 m_btShield = ShieldType.Fire;
                 break;
-            case 2:
+            case "BladeBox":
                 m_btShield = ShieldType.Blade;
                 break;
-            case 3:
+            case "ThornBox":
                 m_btShield = ShieldType.Thorn;
                 break;
         }

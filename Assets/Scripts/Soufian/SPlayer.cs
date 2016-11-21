@@ -50,6 +50,25 @@ public class SPlayer : SEntity
         }
     }
 
+    private void SetShield(ShieldType _ShieldType)
+    {
+        switch (_ShieldType)
+        {
+            case ShieldType.Poison:
+                Debug.Log("Poison activated");
+                break;
+            case ShieldType.Fire:
+                Debug.Log("Fire activated");
+                break;
+            case ShieldType.Blade:
+                Debug.Log("Blade activated");
+                break;
+            case ShieldType.Thorn:
+                Debug.Log("Thorn activated");
+                break;
+        }
+    }
+
     #region Collisions
 
     void OnCollisionEnter(Collision _cCollision)
@@ -88,9 +107,11 @@ public class SPlayer : SEntity
 
     void OnTriggerEnter(Collider _cCollider)
     {
-        if (_cCollider.CompareTag("Shield"))
+        if (_cCollider.CompareTag("ShieldBox"))
         {
-            Debug.Log("Drop Shield : " + _cCollider.GetComponent<SShield>().btShield);
+            ShieldType shieldtype;
+            shieldtype = _cCollider.transform.GetChild(0).GetComponent<SShield>().btShield;
+            SetShield(shieldtype);
             //Do something
             Destroy(_cCollider.gameObject);
         }
