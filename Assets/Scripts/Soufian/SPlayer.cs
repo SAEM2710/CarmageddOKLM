@@ -88,9 +88,9 @@ public class SPlayer : SEntity
 
     void OnTriggerEnter(Collider _cCollider)
     {
-        if (_cCollider.CompareTag("Bonus"))
+        if (_cCollider.CompareTag("Shield"))
         {
-            Debug.Log("Drop Bonus : " + _cCollider.GetComponent<Bonus>().btBonus);
+            Debug.Log("Drop Shield : " + _cCollider.GetComponent<SShield>().btShield);
             //Do something
             Destroy(_cCollider.gameObject);
         }
