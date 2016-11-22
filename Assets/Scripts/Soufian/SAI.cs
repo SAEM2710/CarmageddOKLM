@@ -6,11 +6,14 @@ public class SAI : SEntity
     #region Visible Variables
 
     [SerializeField] private GameObject m_goBloodPuddle;
+    [SerializeField] private GameObject[] m_goTabShieldBonus;
     
     #endregion
 
     private Rigidbody m_rRigidbody;
     private bool m_bIsTouchingObstacle;
+    private int m_iChanceToDrop;
+    private GameObject m_goShieldBonus;
 
     #region Getters/Setters
 
@@ -35,6 +38,8 @@ public class SAI : SEntity
         GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl>().target = goPlayer.transform;
         m_rRigidbody = GetComponent<Rigidbody>();
         m_bIsTouchingObstacle = false;
+        m_iChanceToDrop = Random.Range(0, 10); //10%
+        RandomShieldBonus();
 
         //m_fShootFrequence = 3f; //A VOIR
     }
@@ -74,12 +79,24 @@ public class SAI : SEntity
             goFXDestruction = Instantiate(m_goFXDestruction, transform.position, transform.rotation) as GameObject;
             goBloodPuddle = Instantiate(m_goBloodPuddle, transform.position, transform.rotation) as GameObject;
             Destroy(gameObject);
+            DropShield();
         }
+    }
+
+    private void RandomShieldBonus()
+    {
+        int RandomInt;
+        RandomInt = Random.Range(0, m_goTabShieldBonus.Length);
+        m_goShieldBonus = m_goTabShieldBonus[RandomInt];
     }
 
     private void DropShield()
     {
-
+        if(m_iChanceToDrop == 0)
+        {
+            GameObject goShieldBonus;
+            goShieldBonus = Instantiate(m_goShieldBonus, transform.position, transform.rotation) as GameObject;
+        }
     }
 
     #region Collisions
