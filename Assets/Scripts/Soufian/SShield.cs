@@ -11,6 +11,9 @@ public enum ShieldType
 
 public class SShield : MonoBehaviour
 {
+    [SerializeField] private GameObject m_goFXDestruction1;
+    [SerializeField] private GameObject m_goFXDestruction2;
+
     private ShieldType m_btShield;
 
     public ShieldType btShield
@@ -56,5 +59,13 @@ public class SShield : MonoBehaviour
                 m_btShield = ShieldType.Thorn;
                 break;
         }
+    }
+
+    public void Death()
+    {
+        GameObject goFXDestruction1, goFXDestruction2;
+        goFXDestruction1 = Instantiate(m_goFXDestruction1, transform.position, transform.rotation) as GameObject;
+        goFXDestruction2 = Instantiate(m_goFXDestruction2, transform.position, transform.rotation) as GameObject;
+        Destroy(transform.parent.gameObject);
     }
 }

@@ -3,9 +3,6 @@ using System.Collections;
 
 public class SPlayer : SEntity
 {
-    //test
-    //public float rotationSpeed;
-
     #region Visible Variables
 
     [SerializeField] private float m_fMinSpeedToKill;
@@ -14,12 +11,14 @@ public class SPlayer : SEntity
 
     private UnityStandardAssets.Vehicles.Car.CarController m_ccCarController;
     private Rigidbody m_rRigidbody;
+    private bool m_bIsCollided;
 
     // Use this for initialization
     void Start ()
     {
         m_ccCarController = GetComponent<UnityStandardAssets.Vehicles.Car.CarController>();
         m_rRigidbody = GetComponent<Rigidbody>();
+        m_bIsCollided = false;
     }
 	
 	// Update is called once per frame
@@ -29,18 +28,7 @@ public class SPlayer : SEntity
         Shoot();
 	}
 
-    void test()
-    {
-        /*float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
-        rotation *= Time.deltaTime;
-        transform.Rotate(0, rotation, 0);*/
-
-        /*float h = rotationSpeed * Input.GetAxis("Mouse X");
-        float v = verticalSpeed * Input.GetAxis("Mouse Y");
-        transform.Rotate(0, h, 0);*/
-    }
-
-    /*protected override void Shoot()
+    protected override void Shoot()
     {
         base.Shoot();
 
@@ -57,12 +45,11 @@ public class SPlayer : SEntity
                 //Play Sound
 
                 Rigidbody rProjectileRb = goProjectile.GetComponent<Rigidbody>();
-                //Debug.Log(m_rRigidbody);
                 rProjectileRb.velocity = transform.TransformDirection(Vector3.forward * m_fShootForce) + m_rRigidbody.velocity;
             }
             m_fTime += Time.deltaTime;
         }
-    }*/
+    }
 
     public override void Death()
     {
@@ -131,11 +118,12 @@ public class SPlayer : SEntity
     {
         if (_cCollider.CompareTag("ShieldBox"))
         {
-            ShieldType shieldtype;
-            shieldtype = _cCollider.transform.GetChild(0).GetComponent<SShield>().btShield;
-            SetShield(shieldtype);
-            //Do something
-            Destroy(_cCollider.gameObject);
+                Debug.Log("collision");
+                ShieldType shieldtype;
+                Debug.Log(_cCollider.transform.GetChild(0));
+                shieldtype = _cCollider.transform.GetChild(0).GetComponent<SShield>().btShield;
+                SetShield(shieldtype);
+                _cCollider.transform.GetChild(0).GetComponent<SShield>().Death();
         }
     }
 

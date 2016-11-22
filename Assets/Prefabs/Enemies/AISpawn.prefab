@@ -9,29 +9,30 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1000012095620428}
+  m_RootGameObject: {fileID: 1000013632900674}
   m_IsPrefabParent: 1
---- !u!1 &1000012095620428
+--- !u!1 &1000013632900674
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 4000013292106552}
+  - 4: {fileID: 4000012663664374}
+  - 114: {fileID: 114000012874411884}
   m_Layer: 0
-  m_Name: FXDestructionCar
+  m_Name: AISpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4000013292106552
+--- !u!4 &4000012663664374
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012095620428}
+  m_GameObject: {fileID: 1000013632900674}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -39,3 +40,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &114000012874411884
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013632900674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37918ea61e9af84f8639a1c2690d144, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_iMaxCptIA: 30
+  m_fFrequence: 1
+  m_goTabAI:
+  - {fileID: 1000013239964468, guid: 8cf15522c3322544c864063cc2f5983b, type: 2}
+  - {fileID: 1000010515047060, guid: 1f9f949bd6f85ad4faa0d7e0b0c86fb4, type: 2}
