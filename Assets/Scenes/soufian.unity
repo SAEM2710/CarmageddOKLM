@@ -3014,7 +3014,7 @@ Prefab:
     - target: {fileID: 114000011514282650, guid: b3c5f479df650b642a615c1f3e5467ef,
         type: 2}
       propertyPath: m_fLife
-      value: 1000
+      value: 10000000
       objectReference: {fileID: 0}
     - target: {fileID: 114000011514282650, guid: b3c5f479df650b642a615c1f3e5467ef,
         type: 2}
