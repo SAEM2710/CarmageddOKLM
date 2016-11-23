@@ -549,7 +549,7 @@ PlayerSettings:
   XboxOne::VR::enabledDevices: []
   iOS::VR::enabledDevices: []
   tvOS::VR::enabledDevices: []
-  cloudProjectId: 
-  projectName: 
-  organizationId: 
+  cloudProjectId: fb41b13b-f470-4001-996c-a2ea046df39d
+  projectName: CarmageddOKLM
+  organizationId: huang-1485809
   cloudEnabled: 0
