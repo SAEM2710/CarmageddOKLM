@@ -76,10 +76,11 @@ public class SAI : SEntity
         if (m_fLife <= 0f)
         {
             GameObject goFXDestruction, goBloodPuddle;
-            goFXDestruction = Instantiate(m_goFXDestruction, transform.position, m_goBloodPuddle.transform.rotation) as GameObject;
+            goFXDestruction = Instantiate(m_goFXDestruction, transform.position, m_goFXDestruction.transform.rotation) as GameObject;
             goBloodPuddle = Instantiate(m_goBloodPuddle, transform.position, transform.rotation) as GameObject;
+            DropShield();
             Destroy(gameObject);
-            StartCoroutine("DropShield");
+            //StartCoroutine("DropShield");
         }
     }
 
@@ -90,12 +91,12 @@ public class SAI : SEntity
         m_goShieldBonus = m_goTabShieldBonus[RandomInt];
     }
 
-    private IEnumerator DropShield()
+    private void /*IEnumerator*/ DropShield()
     {
         if(m_iChanceToDrop == 0)
         {
             GameObject goShieldBonus;
-            yield return new WaitForSeconds(1f);
+            //yield return new WaitForSeconds(1f);
             goShieldBonus = Instantiate(m_goShieldBonus, transform.position, transform.rotation) as GameObject;
         }
     }
