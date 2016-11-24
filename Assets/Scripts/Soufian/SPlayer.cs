@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class SPlayer : SEntity
 {
@@ -58,7 +59,12 @@ public class SPlayer : SEntity
 
         if (m_fCurrentLife <= 0f)
         {
-            Destroy(gameObject);
+            //Play Anim / Instantiate Particle
+            //Play Sound
+
+            PlayerPrefs.SetInt("KilledEnemies", SGameManager.Instance.iKilledEnemies);
+            PlayerPrefs.SetFloat("Time", Time.timeSinceLevelLoad);
+            SceneManager.LoadScene("GameOver");
         }
     }
 

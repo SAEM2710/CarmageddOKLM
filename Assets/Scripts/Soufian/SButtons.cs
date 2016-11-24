@@ -10,6 +10,11 @@ public class SButtons : MonoBehaviour
         {
             Time.timeScale = 1.0f;
         }
+        if(AudioListener.pause)
+        {
+            AudioListener.pause = false;
+        }
+
         SceneManager.LoadScene("Soufian2");
     }
 

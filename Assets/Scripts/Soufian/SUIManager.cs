@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class SUIManager : GenericSingleton<SGameManager>
+public class SUIManager : GenericSingleton<SUIManager>
 {
     #region Visible Variables
 
@@ -15,12 +15,26 @@ public class SUIManager : GenericSingleton<SGameManager>
     #endregion
 
     private SPlayer m_spPlayer;
-    private bool m_bIsPaused;
+
+    #region Getters/Setters
+
+    public Image iPauseUI
+    {
+        get
+        {
+            return m_iPauseUI;
+        }
+        set
+        {
+            m_iPauseUI = value;
+        }
+    }
+
+    #endregion
 
     // Use this for initialization
     void Start ()
     {
-        m_bIsPaused = false;
         m_iPauseUI.gameObject.SetActive(false);
         m_spPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<SPlayer>();
         m_sLifeUI.value = (m_sLifeUI.maxValue * m_spPlayer.fCurrentLife)/
@@ -30,7 +44,6 @@ public class SUIManager : GenericSingleton<SGameManager>
 	// Update is called once per frame
 	void Update ()
     {
-        Pause();
         m_sLifeUI.value = (m_sLifeUI.maxValue * m_spPlayer.fCurrentLife) /
                                         m_spPlayer.fMaxLife;
 
@@ -38,24 +51,5 @@ public class SUIManager : GenericSingleton<SGameManager>
         m_tTimeText.text = Time.timeSinceLevelLoad.ToString();
     }
 
-    void Pause()
-    {
-        if (Input.GetButtonDown("Cancel"))
-        {
-            if (m_bIsPaused)
-            {
-                m_bIsPaused = false;
-                m_iPauseUI.gameObject.SetActive(false);
-                AudioListener.pause = false;
-                Time.timeScale = 1.0f;
-            }
-            else
-            {
-                m_bIsPaused = true;
-                m_iPauseUI.gameObject.SetActive(true);
-                AudioListener.pause = true;
-                Time.timeScale = 0.0f;
-            }
-        }
-    }
+
 }
