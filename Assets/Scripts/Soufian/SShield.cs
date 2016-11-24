@@ -35,12 +35,6 @@ public class SShield : MonoBehaviour
         ShieldTag = tag;
         SetShieldType(ShieldTag);
 	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-	
-	}
 
     private void SetShieldType(string _ShieldTag)
     {

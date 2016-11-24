@@ -32,22 +32,22 @@ public class SAI : SEntity
     #endregion
 
     // Use this for initialization
-    void Start ()
+    protected override void Start()
     {
+        base.Start();
+
         GameObject goPlayer = GameObject.FindGameObjectWithTag("Player");
         GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl>().target = goPlayer.transform;
         m_rRigidbody = GetComponent<Rigidbody>();
         m_bIsTouchingObstacle = false;
         m_iChanceToDrop = Random.Range(0, 10); //10%
         RandomShieldBonus();
-
-        //m_fShootFrequence = 3f; //A VOIR
     }
-	
-	// Update is called once per frame
-	void FixedUpdate ()
+
+    // This function is called every fixed framerate frame
+    protected override void FixedUpdate()
     {
-        Shoot();
+        base.FixedUpdate();
 	}
 
     protected override void Shoot()
@@ -73,12 +73,13 @@ public class SAI : SEntity
     {
         base.Death();
 
-        if (m_fLife <= 0f)
+        if (m_fCurrentLife <= 0f)
         {
             GameObject goFXDestruction, goBloodPuddle;
             goFXDestruction = Instantiate(m_goFXDestruction, transform.position, m_goFXDestruction.transform.rotation) as GameObject;
             goBloodPuddle = Instantiate(m_goBloodPuddle, transform.position, transform.rotation) as GameObject;
             DropShield();
+            ++SGameManager.Instance.iKilledEnemies;
             Destroy(gameObject);
             //StartCoroutine("DropShield");
         }

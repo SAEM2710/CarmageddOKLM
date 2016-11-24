@@ -14,18 +14,19 @@ public class SPlayer : SEntity
     private bool m_bIsCollided;
 
     // Use this for initialization
-    void Start ()
+    protected override void Start ()
     {
+        base.Start();
+
         m_ccCarController = GetComponent<UnityStandardAssets.Vehicles.Car.CarController>();
         m_rRigidbody = GetComponent<Rigidbody>();
         m_bIsCollided = false;
     }
-	
-	// Update is called once per frame
-	void FixedUpdate ()
+
+    // This function is called every fixed framerate frame
+    protected override void FixedUpdate()
     {
-        //Debug.Log("Speed : " + m_ccCarController.CurrentSpeed);
-        Shoot();
+        base.FixedUpdate();
 	}
 
     protected override void Shoot()
@@ -53,7 +54,9 @@ public class SPlayer : SEntity
 
     public override void Death()
     {
-        if (m_fLife <= 0f)
+        base.Death();
+
+        if (m_fCurrentLife <= 0f)
         {
             Destroy(gameObject);
         }

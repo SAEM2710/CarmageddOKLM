@@ -1109,7 +1109,7 @@ MonoBehaviour:
     type: 2}
   m_fShootFrequence: 3
   m_fShootForce: 20
-  m_fLife: 10
+  m_fMaxLife: 10
   m_goFXDestruction: {fileID: 1000011704020514, guid: 722c4d166cd75114b8f4715c17c4088b,
     type: 2}
   m_goBloodPuddle: {fileID: 1000012209743606, guid: 1f79980f82bd0b04eaa49d4bf9f0259e,

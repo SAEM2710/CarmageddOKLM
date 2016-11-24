@@ -26,7 +26,7 @@ public class SSpawn : MonoBehaviour
         SpawnIA();
     }
 
-    void SpawnIA()
+    private void SpawnIA()
     {
         int RandomInt;
         RandomInt = Random.Range(0, m_goTabAI.Length);
