@@ -3,12 +3,24 @@ using System.Collections;
 
 public class S_Spawn : MonoBehaviour
 {
-    [SerializeField] private int m_iMaxCptIA;
+    [SerializeField] private int m_iMaxCptAI;
     [SerializeField] private float m_fFrequence;
     [SerializeField] private GameObject[] m_goTabAI;
 
     private int m_iCurrentCptAI;
     private float m_fTime;
+
+    public int iMaxCptAI
+    {
+        get
+        {
+            return m_iMaxCptAI;
+        }
+        set
+        {
+            m_iMaxCptAI = value;
+        }
+    }
 
     // Use this for initialization
     void Start ()
@@ -29,7 +41,7 @@ public class S_Spawn : MonoBehaviour
         GameObject RandomAI;
         RandomAI = m_goTabAI[RandomInt];
 
-        if (m_iCurrentCptAI < m_iMaxCptIA)
+        if (m_iCurrentCptAI < m_iMaxCptAI)
         {
             if (m_fTime > m_fFrequence)
             {
