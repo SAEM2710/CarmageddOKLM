@@ -9558,7 +9558,7 @@ GameObject:
   - 199: {fileID: 199000011249211070}
   - 114: {fileID: 114000010455773604}
   m_Layer: 0
-  m_Name: Smoke - Heavy
+  m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 2800000, guid: 344d4b0036e1d401e8c6c53be26368f0, type: 3}
   m_NavMeshLayer: 0
@@ -11339,7 +11339,7 @@ GameObject:
   - 199: {fileID: 199000013682584522}
   - 114: {fileID: 114000013187465042}
   m_Layer: 0
-  m_Name: Fire - Campfire
+  m_Name: 'Fire '
   m_TagString: Untagged
   m_Icon: {fileID: 2800000, guid: 344d4b0036e1d401e8c6c53be26368f0, type: 3}
   m_NavMeshLayer: 0
