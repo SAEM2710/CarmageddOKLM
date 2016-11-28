@@ -18,7 +18,7 @@ public class S_Player : S_Character
         m_ccCarController = GetComponent<UnityStandardAssets.Vehicles.Car.CarController>();
     }
 
-    protected override void Shoot(GameObject _goBullet)
+    /*protected override void Shoot(GameObject _goBullet)
     {
         base.Shoot(_goBullet);
 
@@ -39,7 +39,7 @@ public class S_Player : S_Character
             }
             m_fTime += Time.deltaTime;
         }
-    }
+    }*/
 
     public override void Death()
     {
