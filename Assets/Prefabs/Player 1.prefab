@@ -74950,7 +74950,7 @@ MonoBehaviour:
   m_goBullet: {fileID: 1000011178816630, guid: e1624b0f5a954f0459b57d2252d5455a, type: 2}
   m_fShootFrequence: 0.2
   m_fShootForce: 50
-  m_fMaxLife: 200
+  m_fMaxLife: 20000
   m_fMinSpeedToKill: 30
 --- !u!114 &114000013333191414
 MonoBehaviour:
