@@ -8,6 +8,8 @@ public class S_Player : S_Character
 {
     [SerializeField] private float m_fMinSpeedToKill;
 
+    private bool IsDead;
+
     private UnityStandardAssets.Vehicles.Car.CarController m_ccCarController;
 
     // Use this for initialization
@@ -16,6 +18,7 @@ public class S_Player : S_Character
         base.Start();
 
         m_ccCarController = GetComponent<UnityStandardAssets.Vehicles.Car.CarController>();
+        IsDead = false;
     }
 
     /*protected override void Shoot(GameObject _goBullet)
@@ -47,12 +50,18 @@ public class S_Player : S_Character
 
         if (m_fCurrentLife <= 0f)
         {
-            //Play Anim / Instantiate Particle
-            //Play Sound
+            if (!IsDead)
+            {
+                //Play Sound
+                GameObject goFXDestruction;
+                goFXDestruction = Instantiate(m_goFXDestruction, transform.position, m_goFXDestruction.transform.rotation) as GameObject;
+                PlayerPrefs.SetInt("KilledEnemies", S_GameManager.Instance.iKilledEnemies);
+                PlayerPrefs.SetFloat("Time", Time.timeSinceLevelLoad);
+                IsDead = true;
+                Destroy(gameObject);
+                //SceneManager.LoadScene("GameOver");
 
-            PlayerPrefs.SetInt("KilledEnemies", S_GameManager.Instance.iKilledEnemies);
-            PlayerPrefs.SetFloat("Time", Time.timeSinceLevelLoad);
-            SceneManager.LoadScene("GameOver");
+            }
         }
     }
 

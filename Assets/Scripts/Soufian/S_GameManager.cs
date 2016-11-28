@@ -34,6 +34,7 @@ public class S_GameManager : S_GenericSingleton<S_GameManager>
         {
             m_iTotalEnemiesCpt += m_goTabSpawns[i].GetComponent<S_Spawn>().iMaxCptAI;
             Debug.Log(m_goTabSpawns[i]);
+            
         }
     }
 
