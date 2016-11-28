@@ -56,17 +56,30 @@ public class S_Player : S_Character
         }
     }
 
+    //MUST CLEAN IT
     private void SetShield(ShieldType _ShieldType)
     {
         switch (_ShieldType)
         {
             case ShieldType.Poison:
+                transform.GetChild(1).GetChild(0).GetChild(0).gameObject.SetActive(true);
+
+                transform.GetChild(1).GetChild(0).GetChild(1).gameObject.SetActive(false);
+                transform.GetChild(1).GetChild(0).GetChild(2).gameObject.SetActive(false);
                 Debug.Log("Poison activated");
                 break;
             case ShieldType.Fire:
+                transform.GetChild(1).GetChild(0).GetChild(1).gameObject.SetActive(true);
+
+                transform.GetChild(1).GetChild(0).GetChild(0).gameObject.SetActive(false);
+                transform.GetChild(1).GetChild(0).GetChild(2).gameObject.SetActive(false);
                 Debug.Log("Fire activated");
                 break;
             case ShieldType.Blade:
+                transform.GetChild(1).GetChild(0).GetChild(2).gameObject.SetActive(true);
+
+                transform.GetChild(1).GetChild(0).GetChild(0).gameObject.SetActive(false);
+                transform.GetChild(1).GetChild(0).GetChild(1).gameObject.SetActive(false);
                 Debug.Log("Blade activated");
                 break;
             case ShieldType.Thorn:
