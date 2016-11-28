@@ -3,18 +3,14 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class SUIManager : GenericSingleton<SUIManager>
+public class S_UIManager : S_GenericSingleton<S_UIManager>
 {
-    #region Visible Variables
-
     [SerializeField] private Image m_iPauseUI;
     [SerializeField] private Slider m_sLifeUI;
     [SerializeField] private Text m_tKilledEnemiesText;
     [SerializeField] private Text m_tTimeText;
 
-    #endregion
-
-    private SPlayer m_spPlayer;
+    private S_Player m_pPlayer;
 
     #region Getters/Setters
 
@@ -36,20 +32,18 @@ public class SUIManager : GenericSingleton<SUIManager>
     void Start ()
     {
         m_iPauseUI.gameObject.SetActive(false);
-        m_spPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<SPlayer>();
-        m_sLifeUI.value = (m_sLifeUI.maxValue * m_spPlayer.fCurrentLife)/
-                                                m_spPlayer.fMaxLife;
+        m_pPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<S_Player>();
+        m_sLifeUI.value = (m_sLifeUI.maxValue * m_pPlayer.fCurrentLife)/
+                                                m_pPlayer.fMaxLife;
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        m_sLifeUI.value = (m_sLifeUI.maxValue * m_spPlayer.fCurrentLife) /
-                                        m_spPlayer.fMaxLife;
+        m_sLifeUI.value = (m_sLifeUI.maxValue * m_pPlayer.fCurrentLife) /
+                                        m_pPlayer.fMaxLife;
 
-        m_tKilledEnemiesText.text = "Killed Enemies : " + SGameManager.Instance.iKilledEnemies.ToString();
+        m_tKilledEnemiesText.text = "Killed Enemies : " + S_GameManager.Instance.iKilledEnemies.ToString();
         m_tTimeText.text = Time.timeSinceLevelLoad.ToString();
     }
-
-
 }

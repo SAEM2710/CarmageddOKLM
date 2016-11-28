@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class SPlayerScore : MonoBehaviour
+public class S_PlayerScore : MonoBehaviour
 {
     //Classe Test
     [SerializeField] private Text m_tScoreText;

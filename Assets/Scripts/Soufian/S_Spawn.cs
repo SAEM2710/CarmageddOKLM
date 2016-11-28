@@ -1,15 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SSpawn : MonoBehaviour
+public class S_Spawn : MonoBehaviour
 {
-    #region Visible Variables
-
     [SerializeField] private int m_iMaxCptIA;
     [SerializeField] private float m_fFrequence;
     [SerializeField] private GameObject[] m_goTabAI;
-
-    #endregion
 
     private int m_iCurrentCptAI;
     private float m_fTime;

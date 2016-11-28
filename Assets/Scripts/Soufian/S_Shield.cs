@@ -9,10 +9,10 @@ public enum ShieldType
     Thorn
 }
 
-public class SShield : MonoBehaviour
+public class S_Shield : S_Object
 {
-    [SerializeField] private GameObject m_goFXDestruction1;
-    [SerializeField] private GameObject m_goFXDestruction2;
+    [SerializeField] private GameObject m_goFeedBack;
+    [SerializeField] private float m_fRotationSpeed;
 
     private ShieldType m_btShield;
 
@@ -29,12 +29,21 @@ public class SShield : MonoBehaviour
     }
 
     // Use this for initialization
-    void Start ()
+    protected override void Start ()
     {
+        base.Start();
+
         string ShieldTag;
-        ShieldTag = tag;
+        ShieldTag = transform.GetChild(0).tag;
         SetShieldType(ShieldTag);
 	}
+
+    protected override void Update()
+    {
+        //base.Update();
+
+        transform.Rotate(Vector3.up * m_fRotationSpeed * Time.deltaTime);
+    }
 
     private void SetShieldType(string _ShieldTag)
     {
@@ -55,11 +64,13 @@ public class SShield : MonoBehaviour
         }
     }
 
-    public void Death()
+    public override void Death()
     {
-        GameObject goFXDestruction1, goFXDestruction2;
-        goFXDestruction1 = Instantiate(m_goFXDestruction1, transform.position, transform.rotation) as GameObject;
-        goFXDestruction2 = Instantiate(m_goFXDestruction2, transform.position, transform.rotation) as GameObject;
-        Destroy(transform.parent.gameObject);
+        base.Death();
+
+        GameObject goFXDestruction, goFeedBack;
+        goFXDestruction = Instantiate(m_goFXDestruction, transform.position, transform.rotation) as GameObject;
+        goFeedBack = Instantiate(m_goFeedBack, transform.position, transform.rotation) as GameObject;
+        Destroy(gameObject);
     }
 }

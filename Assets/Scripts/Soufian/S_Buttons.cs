@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class SButtons : MonoBehaviour
+public class S_Buttons : MonoBehaviour
 {
     public void SPlay()
     {

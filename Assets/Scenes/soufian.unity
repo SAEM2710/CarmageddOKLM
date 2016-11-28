@@ -1411,7 +1411,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &657036801
 Transform:
   m_ObjectHideFlags: 0
@@ -1801,7 +1801,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 640bc85bc71d53249950e2367b6e0fdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_iPauseSprite: {fileID: 485400531}
 --- !u!4 &732347978
 Transform:
   m_ObjectHideFlags: 0
@@ -3071,6 +3070,17 @@ Prefab:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 114000011514282650, guid: b3c5f479df650b642a615c1f3e5467ef,
+        type: 2}
+      propertyPath: m_fMaxLife
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011514282650, guid: b3c5f479df650b642a615c1f3e5467ef,
+        type: 2}
+      propertyPath: m_goBullet
+      value: 
+      objectReference: {fileID: 1000011178816630, guid: e1624b0f5a954f0459b57d2252d5455a,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b3c5f479df650b642a615c1f3e5467ef, type: 2}
   m_IsPrefabParent: 0

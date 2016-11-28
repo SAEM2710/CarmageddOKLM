@@ -1,13 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SCamera : MonoBehaviour
+public class S_Camera : MonoBehaviour
 {
-    #region Visible Variables
-
     [SerializeField] private float m_fCameraHeight;
-
-    #endregion
 
     private GameObject m_goPlayer;
 

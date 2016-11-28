@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000013705331526}
-  - 114: {fileID: 114000012467079588}
+  - 114: {fileID: 114000010913273824}
   m_Layer: 0
   m_Name: EmptyFX
   m_TagString: Untagged
@@ -40,7 +40,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &114000012467079588
+--- !u!114 &114000010913273824
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

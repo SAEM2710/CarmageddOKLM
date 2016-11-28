@@ -29014,13 +29014,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0cfc36c3a7c415418a6b95e11566644, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_goProjectile: {fileID: 1000011178816630, guid: e1624b0f5a954f0459b57d2252d5455a,
+  m_goFXDestruction: {fileID: 1000012963748494, guid: 5e1891ef481f4ff49a57e4b55e778b81,
     type: 2}
+  m_goBullet: {fileID: 1000011178816630, guid: e1624b0f5a954f0459b57d2252d5455a, type: 2}
   m_fShootFrequence: 0.2
   m_fShootForce: 50
-  m_fLife: 1000
-  m_goFXDestruction: {fileID: 1000012095620428, guid: 4f5e463c6fc9873428a1ecfd0fb302ca,
-    type: 2}
+  m_fMaxLife: 200
   m_fMinSpeedToKill: 30
 --- !u!114 &114000012366763796
 MonoBehaviour:

@@ -2,17 +2,13 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class SPlayer : SEntity
+// S_Player requires the GameObject to have a Rigidbody component
+[RequireComponent(typeof(Rigidbody))]
+public class S_Player : S_Character
 {
-    #region Visible Variables
-
     [SerializeField] private float m_fMinSpeedToKill;
 
-    #endregion
-
     private UnityStandardAssets.Vehicles.Car.CarController m_ccCarController;
-    private Rigidbody m_rRigidbody;
-    private bool m_bIsCollided;
 
     // Use this for initialization
     protected override void Start ()
@@ -20,19 +16,11 @@ public class SPlayer : SEntity
         base.Start();
 
         m_ccCarController = GetComponent<UnityStandardAssets.Vehicles.Car.CarController>();
-        m_rRigidbody = GetComponent<Rigidbody>();
-        m_bIsCollided = false;
     }
 
-    // This function is called every fixed framerate frame
-    protected override void FixedUpdate()
+    protected override void Shoot(GameObject _goBullet)
     {
-        base.FixedUpdate();
-	}
-
-    protected override void Shoot()
-    {
-        base.Shoot();
+        base.Shoot(_goBullet);
 
         if (Input.GetButton("Fire1"))
         {
@@ -41,8 +29,8 @@ public class SPlayer : SEntity
                 m_fTime = 0f;
 
                 GameObject goProjectile;
-                goProjectile = Instantiate(m_goProjectile, m_v3PositionShoot, m_v3RotationShoot) as GameObject;
-                goProjectile.GetComponent<SProjectile>().bIsSpawnByPlayer = true;
+                goProjectile = Instantiate(_goBullet, m_v3PositionShoot, m_v3RotationShoot) as GameObject;
+                goProjectile.GetComponent<S_Bullet>().bIsSpawnByPlayer = true;
 
                 //Play Sound
 
@@ -62,7 +50,7 @@ public class SPlayer : SEntity
             //Play Anim / Instantiate Particle
             //Play Sound
 
-            PlayerPrefs.SetInt("KilledEnemies", SGameManager.Instance.iKilledEnemies);
+            PlayerPrefs.SetInt("KilledEnemies", S_GameManager.Instance.iKilledEnemies);
             PlayerPrefs.SetFloat("Time", Time.timeSinceLevelLoad);
             SceneManager.LoadScene("GameOver");
         }
@@ -89,32 +77,36 @@ public class SPlayer : SEntity
 
     #region Collisions
 
-    void OnCollisionEnter(Collision _cCollision)
+    protected override void OnCollisionEnter(Collision _cCollision)
     {
+        base.OnCollisionEnter(_cCollision);
+
         if (_cCollision.gameObject.CompareTag("AI"))
         {
             if (m_ccCarController.CurrentSpeed > m_fMinSpeedToKill)
             {
-                _cCollision.gameObject.GetComponent<SAI>().LoseLife(10f);
+                _cCollision.gameObject.GetComponent<S_AI>().LoseLife(10f);
             }
-            else if(_cCollision.gameObject.GetComponent<SAI>().bIsTouchingObstacle)
+            else if(_cCollision.gameObject.GetComponent<S_AI>().bIsTouchingObstacle)
             {
-                _cCollision.gameObject.GetComponent<SAI>().LoseLife(10f);
+                _cCollision.gameObject.GetComponent<S_AI>().LoseLife(10f);
             }
         }
     }
 
-    void OnCollisionStay(Collision _cCollision)
+    protected override void OnCollisionStay(Collision _cCollision)
     {
+        base.OnCollisionStay(_cCollision);
+
         if (_cCollision.gameObject.CompareTag("AI"))
         {
             if (m_ccCarController.CurrentSpeed > m_fMinSpeedToKill)
             {
-                _cCollision.gameObject.GetComponent<SAI>().LoseLife(10f);
+                _cCollision.gameObject.GetComponent<S_AI>().LoseLife(10f);
             }
-            else if (_cCollision.gameObject.GetComponent<SAI>().bIsTouchingObstacle)
+            else if (_cCollision.gameObject.GetComponent<S_AI>().bIsTouchingObstacle)
             {
-                _cCollision.gameObject.GetComponent<SAI>().LoseLife(10f);
+                _cCollision.gameObject.GetComponent<S_AI>().LoseLife(10f);
             }
         }
     }
@@ -123,16 +115,14 @@ public class SPlayer : SEntity
 
     #region Triggers
 
-    void OnTriggerEnter(Collider _cCollider)
+    private void OnTriggerEnter(Collider _cCollider)
     {
         if (_cCollider.CompareTag("ShieldBox"))
         {
-                Debug.Log("collision");
                 ShieldType shieldtype;
-                Debug.Log(_cCollider.transform.GetChild(0));
-                shieldtype = _cCollider.transform.GetChild(0).GetComponent<SShield>().btShield;
+                shieldtype = _cCollider.gameObject.GetComponent<S_Shield>().btShield;
                 SetShield(shieldtype);
-                _cCollider.transform.GetChild(0).GetComponent<SShield>().Death();
+                _cCollider.gameObject.GetComponent<S_Shield>().Death();
         }
     }
 

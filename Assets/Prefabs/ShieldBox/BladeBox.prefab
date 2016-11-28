@@ -137,6 +137,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010660271576}
   - 65: {fileID: 65000013329396098}
+  - 114: {fileID: 114000013333037502}
   m_Layer: 0
   m_Name: BladeBox
   m_TagString: ShieldBox
@@ -222,7 +223,6 @@ GameObject:
   - 4: {fileID: 4000011182052516}
   - 33: {fileID: 33000012201821852}
   - 23: {fileID: 23000013056089620}
-  - 114: {fileID: 114000011602516458}
   m_Layer: 0
   m_Name: Box
   m_TagString: BladeBox
@@ -1326,21 +1326,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnlyDeactivate: 0
---- !u!114 &114000011602516458
+--- !u!114 &114000013333037502
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012644791064}
+  m_GameObject: {fileID: 1000011441406448}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a4f15ad36b636548941bab2ffa1a083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_goFXDestruction1: {fileID: 1000012870390754, guid: b70cff7f8010efa4bac26c9673779dd5,
+  m_goFXDestruction: {fileID: 1000012870390754, guid: b70cff7f8010efa4bac26c9673779dd5,
     type: 2}
-  m_goFXDestruction2: {fileID: 1000012963748494, guid: 5e1891ef481f4ff49a57e4b55e778b81,
+  m_fSecondsBeforeDestruction: 5
+  m_goFeedBack: {fileID: 1000012963748494, guid: 5e1891ef481f4ff49a57e4b55e778b81,
     type: 2}
+  m_fRotationSpeed: 50
 --- !u!198 &198000010349548158
 ParticleSystem:
   m_ObjectHideFlags: 1

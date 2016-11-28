@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SDestroy : MonoBehaviour
+public class S_Destroy : MonoBehaviour
 {
 	// Use this for initialization
 	void Start ()

@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class SGameManager : GenericSingleton<SGameManager>
+public class S_GameManager : S_GenericSingleton<S_GameManager>
 {
     private int m_iKilledEnemies;
     private bool m_bIsPaused;
@@ -37,14 +37,14 @@ public class SGameManager : GenericSingleton<SGameManager>
             if (m_bIsPaused)
             {
                 m_bIsPaused = false;
-                SUIManager.Instance.iPauseUI.gameObject.SetActive(false);
+                S_UIManager.Instance.iPauseUI.gameObject.SetActive(false);
                 AudioListener.pause = false;
                 Time.timeScale = 1.0f;
             }
             else
             {
                 m_bIsPaused = true;
-                SUIManager.Instance.iPauseUI.gameObject.SetActive(true);
+                S_UIManager.Instance.iPauseUI.gameObject.SetActive(true);
                 AudioListener.pause = true;
                 Time.timeScale = 0.0f;
             }
