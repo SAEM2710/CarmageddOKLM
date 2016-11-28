@@ -63,10 +63,10 @@ MonoBehaviour:
   collisionExclusionFoldout: 0
   renderingMaterialFoldout: 0
   renderingColorFoldout: 1
-  renderingRenderModeFoldout: 0
-  renderingShadowsFoldout: 0
+  renderingRenderModeFoldout: 1
+  renderingShadowsFoldout: 1
   advancedTimeFoldout: 0
-  advancedSimulationFoldout: 1
+  advancedSimulationFoldout: 0
   advancedRebirthOptionsFoldout: 0
   advancedLocksFoldout: 0
   advancedOnEnableFoldout: 0
