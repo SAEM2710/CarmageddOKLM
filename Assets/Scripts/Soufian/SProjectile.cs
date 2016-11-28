@@ -27,12 +27,6 @@ public class SProjectile : MonoBehaviour
         Destroy(gameObject, 2f);
 	}
 	
-	// Update is called once per frame
-	void Update ()
-    {
-	
-	}
-
     void OnTriggerEnter(Collider _cCollider)
     {
         if (_cCollider.CompareTag("AI"))
@@ -40,12 +34,11 @@ public class SProjectile : MonoBehaviour
             if (m_bIsSpawnByPlayer)
             {
                 _cCollider.GetComponentInParent<SAI>().LoseLife(10f); //TO CHANGE
-                //_cCollider.gameObject.GetComponent<SAI>().Death();
             }
-            else
+            /*else
             {
                 //Destroy projectile allie ?
-            }
+            }*/
         }
         else if(_cCollider.CompareTag("PlayerCollider"))
         {
@@ -54,10 +47,10 @@ public class SProjectile : MonoBehaviour
                 _cCollider.GetComponentInParent<SPlayer>().LoseLife(10f); //TO CHANGE
                 Destroy(gameObject);
             }
-            else
+            /*else
             {
                 //Destroy projectile allie ?
-            }
+            }*/
         }
     }
 }
