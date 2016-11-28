@@ -4965,12 +4965,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 842046542}
   m_RootOrder: 2
+--- !u!114 &1060302227 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000013710792244, guid: a0dcbf1dbcf5080409aea829de3cc0dc,
+    type: 2}
+  m_PrefabInternal: {fileID: 1414585165}
+  m_Script: {fileID: 11500000, guid: a095f32c8084a4b1ba25c9153255dd10, type: 3}
 --- !u!43 &1085257830
 Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh65444
+  m_Name: pb_Mesh-3272
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -6455,14 +6461,6 @@ Prefab:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1000011041293674, guid: a0dcbf1dbcf5080409aea829de3cc0dc, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000011334852058, guid: a0dcbf1dbcf5080409aea829de3cc0dc, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a0dcbf1dbcf5080409aea829de3cc0dc, type: 2}
   m_IsPrefabParent: 0
@@ -6747,6 +6745,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ae03db13602621e41a8aa26dca908d91, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1520210383 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000010455773604, guid: a0dcbf1dbcf5080409aea829de3cc0dc,
+    type: 2}
+  m_PrefabInternal: {fileID: 1414585165}
+  m_Script: {fileID: 11500000, guid: a095f32c8084a4b1ba25c9153255dd10, type: 3}
 --- !u!1 &1548282425 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1000011007538024, guid: ae03db13602621e41a8aa26dca908d91,
@@ -8078,6 +8082,9 @@ MonoBehaviour:
   - {fileID: 1047580983}
   - {fileID: 1560500334}
   - {fileID: 2031377859}
+  - {fileID: 2054647145}
+  - {fileID: 1060302227}
+  - {fileID: 1520210383}
   manipulators: []
   paintMaxPositions: 10000
   calculate: 1
@@ -9125,6 +9132,12 @@ Prefab:
     - {fileID: 65000012528517020, guid: 380e04812399e434ab16450418985c5b, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 380e04812399e434ab16450418985c5b, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &2054647145 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000013187465042, guid: a0dcbf1dbcf5080409aea829de3cc0dc,
+    type: 2}
+  m_PrefabInternal: {fileID: 1414585165}
+  m_Script: {fileID: 11500000, guid: a095f32c8084a4b1ba25c9153255dd10, type: 3}
 --- !u!1 &2068794858
 GameObject:
   m_ObjectHideFlags: 0
