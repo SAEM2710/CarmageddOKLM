@@ -121,11 +121,11 @@ public class CFX_SpawnSystem : MonoBehaviour
 				newObj.SetActiveRecursively(false);
 			#else
 				newObj.SetActive(false);
-#endif
-
-            //Set flag to not destruct object
-            YAutoDestructParticle[] autoDestruct = newObj.GetComponentsInChildren<YAutoDestructParticle>(true);
-			foreach(YAutoDestructParticle ad in autoDestruct)
+			#endif
+			
+			//Set flag to not destruct object
+			CFX_AutoDestructShuriken[] autoDestruct = newObj.GetComponentsInChildren<CFX_AutoDestructShuriken>(true);
+			foreach(CFX_AutoDestructShuriken ad in autoDestruct)
 			{
 				ad.OnlyDeactivate = true;
 			}
