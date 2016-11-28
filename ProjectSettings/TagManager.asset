@@ -15,6 +15,7 @@ TagManager:
   - BladeBox
   - ShieldBox
   - Bullet
+  - Spawn
   layers:
   - Default
   - TransparentFX

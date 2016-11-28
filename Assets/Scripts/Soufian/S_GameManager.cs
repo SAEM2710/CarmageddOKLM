@@ -6,6 +6,9 @@ public class S_GameManager : S_GenericSingleton<S_GameManager>
 {
     private int m_iKilledEnemies;
     private bool m_bIsPaused;
+    private int m_iWavesCpt;
+    private int m_iTotalEnemiesCpt;
+    private GameObject[] m_goTabSpawns;
 
     public int iKilledEnemies
     {
@@ -21,13 +24,24 @@ public class S_GameManager : S_GenericSingleton<S_GameManager>
 
     void Start()
     {
+        m_iWavesCpt = 0;
         m_bIsPaused = false;
         m_iKilledEnemies = 0;
+
+        m_goTabSpawns = GameObject.FindGameObjectsWithTag("Spawn");
+
+        for (int i = 0; i < m_goTabSpawns.Length; ++i)
+        {
+            m_iTotalEnemiesCpt += m_goTabSpawns[i].GetComponent<S_Spawn>().iMaxCptAI;
+            Debug.Log(m_goTabSpawns[i]);
+            
+        }
     }
 
     void Update()
     {
         Pause();
+        WavesManager();
     }
 
     void Pause()
@@ -50,4 +64,27 @@ public class S_GameManager : S_GenericSingleton<S_GameManager>
             }
         }
     }
+
+    private void WavesManager()
+    {
+        switch(m_iWavesCpt)
+        {
+            case 0:
+                Debug.Log("Wave " + m_iWavesCpt);
+                /*m_goTabSpawns[0].gameObject.SetActive(true);
+                m_goTabSpawns[1].gameObject.SetActive(true);*/
+                break;
+            case 1:
+                Debug.Log("Wave " + m_iWavesCpt);
+                break;
+            case 2:
+                Debug.Log("Wave " + m_iWavesCpt);
+                break;
+        }
+        //m_goTabSpawns
+        //vague 1, instantier 40 ennemis, 20 en haut, 20 en bas
+        // vague 2, instantier 60 ennemis, 20 en haut, 20 en bas, 20 a droite
+        //vague 3
+    }
+
 }

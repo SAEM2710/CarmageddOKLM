@@ -162,12 +162,12 @@ GameObject:
   - 4: {fileID: 20368810}
   - 114: {fileID: 20368811}
   m_Layer: 0
-  m_Name: RightCenter
-  m_TagString: Untagged
+  m_Name: Right
+  m_TagString: Spawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &20368810
 Transform:
   m_ObjectHideFlags: 0
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d37918ea61e9af84f8639a1c2690d144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_iMaxCptIA: 10
+  m_iMaxCptAI: 10
   m_fFrequence: 1
   m_goTabAI:
   - {fileID: 1000013239964468, guid: 8cf15522c3322544c864063cc2f5983b, type: 2}
@@ -3429,12 +3429,12 @@ GameObject:
   - 4: {fileID: 651917583}
   - 114: {fileID: 651917582}
   m_Layer: 0
-  m_Name: LeftCenter
-  m_TagString: Untagged
+  m_Name: Left
+  m_TagString: Spawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &651917582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3446,7 +3446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d37918ea61e9af84f8639a1c2690d144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_iMaxCptIA: 10
+  m_iMaxCptAI: 10
   m_fFrequence: 1
   m_goTabAI:
   - {fileID: 1000013239964468, guid: 8cf15522c3322544c864063cc2f5983b, type: 2}
@@ -5300,12 +5300,12 @@ GameObject:
   - 4: {fileID: 1054803244}
   - 114: {fileID: 1054803243}
   m_Layer: 0
-  m_Name: CenterTop
-  m_TagString: Untagged
+  m_Name: Top
+  m_TagString: Spawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1054803243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5317,7 +5317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d37918ea61e9af84f8639a1c2690d144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_iMaxCptIA: 10
+  m_iMaxCptAI: 10
   m_fFrequence: 1
   m_goTabAI:
   - {fileID: 1000013239964468, guid: 8cf15522c3322544c864063cc2f5983b, type: 2}
@@ -6120,6 +6120,49 @@ Prefab:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1000011321432074, guid: a0dcbf1dbcf5080409aea829de3cc0dc, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010644893640, guid: a0dcbf1dbcf5080409aea829de3cc0dc, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012997887364, guid: a0dcbf1dbcf5080409aea829de3cc0dc, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012555076698, guid: a0dcbf1dbcf5080409aea829de3cc0dc, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010974970092, guid: a0dcbf1dbcf5080409aea829de3cc0dc, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000013987291776, guid: a0dcbf1dbcf5080409aea829de3cc0dc, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010907155886, guid: a0dcbf1dbcf5080409aea829de3cc0dc, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000012069932262, guid: a0dcbf1dbcf5080409aea829de3cc0dc, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013206945490, guid: a0dcbf1dbcf5080409aea829de3cc0dc,
+        type: 2}
+      propertyPath: m_fMaxLife
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013206945490, guid: a0dcbf1dbcf5080409aea829de3cc0dc,
+        type: 2}
+      propertyPath: m_goBullet
+      value: 
+      objectReference: {fileID: 1000011178816630, guid: e1624b0f5a954f0459b57d2252d5455a,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a0dcbf1dbcf5080409aea829de3cc0dc, type: 2}
   m_IsPrefabParent: 0
@@ -6793,7 +6836,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -7640,12 +7683,12 @@ GameObject:
   - 4: {fileID: 1631480420}
   - 114: {fileID: 1631480421}
   m_Layer: 0
-  m_Name: CenterDown
-  m_TagString: Untagged
+  m_Name: Down
+  m_TagString: Spawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1631480420
 Transform:
   m_ObjectHideFlags: 0
@@ -7670,7 +7713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d37918ea61e9af84f8639a1c2690d144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_iMaxCptIA: 10
+  m_iMaxCptAI: 10
   m_fFrequence: 1
   m_goTabAI:
   - {fileID: 1000013239964468, guid: 8cf15522c3322544c864063cc2f5983b, type: 2}
@@ -10287,7 +10330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
