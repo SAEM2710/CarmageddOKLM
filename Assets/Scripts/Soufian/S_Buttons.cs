@@ -15,12 +15,12 @@ public class S_Buttons : MonoBehaviour
             AudioListener.pause = false;
         }
 
-        SceneManager.LoadScene("Soufian2");
+        SceneManager.LoadScene("Soufian3");
     }
 
     public void SMenu()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("MenuYu");
     }
 
     public void SQuit()
