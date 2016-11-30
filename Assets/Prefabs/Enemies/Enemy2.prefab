@@ -71,6 +71,7 @@ GameObject:
   - 114: {fileID: 114000012519015960}
   - 114: {fileID: 114000013029162560}
   - 114: {fileID: 114000011415376266}
+  - 114: {fileID: 114000013725468824}
   m_Layer: 9
   m_Name: Enemy2
   m_TagString: AI
@@ -1148,6 +1149,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+--- !u!114 &114000013725468824
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010515047060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce1feb2979e56fe4c944357ec6635f87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_poisonTime: 5
+  m_poisonFrequency: 0.5
+  m_poisonDmgs: 1
+  m_fireTime: 2
+  m_fireFrequency: 0.5
+  m_fireDmgs: 0.5
 --- !u!136 &136000012072667228
 CapsuleCollider:
   m_ObjectHideFlags: 1
