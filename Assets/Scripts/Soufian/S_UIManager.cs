@@ -35,6 +35,9 @@ public class S_UIManager : S_GenericSingleton<S_UIManager>
         m_pPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<S_Player>();
         m_sLifeUI.value = (m_sLifeUI.maxValue * m_pPlayer.fCurrentLife)/
                                                 m_pPlayer.fMaxLife;
+
+        Camera.main.GetComponent<CameraFilterPack_AAA_BloodOnScreen>().Blood_On_Screen =
+        (1f * m_pPlayer.fCurrentBerzerkValue) / m_pPlayer.fMaxBerzerkValue;
     }
 	
 	// Update is called once per frame
@@ -45,5 +48,8 @@ public class S_UIManager : S_GenericSingleton<S_UIManager>
 
         m_tKilledEnemiesText.text = "Killed Enemies : " + S_GameManager.Instance.iKilledEnemies.ToString();
         m_tTimeText.text = Time.timeSinceLevelLoad.ToString();
+
+        Camera.main.GetComponent<CameraFilterPack_AAA_BloodOnScreen>().Blood_On_Screen =
+            (1f * m_pPlayer.fCurrentBerzerkValue) / m_pPlayer.fMaxBerzerkValue;
     }
 }

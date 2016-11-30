@@ -70,6 +70,7 @@ public class S_AI : S_Character
             goBloodPuddle = Instantiate(m_goBloodPuddle, transform.position, transform.rotation) as GameObject;
             DropShield();
             ++S_GameManager.Instance.iKilledEnemies;
+            --S_GameManager.Instance.iCurrentAICpt;
             Destroy(gameObject);
             //StartCoroutine("DropShield");
         }

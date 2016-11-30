@@ -15,6 +15,8 @@ public class S_GameManager : S_GenericSingleton<S_GameManager>
     private bool m_bIsPaused;
     private int m_iWavesCpt;
     private GameObject[] m_goTabSpawns;
+    private int m_iCurrentAICpt;
+    private int m_iWave;
     //private float m_fTime;
 
     public int iKilledEnemies
@@ -29,6 +31,18 @@ public class S_GameManager : S_GenericSingleton<S_GameManager>
         }
     }
 
+    public int iCurrentAICpt
+    {
+        get
+        {
+            return m_iCurrentAICpt;
+        }
+        set
+        {
+            m_iCurrentAICpt = value;
+        }
+    }
+
     void Start()
     {
         m_iWavesCpt = 0;
@@ -39,13 +53,22 @@ public class S_GameManager : S_GenericSingleton<S_GameManager>
         m_goTabSpawns = GameObject.FindGameObjectsWithTag("Spawn");
 
         Spawn();
+        m_iWave = 1;
+        //m_iCurrentAICpt = GameObject.FindGameObjectsWithTag("AI").Length;
     }
 
     void Update()
     {
         Pause();
-        //WavesManager();
 
+        //Debug.Log(m_iCurrentAICpt);
+
+        if(m_iCurrentAICpt <= 0)
+        {
+            m_iTotalEnemiesCpt += 10;
+            Spawn();
+            ++m_iWave;
+        }
     }
 
     void Pause()
@@ -69,45 +92,15 @@ public class S_GameManager : S_GenericSingleton<S_GameManager>
         }
     }
 
-    /*private void Waves()
-    {
-        if (GameObject.FindGameObjectsWithTag("AI").Length <= 0)
-        {
-            ++WavesCpt;
-        }
-    }
-
-    private void */
-
     private void Spawn()
     {
-        /*switch(m_iWavesCpt)
-        {
-            case 0:
-                Debug.Log("Wave " + m_iWavesCpt);
-                /*m_goTabSpawns[0].gameObject.SetActive(true);
-                m_goTabSpawns[1].gameObject.SetActive(true);
-                break;
-            case 1:
-                Debug.Log("Wave " + m_iWavesCpt);
-                break;
-            case 2:
-                Debug.Log("Wave " + m_iWavesCpt);
-                break;
-        }
-        //m_goTabSpawns
-        //vague 1, instantier 40 ennemis, 20 en haut, 20 en bas
-        // vague 2, instantier 60 ennemis, 20 en haut, 20 en bas, 20 a droite
-        //vague 3*/
-
         int iTotalEnemiesCptBySpawn;
         iTotalEnemiesCptBySpawn = m_iTotalEnemiesCpt / m_goTabSpawns.Length;
-        //Debug.Log(iTotalEnemiesCptBySpawn);
-        int iCurrentAICpt = 0;
+        int iCurrentAICptBySpawn = 0;
 
         for (int i = 0; i < m_goTabSpawns.Length; ++i)
         {
-            while (iCurrentAICpt < iTotalEnemiesCptBySpawn)
+            while (iCurrentAICptBySpawn < iTotalEnemiesCptBySpawn)
             {
                 //if (m_fTime > m_fFrequence)
                 //{
@@ -120,11 +113,12 @@ public class S_GameManager : S_GenericSingleton<S_GameManager>
 
                     GameObject goIA;
                     goIA = Instantiate(RandomAI, m_goTabSpawns[i].transform.position, m_goTabSpawns[i].transform.rotation) as GameObject;
-                    ++iCurrentAICpt;
+                    ++iCurrentAICptBySpawn;
+                    ++m_iCurrentAICpt;
                 //}
                 //m_fTime += Time.deltaTime;
             }
-            iCurrentAICpt = 0;
+            iCurrentAICptBySpawn = 0;
         }
     }
 }

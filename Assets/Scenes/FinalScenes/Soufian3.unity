@@ -550,6 +550,11 @@ Prefab:
       propertyPath: m_tTimeText
       value: 
       objectReference: {fileID: 1232664605}
+    - target: {fileID: 114000011828560162, guid: 418ef5ce424ed1c469f662dc8f85c6a3,
+        type: 2}
+      propertyPath: m_fFrequence
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 418ef5ce424ed1c469f662dc8f85c6a3, type: 2}
   m_IsPrefabParent: 0
@@ -949,6 +954,35 @@ Prefab:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 114000013206945490, guid: a0dcbf1dbcf5080409aea829de3cc0dc,
+        type: 2}
+      propertyPath: m_fMaxLife
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 198000010637090460, guid: a0dcbf1dbcf5080409aea829de3cc0dc,
+        type: 2}
+      propertyPath: randomSeed
+      value: -553363213
+      objectReference: {fileID: 0}
+    - target: {fileID: 198000011607827842, guid: a0dcbf1dbcf5080409aea829de3cc0dc,
+        type: 2}
+      propertyPath: randomSeed
+      value: -246865507
+      objectReference: {fileID: 0}
+    - target: {fileID: 198000011029894578, guid: a0dcbf1dbcf5080409aea829de3cc0dc,
+        type: 2}
+      propertyPath: randomSeed
+      value: 1437563279
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011798009686, guid: a0dcbf1dbcf5080409aea829de3cc0dc, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013206945490, guid: a0dcbf1dbcf5080409aea829de3cc0dc,
+        type: 2}
+      propertyPath: m_fMaxBerzerkValue
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a0dcbf1dbcf5080409aea829de3cc0dc, type: 2}
   m_IsPrefabParent: 0
@@ -1191,13 +1225,13 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1747627809}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 91f7bda0206423c4d990cefee1b4f6cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SCShader: {fileID: 4800000, guid: 6fcc97b5e9e8cad48bd61db91e93f1a2, type: 3}
-  Blood_On_Screen: 0.7
+  Blood_On_Screen: 0.02
   Blood_Color: {r: 1, g: 0, b: 0, a: 1}
   Blood_Intensify: 0.7
   Blood_Darkness: 0.5
@@ -1346,7 +1380,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1542626
+  m_Name: pb_Mesh-4430
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2

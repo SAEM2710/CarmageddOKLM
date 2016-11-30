@@ -7,16 +7,42 @@ using UnityEngine.SceneManagement;
 public class S_Player : S_Character
 {
     [SerializeField] private float m_fMinSpeedToKill;
+    [SerializeField] private float m_fMaxBerzerkValue;
 
+    private float m_fCurrentBerzerkValue;
     private bool IsDead;
-
     private UnityStandardAssets.Vehicles.Car.CarController m_ccCarController;
+
+    public float fCurrentBerzerkValue
+    {
+        get
+        {
+            return m_fCurrentBerzerkValue;
+        }
+        set
+        {
+            m_fCurrentBerzerkValue = value;
+        }
+    }
+
+    public float fMaxBerzerkValue
+    {
+        get
+        {
+            return m_fMaxBerzerkValue;
+        }
+        set
+        {
+            m_fMaxBerzerkValue = value;
+        }
+    }
 
     // Use this for initialization
     protected override void Start ()
     {
         base.Start();
 
+        m_fCurrentBerzerkValue = 0f;
         m_ccCarController = GetComponent<UnityStandardAssets.Vehicles.Car.CarController>();
         IsDead = false;
     }
@@ -59,10 +85,18 @@ public class S_Player : S_Character
                 PlayerPrefs.SetFloat("Time", Time.timeSinceLevelLoad);
                 IsDead = true;
                 Destroy(gameObject);
-                //SceneManager.LoadScene("GameOver");
+                SceneManager.LoadScene("GameOver");
 
             }
         }
+    }
+
+    protected override void Update()
+    {
+        base.Update();
+
+        ActivateBerzerk();
+        Debug.Log("CurrentBerzerkValue : " + m_fCurrentBerzerkValue);
     }
 
     //MUST CLEAN IT
@@ -71,29 +105,45 @@ public class S_Player : S_Character
         switch (_ShieldType)
         {
             case ShieldType.Poison:
-                transform.GetChild(1).GetChild(0).GetChild(0).gameObject.SetActive(true);
+                transform.GetChild(5).GetChild(0).GetChild(2).gameObject.SetActive(true);
 
-                transform.GetChild(1).GetChild(0).GetChild(1).gameObject.SetActive(false);
-                transform.GetChild(1).GetChild(0).GetChild(2).gameObject.SetActive(false);
+                transform.GetChild(5).GetChild(0).GetChild(1).gameObject.SetActive(false);
+                transform.GetChild(5).GetChild(0).GetChild(3).gameObject.SetActive(false);
                 Debug.Log("Poison activated");
                 break;
             case ShieldType.Fire:
-                transform.GetChild(1).GetChild(0).GetChild(1).gameObject.SetActive(true);
+                transform.GetChild(5).GetChild(0).GetChild(1).gameObject.SetActive(true);
 
-                transform.GetChild(1).GetChild(0).GetChild(0).gameObject.SetActive(false);
-                transform.GetChild(1).GetChild(0).GetChild(2).gameObject.SetActive(false);
+                transform.GetChild(5).GetChild(0).GetChild(3).gameObject.SetActive(false);
+                transform.GetChild(5).GetChild(0).GetChild(2).gameObject.SetActive(false);
                 Debug.Log("Fire activated");
                 break;
             case ShieldType.Blade:
-                transform.GetChild(1).GetChild(0).GetChild(2).gameObject.SetActive(true);
+                transform.GetChild(5).GetChild(0).GetChild(3).gameObject.SetActive(true);
 
-                transform.GetChild(1).GetChild(0).GetChild(0).gameObject.SetActive(false);
-                transform.GetChild(1).GetChild(0).GetChild(1).gameObject.SetActive(false);
+                transform.GetChild(5).GetChild(0).GetChild(2).gameObject.SetActive(false);
+                transform.GetChild(5).GetChild(0).GetChild(1).gameObject.SetActive(false);
                 Debug.Log("Blade activated");
                 break;
             case ShieldType.Thorn:
                 Debug.Log("Thorn activated");
                 break;
+        }
+    }
+
+    private void ActivateBerzerk()
+    {
+        if(m_fCurrentBerzerkValue >= m_fMaxBerzerkValue)
+        {
+            m_fCurrentBerzerkValue = m_fMaxBerzerkValue;
+            if(Input.GetButtonDown("Fire1"))
+            {
+                Debug.Log("Berzerk");
+                //Play Sound
+                //Instantiate effect
+                //Do something
+                m_fCurrentBerzerkValue = 0f;
+            }
         }
     }
 
@@ -108,10 +158,12 @@ public class S_Player : S_Character
             if (m_ccCarController.CurrentSpeed > m_fMinSpeedToKill)
             {
                 _cCollision.gameObject.GetComponent<S_AI>().LoseLife(10f);
+                m_fCurrentBerzerkValue += 5f;
             }
             else if(_cCollision.gameObject.GetComponent<S_AI>().bIsTouchingObstacle)
             {
                 _cCollision.gameObject.GetComponent<S_AI>().LoseLife(10f);
+                //m_fCurrentBerzerkValue -= 2.5f;
             }
         }
     }
@@ -125,10 +177,12 @@ public class S_Player : S_Character
             if (m_ccCarController.CurrentSpeed > m_fMinSpeedToKill)
             {
                 _cCollision.gameObject.GetComponent<S_AI>().LoseLife(10f);
+                //m_fCurrentBerzerkValue += 5f;
             }
             else if (_cCollision.gameObject.GetComponent<S_AI>().bIsTouchingObstacle)
             {
                 _cCollision.gameObject.GetComponent<S_AI>().LoseLife(10f);
+                //m_fCurrentBerzerkValue += 5f;
             }
         }
     }
