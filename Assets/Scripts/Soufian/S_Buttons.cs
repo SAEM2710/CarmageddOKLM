@@ -27,4 +27,20 @@ public class S_Buttons : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void Sstart()
+    {
+        if(Input.GetButtonDown("StartGame"))
+        {
+            SceneManager.LoadScene("Tuto");
+        }
+    }
+
+    public void Sexit()
+    {
+        if(Input.GetButtonDown("Cancel"))
+        {
+            SQuit();
+        }
+    }
 }
