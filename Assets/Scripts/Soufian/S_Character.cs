@@ -65,7 +65,7 @@ public class S_Character : S_Entity
         m_v3RotationShoot = transform.GetChild(0).rotation;
     }
 
-    public void LoseLife(float _fDamage)
+    public virtual void LoseLife(float _fDamage)
     {
         m_fCurrentLife -= _fDamage;
     }

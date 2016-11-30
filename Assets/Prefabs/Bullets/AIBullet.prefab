@@ -119,4 +119,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_goFXDestruction: {fileID: 0}
-  m_fSecondsBeforeDestruction: 2
+  m_fSecondsBeforeDestruction: 1.5

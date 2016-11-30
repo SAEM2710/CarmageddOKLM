@@ -6,7 +6,7 @@ public enum ShieldType
     Poison,
     Fire,
     Blade,
-    Thorn
+    //Thorn
 }
 
 public class S_Shield : S_Object
@@ -58,9 +58,9 @@ public class S_Shield : S_Object
             case "BladeBox":
                 m_btShield = ShieldType.Blade;
                 break;
-            case "ThornBox":
+            /*case "ThornBox":
                 m_btShield = ShieldType.Thorn;
-                break;
+                break;*/
         }
     }
 

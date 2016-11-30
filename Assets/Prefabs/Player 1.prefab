@@ -8200,11 +8200,10 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000011411742592}
-  - {fileID: 4000013042475516}
   - {fileID: 4000010791947408}
-  - {fileID: 4000011493326478}
+  - {fileID: 4000013042475516}
   m_Father: {fileID: 4000011633298884}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!4 &4000010262192818
 Transform:
   m_ObjectHideFlags: 1
@@ -8374,7 +8373,7 @@ Transform:
   m_Children:
   - {fileID: 4000011553466958}
   m_Father: {fileID: 4000011633298884}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!4 &4000010368238194
 Transform:
   m_ObjectHideFlags: 1
@@ -8948,7 +8947,7 @@ Transform:
   - {fileID: 4000011428305026}
   - {fileID: 4000010011082554}
   m_Father: {fileID: 4000010249646524}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!4 &4000010792099742
 Transform:
   m_ObjectHideFlags: 1
@@ -10095,16 +10094,16 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013324697334}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.011889311, y: -0.34199998, z: -0.0000000046910023}
-  m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000004}
+  m_LocalPosition: {x: -0.048481237, y: -0.5427828, z: -0.13309044}
+  m_LocalScale: {x: 2.3824072, y: 2.382406, z: 2.3824072}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000013627092406}
   - {fileID: 4000011995822584}
   - {fileID: 4000013939624452}
   - {fileID: 4000013498421838}
-  m_Father: {fileID: 4000010249646524}
-  m_RootOrder: 3
+  m_Father: {fileID: 4000011633298884}
+  m_RootOrder: 0
 --- !u!4 &4000011499617746
 Transform:
   m_ObjectHideFlags: 1
@@ -10377,6 +10376,7 @@ Transform:
   m_LocalScale: {x: 1.6157832, y: 1.6157835, z: 1.6157835}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 4000011493326478}
   - {fileID: 4000010249646524}
   - {fileID: 4000010365715030}
   m_Father: {fileID: 4000011687238190}
@@ -12481,7 +12481,7 @@ Transform:
   - {fileID: 4000011474584628}
   - {fileID: 4000011943634148}
   m_Father: {fileID: 4000010249646524}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!4 &4000013062458840
 Transform:
   m_ObjectHideFlags: 1
@@ -45587,6 +45587,11 @@ MonoBehaviour:
   m_fShootForce: 50
   m_fMaxLife: 600
   m_fMinSpeedToKill: 30
+  m_fMaxBerzerkValue: 100
+  m_goTabWeapons:
+  - {fileID: 1000011334852058}
+  - {fileID: 1000011798009686}
+  - {fileID: 1000013324697334}
 --- !u!114 &114000013333191414
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -46653,7 +46658,7 @@ ParticleSystem:
   moveWithTransform: 0
   autoRandomSeed: 1
   scalingMode: 2
-  randomSeed: 1766116017
+  randomSeed: -553363213
   InitialModule:
     serializedVersion: 2
     enabled: 1
@@ -48407,7 +48412,7 @@ ParticleSystem:
   moveWithTransform: 1
   autoRandomSeed: 1
   scalingMode: 2
-  randomSeed: -556651491
+  randomSeed: 1437563279
   InitialModule:
     serializedVersion: 2
     enabled: 1
@@ -53609,7 +53614,7 @@ ParticleSystem:
   moveWithTransform: 0
   autoRandomSeed: 1
   scalingMode: 2
-  randomSeed: -48721798
+  randomSeed: -246865507
   InitialModule:
     serializedVersion: 2
     enabled: 1

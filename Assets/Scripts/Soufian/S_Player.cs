@@ -8,10 +8,52 @@ public class S_Player : S_Character
 {
     [SerializeField] private float m_fMinSpeedToKill;
     [SerializeField] private float m_fMaxBerzerkValue;
+    [SerializeField] private GameObject[] m_goTabWeapons;
 
     private float m_fCurrentBerzerkValue;
     private bool IsDead;
     private UnityStandardAssets.Vehicles.Car.CarController m_ccCarController;
+    private float m_fMaxShieldValue;
+    private float m_fCurrentShieldValue;
+    private bool m_bShieldActivated;
+
+    #region Getters/Setters
+
+    public bool bShieldActivated
+    {
+        get
+        {
+            return m_bShieldActivated;
+        }
+        set
+        {
+            m_bShieldActivated = value;
+        }
+    }
+
+    public float fCurrentShieldValue
+    {
+        get
+        {
+            return m_fCurrentShieldValue;
+        }
+        set
+        {
+            m_fCurrentShieldValue = value;
+        }
+    }
+
+    public float fMaxShieldValue
+    {
+        get
+        {
+            return m_fMaxShieldValue;
+        }
+        set
+        {
+            m_fMaxShieldValue = value;
+        }
+    }
 
     public float fCurrentBerzerkValue
     {
@@ -37,6 +79,8 @@ public class S_Player : S_Character
         }
     }
 
+    #endregion
+
     // Use this for initialization
     protected override void Start ()
     {
@@ -45,31 +89,20 @@ public class S_Player : S_Character
         m_fCurrentBerzerkValue = 0f;
         m_ccCarController = GetComponent<UnityStandardAssets.Vehicles.Car.CarController>();
         IsDead = false;
+        m_bShieldActivated = false;
     }
 
-    /*protected override void Shoot(GameObject _goBullet)
+    public override void LoseLife(float _fDamage)
     {
-        base.Shoot(_goBullet);
-
-        if (Input.GetButton("Fire1"))
+        if (m_bShieldActivated)
         {
-            if (m_fTime > m_fShootFrequence)
-            {
-                m_fTime = 0f;
-
-                GameObject goProjectile;
-                goProjectile = Instantiate(_goBullet, m_v3PositionShoot, m_v3RotationShoot) as GameObject;
-                goProjectile.GetComponent<S_Bullet>().bIsSpawnByPlayer = true;
-
-                //Play Sound
-
-                Rigidbody rProjectileRb = goProjectile.GetComponent<Rigidbody>();
-                rProjectileRb.velocity = transform.TransformDirection(Vector3.forward * m_fShootForce) + m_rRigidbody.velocity;
-            }
-            m_fTime += Time.deltaTime;
+            m_fCurrentShieldValue -= _fDamage;
         }
-    }*/
-
+        else
+        {
+            m_fCurrentLife -= _fDamage;
+        }
+    }
     public override void Death()
     {
         base.Death();
@@ -91,6 +124,14 @@ public class S_Player : S_Character
         }
     }
 
+    private void DesactivateShield()
+    {
+        if(m_fCurrentShieldValue <= 0)
+        {
+            m_bShieldActivated = false;
+        }
+    }
+
     protected override void Update()
     {
         base.Update();
@@ -105,28 +146,22 @@ public class S_Player : S_Character
         switch (_ShieldType)
         {
             case ShieldType.Poison:
-                transform.GetChild(5).GetChild(0).GetChild(2).gameObject.SetActive(true);
-
-                transform.GetChild(5).GetChild(0).GetChild(1).gameObject.SetActive(false);
-                transform.GetChild(5).GetChild(0).GetChild(3).gameObject.SetActive(false);
+                m_goTabWeapons[0].SetActive(true);
+                m_goTabWeapons[1].SetActive(false);
+                m_goTabWeapons[2].SetActive(false);
                 Debug.Log("Poison activated");
                 break;
             case ShieldType.Fire:
-                transform.GetChild(5).GetChild(0).GetChild(1).gameObject.SetActive(true);
-
-                transform.GetChild(5).GetChild(0).GetChild(3).gameObject.SetActive(false);
-                transform.GetChild(5).GetChild(0).GetChild(2).gameObject.SetActive(false);
+                m_goTabWeapons[0].SetActive(false);
+                m_goTabWeapons[1].SetActive(true);
+                m_goTabWeapons[2].SetActive(false);
                 Debug.Log("Fire activated");
                 break;
             case ShieldType.Blade:
-                transform.GetChild(5).GetChild(0).GetChild(3).gameObject.SetActive(true);
-
-                transform.GetChild(5).GetChild(0).GetChild(2).gameObject.SetActive(false);
-                transform.GetChild(5).GetChild(0).GetChild(1).gameObject.SetActive(false);
+                m_goTabWeapons[0].SetActive(false);
+                m_goTabWeapons[1].SetActive(false);
+                m_goTabWeapons[2].SetActive(true);
                 Debug.Log("Blade activated");
-                break;
-            case ShieldType.Thorn:
-                Debug.Log("Thorn activated");
                 break;
         }
     }
@@ -195,10 +230,12 @@ public class S_Player : S_Character
     {
         if (_cCollider.CompareTag("ShieldBox"))
         {
-                ShieldType shieldtype;
-                shieldtype = _cCollider.gameObject.GetComponent<S_Shield>().btShield;
-                SetShield(shieldtype);
-                _cCollider.gameObject.GetComponent<S_Shield>().Death();
+            m_bShieldActivated = true;
+            m_fMaxShieldValue = 100f;
+            ShieldType shieldtype;
+            shieldtype = _cCollider.gameObject.GetComponent<S_Shield>().btShield;
+            SetShield(shieldtype);
+            _cCollider.gameObject.GetComponent<S_Shield>().Death();
         }
     }
 
