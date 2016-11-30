@@ -103,6 +103,7 @@ public class S_Player : S_Character
             m_fCurrentLife -= _fDamage;
         }
     }
+
     public override void Death()
     {
         base.Death();
@@ -114,14 +115,19 @@ public class S_Player : S_Character
                 //Play Sound
                 GameObject goFXDestruction;
                 goFXDestruction = Instantiate(m_goFXDestruction, transform.position, m_goFXDestruction.transform.rotation) as GameObject;
-                PlayerPrefs.SetInt("KilledEnemies", S_GameManager.Instance.iKilledEnemies);
-                PlayerPrefs.SetFloat("Time", Time.timeSinceLevelLoad);
+                SetScore();
                 IsDead = true;
                 Destroy(gameObject);
                 SceneManager.LoadScene("GameOver");
 
             }
         }
+    }
+
+    private void SetScore()
+    {
+        PlayerPrefs.SetInt("KilledEnemies", S_GameManager.Instance.iKilledEnemies);
+        PlayerPrefs.SetFloat("Time", Time.timeSinceLevelLoad);
     }
 
     private void DesactivateShield()
@@ -137,7 +143,10 @@ public class S_Player : S_Character
         base.Update();
 
         ActivateBerzerk();
-        Debug.Log("CurrentBerzerkValue : " + m_fCurrentBerzerkValue);
+        /*Debug.Log("CurrentShieldValue : " + m_fCurrentShieldValue);
+        Debug.Log("MaxShieldValue : " + m_fMaxShieldValue);
+        Debug.Log(m_bShieldActivated);*/
+        DesactivateShield();
     }
 
     //MUST CLEAN IT
@@ -232,6 +241,7 @@ public class S_Player : S_Character
         {
             m_bShieldActivated = true;
             m_fMaxShieldValue = 100f;
+            m_fCurrentShieldValue = m_fMaxShieldValue;
             ShieldType shieldtype;
             shieldtype = _cCollider.gameObject.GetComponent<S_Shield>().btShield;
             SetShield(shieldtype);
