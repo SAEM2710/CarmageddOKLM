@@ -118,7 +118,7 @@ public class S_Player : S_Character
                 SetScore();
                 IsDead = true;
                 Destroy(gameObject);
-                SceneManager.LoadScene("GameOver");
+                SceneManager.LoadScene("S_GameOver");
 
             }
         }
