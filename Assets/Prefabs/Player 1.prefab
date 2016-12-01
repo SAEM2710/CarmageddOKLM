@@ -2227,7 +2227,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1000011353905940
 GameObject:
   m_ObjectHideFlags: 1
@@ -6104,7 +6104,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1000013327545674
 GameObject:
   m_ObjectHideFlags: 1
@@ -46840,7 +46840,7 @@ ParticleSystem:
   moveWithTransform: 0
   autoRandomSeed: 1
   scalingMode: 2
-  randomSeed: 1330123790
+  randomSeed: -1393852052
   InitialModule:
     serializedVersion: 2
     enabled: 1
@@ -48594,7 +48594,7 @@ ParticleSystem:
   moveWithTransform: 1
   autoRandomSeed: 1
   scalingMode: 2
-  randomSeed: 590190175
+  randomSeed: 1581000099
   InitialModule:
     serializedVersion: 2
     enabled: 1
@@ -50348,7 +50348,7 @@ ParticleSystem:
   moveWithTransform: 1
   autoRandomSeed: 1
   scalingMode: 2
-  randomSeed: -698921360
+  randomSeed: -2020116070
   InitialModule:
     serializedVersion: 2
     enabled: 1
@@ -52072,7 +52072,7 @@ ParticleSystem:
   moveWithTransform: 1
   autoRandomSeed: 1
   scalingMode: 2
-  randomSeed: 565769927
+  randomSeed: 2045919240
   InitialModule:
     serializedVersion: 2
     enabled: 1
@@ -53796,7 +53796,7 @@ ParticleSystem:
   moveWithTransform: 0
   autoRandomSeed: 1
   scalingMode: 2
-  randomSeed: -1999800423
+  randomSeed: -1345067571
   InitialModule:
     serializedVersion: 2
     enabled: 1
@@ -57244,7 +57244,7 @@ ParticleSystem:
   moveWithTransform: 1
   autoRandomSeed: 1
   scalingMode: 2
-  randomSeed: -1816779928
+  randomSeed: -1218832088
   InitialModule:
     serializedVersion: 2
     enabled: 1
@@ -62286,7 +62286,7 @@ ParticleSystem:
   moveWithTransform: 1
   autoRandomSeed: 1
   scalingMode: 2
-  randomSeed: -649095741
+  randomSeed: 323336303
   InitialModule:
     serializedVersion: 2
     enabled: 1
@@ -65641,7 +65641,7 @@ ParticleSystem:
     quality: 0
     voxelSize: 0.5
     collisionMessages: 1
-    collidesWithDynamic: 1
+    collidesWithDynamic: 0
     interiorCollisions: 1
   TriggerModule:
     enabled: 0
