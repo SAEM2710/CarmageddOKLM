@@ -30,7 +30,7 @@ public class TowerShoot : S_Character {
 
             transform.eulerAngles = new Vector3(transform.eulerAngles.x, Mathf.Atan2(x, y) * Mathf.Rad2Deg, transform.eulerAngles.z);
 
-            if (m_fTime > m_fShootFrequence)
+            if (m_fTime > m_fShootFrequence && canShoot)
             {
                 m_fTime = 0f;
           
@@ -48,8 +48,12 @@ public class TowerShoot : S_Character {
         }
     }
 
+    void CancelShoot()
+    {
+        canShoot = false;
+    }
 
-    void ShootDelay()
+    void ActiveShoot()
     {
         canShoot = true;
     }
