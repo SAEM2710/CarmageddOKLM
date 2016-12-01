@@ -6,10 +6,11 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: base_palmier
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _EMISSION
-  m_LightmapFlags: 1
+  m_Name: ZFS_3d_Pro_Fog
+  m_Shader: {fileID: 4800000, guid: 5ea6b9577f45d7c49bcbd86688d7bbf5, type: 3}
+  m_ShaderKeywords: _EDGE_DETECTION_ON _FRESNEL_ON _GRADIENT_OR_SOLID_COLOR_ON _LIGHTMAPPING_REALTIME
+    _SOFT_TEXTURE_ON
+  m_LightmapFlags: 5
   m_CustomRenderQueue: -1
   stringTagMap: {}
   m_SavedProperties:
@@ -46,6 +47,24 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
+        name: _Gradient_Color
+      second:
+        m_Texture: {fileID: 2800000, guid: 6213ecb3f516cc54d8c441fe5ed2d012, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _Gradient_Edge_Detection
+      second:
+        m_Texture: {fileID: 2800000, guid: a95cd61354f0f794ab21bc0e7e905dbc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _Gradient_Texture_Decay
+      second:
+        m_Texture: {fileID: 2800000, guid: 1afc2415b297bab478597580754713c6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
         name: _MainTex
       second:
         m_Texture: {fileID: 0}
@@ -69,7 +88,16 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - first:
+        name: _Texture
+      second:
+        m_Texture: {fileID: 2800000, guid: ba38235cb02433444971448418b72592, type: 3}
+        m_Scale: {x: 3, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
+    - first:
+        name: _Brightness
+      second: 1.5
     - first:
         name: _BumpScale
       second: 1
@@ -77,20 +105,44 @@ Material:
         name: _Cutoff
       second: 0.5
     - first:
+        name: _Decay
+      second: 0.601
+    - first:
         name: _DetailNormalMapScale
       second: 1
     - first:
         name: _DstBlend
       second: 0
     - first:
-        name: _GlossMapScale
+        name: _Edge_Detection
       second: 1
+    - first:
+        name: _Edge_Detection_Distance
+      second: 3
+    - first:
+        name: _EmissionScaleUI
+      second: 0
+    - first:
+        name: _Fresnel
+      second: 1
+    - first:
+        name: _Fresnel_Exponent
+      second: 2
     - first:
         name: _Glossiness
       second: 0.5
     - first:
-        name: _GlossyReflections
+        name: _Gradient_Or_Solid_Color
       second: 1
+    - first:
+        name: _Intensity
+      second: 1.2
+    - first:
+        name: _Lightmapping
+      second: 1
+    - first:
+        name: _Make_Same_As_Fresnel
+      second: 0
     - first:
         name: _Metallic
       second: 0
@@ -101,16 +153,22 @@ Material:
         name: _OcclusionStrength
       second: 1
     - first:
+        name: _Pan_SpeedX
+      second: 0
+    - first:
+        name: _Pan_SpeedY
+      second: 0.1
+    - first:
         name: _Parallax
       second: 0.02
     - first:
-        name: _SmoothnessTextureChannel
-      second: 0
-    - first:
-        name: _SpecularHighlights
-      second: 1
+        name: _Soft_Texture
+      second: 1.698039
     - first:
         name: _SrcBlend
+      second: 1
+    - first:
+        name: _Transparency
       second: 1
     - first:
         name: _UVSec
@@ -121,7 +179,13 @@ Material:
     m_Colors:
     - first:
         name: _Color
-      second: {r: 0.672, g: 0.43742934, b: 0.30576, a: 1}
+      second: {r: 1, g: 1, b: 1, a: 1}
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
+    - first:
+        name: _EmissionColorUI
+      second: {r: 1, g: 1, b: 1, a: 1}
+    - first:
+        name: _Solid_Color
+      second: {r: 0.1764706, g: 0.5229208, b: 1, a: 1}
