@@ -12,22 +12,9 @@ public class S_AI : S_Character
     private bool m_bIsTouchingObstacle;
     private int m_iChanceToDrop;
     private GameObject m_goShieldBonus;
-    private bool m_bIsVisible;
     private GameObject m_goPlayer;
 
     #region Getters/Setters
-
-    public bool bIsVisible
-    {
-        get
-        {
-            return m_bIsVisible;
-        }
-        set
-        {
-            m_bIsVisible = value;
-        }
-    }
 
     public bool bIsTouchingObstacle
     {
@@ -110,16 +97,6 @@ public class S_AI : S_Character
             //yield return new WaitForSeconds(1f);
             goShieldBonus = Instantiate(m_goShieldBonus, transform.position, transform.rotation) as GameObject;
         }
-    }
-
-    private void OnBecameVisible()
-    {
-        m_bIsVisible = true;
-    }
-
-    private void OnBecameInvisible()
-    {
-        m_bIsVisible = false;
     }
 
     #region Collisions

@@ -199,17 +199,15 @@ public class S_Player : S_Character
             m_fCurrentBerzerkValue = m_fMaxBerzerkValue;
             if(Input.GetButtonDown("Fire1"))
             {
-                Debug.Log("Berzerk");
                 //Play Sound
                 //Instantiate effect
 
                 GameObject[] goTabAI = GameObject.FindGameObjectsWithTag("AI");
                 for (int i = 0; i < goTabAI.Length; ++i)
                 {
-                    if(goTabAI[i].GetComponent<S_AI>().bIsVisible)
+                    if(goTabAI[i].transform.GetChild(2).GetComponent<S_Visibility>().bIsVisible)
                     {
-                        Debug.Log("blblb");
-                        Destroy(goTabAI[i].gameObject);
+                        goTabAI[i].GetComponent<S_AI>().fCurrentLife = 0f;
                     }
                 }
                 m_fCurrentBerzerkValue = 0f;

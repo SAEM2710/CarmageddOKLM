@@ -35092,7 +35092,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_goFXDestruction: {fileID: 0}
-  m_goBullet: {fileID: 1000011178816630, guid: e1624b0f5a954f0459b57d2252d5455a, type: 2}
+  m_goBullet: {fileID: 1000014059425614, guid: 5a6a2f86850a1a34d833aa0a64a5f7dd, type: 2}
   m_fShootFrequence: 0.2
   m_fShootForce: 50
   m_fMaxLife: 0
@@ -45697,7 +45697,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_goFXDestruction: {fileID: 1000012290977702, guid: 1eb0ef4c93e1bf844acf0102e58fd07b,
     type: 2}
-  m_goBullet: {fileID: 1000011178816630, guid: e1624b0f5a954f0459b57d2252d5455a, type: 2}
+  m_goBullet: {fileID: 0}
   m_fShootFrequence: 0.2
   m_fShootForce: 50
   m_fMaxLife: 600
