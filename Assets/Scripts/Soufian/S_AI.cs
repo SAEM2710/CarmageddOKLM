@@ -85,7 +85,6 @@ public class S_AI : S_Character
             ++S_GameManager.Instance.iKilledEnemies;
             --S_GameManager.Instance.iCurrentAICpt;
             Destroy(gameObject);
-            //StartCoroutine("DropShield");
         }
     }
 
