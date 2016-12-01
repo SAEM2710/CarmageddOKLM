@@ -48,12 +48,12 @@ public class TowerShoot : S_Character {
         }
     }
 
-    void CancelShoot()
+    public void CancelShoot()
     {
         canShoot = false;
     }
 
-    void ActiveShoot()
+    public void ActiveShoot()
     {
         canShoot = true;
     }

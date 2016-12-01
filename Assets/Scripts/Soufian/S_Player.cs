@@ -9,6 +9,8 @@ public class S_Player : S_Character
     [SerializeField] private float m_fMinSpeedToKill;
     [SerializeField] private float m_fMaxBerzerkValue;
     [SerializeField] private GameObject[] m_goTabWeapons;
+    [SerializeField] private GameObject[] m_goTabShields;
+    [SerializeField] private GameObject m_goTurret;
 
     private float m_fCurrentBerzerkValue;
     private bool IsDead;
@@ -135,6 +137,8 @@ public class S_Player : S_Character
         if(m_fCurrentShieldValue <= 0)
         {
             m_bShieldActivated = false;
+            DesactivateShieldAndWeapon();
+            m_goTurret.GetComponent<TowerShoot>().ActiveShoot();
         }
     }
 
@@ -155,23 +159,36 @@ public class S_Player : S_Character
         switch (_ShieldType)
         {
             case ShieldType.Poison:
-                m_goTabWeapons[0].SetActive(true);
-                m_goTabWeapons[1].SetActive(false);
-                m_goTabWeapons[2].SetActive(false);
-                Debug.Log("Poison activated");
+                ActivateShieldAndWeapon(0);
+                m_goTurret.GetComponent<TowerShoot>().CancelShoot();
                 break;
             case ShieldType.Fire:
-                m_goTabWeapons[0].SetActive(false);
-                m_goTabWeapons[1].SetActive(true);
-                m_goTabWeapons[2].SetActive(false);
-                Debug.Log("Fire activated");
+                ActivateShieldAndWeapon(1);
+                m_goTurret.GetComponent<TowerShoot>().CancelShoot();
                 break;
             case ShieldType.Blade:
-                m_goTabWeapons[0].SetActive(false);
-                m_goTabWeapons[1].SetActive(false);
-                m_goTabWeapons[2].SetActive(true);
-                Debug.Log("Blade activated");
+                ActivateShieldAndWeapon(2);
+                m_goTurret.GetComponent<TowerShoot>().ActiveShoot();
                 break;
+        }
+    }
+
+    private void ActivateShieldAndWeapon(int _iIndice)
+    {
+        DesactivateShieldAndWeapon();
+        m_goTabWeapons[_iIndice].SetActive(true);
+        m_goTabShields[_iIndice].SetActive(true);
+    }
+
+    private void DesactivateShieldAndWeapon()
+    {
+        for (int i = 0; i < m_goTabShields.Length; ++i)
+        {
+            m_goTabWeapons[i].SetActive(false);
+        }
+        for (int i = 0; i < m_goTabShields.Length; ++i)
+        {
+            m_goTabShields[i].SetActive(false);
         }
     }
 
