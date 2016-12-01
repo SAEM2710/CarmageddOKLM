@@ -6,10 +6,10 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: base_palmier
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _EMISSION
-  m_LightmapFlags: 1
+  m_Name: ZFS_3d_LineOnly_Fog
+  m_Shader: {fileID: 4800000, guid: 85921ca81013036428d501f2bf681eb0, type: 3}
+  m_ShaderKeywords: _EDGE_DETECTION_ON _GRADIENT_OR_SOLID_COLOR_ON _LIGHTMAPPING_REALTIME
+  m_LightmapFlags: 5
   m_CustomRenderQueue: -1
   stringTagMap: {}
   m_SavedProperties:
@@ -46,6 +46,18 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
+        name: _Gradient_Color
+      second:
+        m_Texture: {fileID: 2800000, guid: ef64e71a45cb187428f0819af04f5703, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _Gradient_Edge_Detection
+      second:
+        m_Texture: {fileID: 2800000, guid: 3feadd92e54464347807408a77bf84d9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
         name: _MainTex
       second:
         m_Texture: {fileID: 0}
@@ -71,6 +83,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - first:
+        name: _Brightness
+      second: 1
+    - first:
         name: _BumpScale
       second: 1
     - first:
@@ -83,13 +98,25 @@ Material:
         name: _DstBlend
       second: 0
     - first:
-        name: _GlossMapScale
+        name: _Edge_Detection
       second: 1
+    - first:
+        name: _Edge_Detection_Distance
+      second: 3
+    - first:
+        name: _EmissionScaleUI
+      second: 0
     - first:
         name: _Glossiness
       second: 0.5
     - first:
-        name: _GlossyReflections
+        name: _Gradient_Or_Solid_Color
+      second: 1
+    - first:
+        name: _Intensity
+      second: 1
+    - first:
+        name: _Lightmapping
       second: 1
     - first:
         name: _Metallic
@@ -104,16 +131,19 @@ Material:
         name: _Parallax
       second: 0.02
     - first:
-        name: _SmoothnessTextureChannel
-      second: 0
-    - first:
-        name: _SpecularHighlights
-      second: 1
-    - first:
         name: _SrcBlend
       second: 1
     - first:
+        name: _Transparent
+      second: 1
+    - first:
         name: _UVSec
+      second: 0
+    - first:
+        name: _Value_Clamp_Maximum
+      second: 0.95
+    - first:
+        name: _Value_Clamp_Minimum
       second: 0
     - first:
         name: _ZWrite
@@ -121,7 +151,13 @@ Material:
     m_Colors:
     - first:
         name: _Color
-      second: {r: 0.672, g: 0.43742934, b: 0.30576, a: 1}
+      second: {r: 1, g: 1, b: 1, a: 1}
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
+    - first:
+        name: _EmissionColorUI
+      second: {r: 1, g: 1, b: 1, a: 1}
+    - first:
+        name: _Solid_Color
+      second: {r: 0.1764706, g: 0.5229208, b: 1, a: 1}
