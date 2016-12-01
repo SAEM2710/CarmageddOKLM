@@ -185,7 +185,15 @@ public class S_Player : S_Character
                 Debug.Log("Berzerk");
                 //Play Sound
                 //Instantiate effect
-                //Do something
+
+                GameObject[] goTabAI = GameObject.FindGameObjectsWithTag("AI");
+                for (int i = 0; i < goTabAI.Length; ++i)
+                {
+                    if(goTabAI[i].GetComponent<S_AI>().bIsVisible)
+                    {
+                        goTabAI[i].GetComponent<S_AI>().Death();
+                    }
+                }
                 m_fCurrentBerzerkValue = 0f;
             }
         }
