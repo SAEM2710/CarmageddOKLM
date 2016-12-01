@@ -191,7 +191,8 @@ public class S_Player : S_Character
                 {
                     if(goTabAI[i].GetComponent<S_AI>().bIsVisible)
                     {
-                        goTabAI[i].GetComponent<S_AI>().Death();
+                        Debug.Log("blblb");
+                        Destroy(goTabAI[i].gameObject);
                     }
                 }
                 m_fCurrentBerzerkValue = 0f;
