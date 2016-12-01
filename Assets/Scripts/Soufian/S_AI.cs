@@ -7,11 +7,13 @@ public class S_AI : S_Character
 {
     [SerializeField] private GameObject m_goBloodPuddle;
     [SerializeField] private GameObject[] m_goTabShieldBonus;
+    [SerializeField] private float m_fMaxDistanceToShoot;
 
     private bool m_bIsTouchingObstacle;
     private int m_iChanceToDrop;
     private GameObject m_goShieldBonus;
     private bool m_bIsVisible;
+    private GameObject m_goPlayer;
 
     #region Getters/Setters
 
@@ -46,8 +48,8 @@ public class S_AI : S_Character
     {
         base.Start();
 
-        GameObject goPlayer = GameObject.FindGameObjectWithTag("Player");
-        GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl>().target = goPlayer.transform;
+        m_goPlayer = GameObject.FindGameObjectWithTag("Player");
+        GetComponent<UnityStandardAssets.Characters.ThirdPerson.AICharacterControl>().target = m_goPlayer.transform;
         m_bIsTouchingObstacle = false;
         m_iChanceToDrop = Random.Range(0, 10); //10%
         RandomShieldBonus();
@@ -57,19 +59,24 @@ public class S_AI : S_Character
     {
         base.Shoot(_goBullet);
 
-        if (m_fTime > m_fShootFrequence)
+        float fDistance;
+        fDistance = Vector3.Distance(m_goPlayer.transform.position, transform.position);
+        if (fDistance <= m_fMaxDistanceToShoot)
         {
-            m_fTime = 0f;
+            if (m_fTime > m_fShootFrequence)
+            {
+                m_fTime = 0f;
 
-            GameObject goProjectile;
-            goProjectile = Instantiate(_goBullet, m_v3PositionShoot, m_v3RotationShoot) as GameObject;
+                GameObject goProjectile;
+                goProjectile = Instantiate(_goBullet, m_v3PositionShoot, m_v3RotationShoot) as GameObject;
 
-            //Play Sound
+                //Play Sound
 
-            Rigidbody rProjectileRb = goProjectile.GetComponent<Rigidbody>();
-            rProjectileRb.velocity = transform.TransformDirection(Vector3.forward * m_fShootForce) + m_rRigidbody.velocity;
+                Rigidbody rProjectileRb = goProjectile.GetComponent<Rigidbody>();
+                rProjectileRb.velocity = transform.TransformDirection(Vector3.forward * m_fShootForce) + m_rRigidbody.velocity;
+            }
+            m_fTime += Time.deltaTime;
         }
-        m_fTime += Time.deltaTime;
     }
 
     public override void Death()
