@@ -810,6 +810,8 @@ GameObject:
   - 198: {fileID: 198000011607827842}
   - 199: {fileID: 199000012115748864}
   - 114: {fileID: 114000014009647944}
+  - 135: {fileID: 135000011147495468}
+  - 114: {fileID: 114000014164656184}
   m_Layer: 0
   m_Name: Fire - Burning Ring
   m_TagString: Untagged
@@ -1710,6 +1712,7 @@ GameObject:
   - 4: {fileID: 4000011428305026}
   - 198: {fileID: 198000013983172732}
   - 199: {fileID: 199000010186253800}
+  - 114: {fileID: 114000010777707332}
   m_Layer: 0
   m_Name: PoisonCloud
   m_TagString: Untagged
@@ -1795,6 +1798,7 @@ GameObject:
   - 4: {fileID: 4000010011082554}
   - 198: {fileID: 198000014083504614}
   - 199: {fileID: 199000013553645440}
+  - 114: {fileID: 114000011162225200}
   m_Layer: 0
   m_Name: poisongun
   m_TagString: Untagged
@@ -2829,6 +2833,7 @@ GameObject:
   - 33: {fileID: 33000010277850662}
   - 23: {fileID: 23000011532474830}
   - 111: {fileID: 111000013825781204}
+  - 135: {fileID: 135000013884781346}
   m_Layer: 0
   m_Name: scie
   m_TagString: Untagged
@@ -3247,6 +3252,8 @@ GameObject:
   - 198: {fileID: 198000011029894578}
   - 199: {fileID: 199000011072187644}
   - 114: {fileID: 114000010436841542}
+  - 65: {fileID: 65000010758976392}
+  - 114: {fileID: 114000013657600188}
   m_Layer: 0
   m_Name: Fire canon
   m_TagString: Untagged
@@ -6092,7 +6099,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1000013327545674
 GameObject:
   m_ObjectHideFlags: 1
@@ -10772,8 +10779,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011823971302}
   m_LocalRotation: {x: -0.03863194, y: 0.7060507, z: -0.7060507, w: -0.03863194}
-  m_LocalPosition: {x: -0.04272256, y: 0.025394484, z: -0.41039687}
-  m_LocalScale: {x: 1.0493593, y: 1.0493597, z: 1.0493597}
+  m_LocalPosition: {x: -0.03, y: 0.02, z: -0.28}
+  m_LocalScale: {x: 0.10447461, y: 0.278535, z: 0.104474545}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000013042475516}
@@ -29354,6 +29361,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 0.64}
   m_Center: {x: 0, y: 0, z: 0.12}
+--- !u!65 &65000010758976392
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011823971302}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.6669087, y: 13.986684, z: 8.167756}
+  m_Center: {x: -0.0111554805, y: 8.113267, z: 1.6545763}
 --- !u!65 &65000011298289066
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -30315,14 +30334,14 @@ MonoBehaviour:
   collision: 0
   affectRigidbodies: 1
   inverseRigidbodyCollision: 0
-  mass: 0.01
-  collisionRadius: 0.1
+  mass: 0
+  collisionRadius: 0.5
   collisionMask:
     serializedVersion: 2
     m_Bits: 4294967295
   collisionExclusion: []
   lifetimeLoss: 0
-  bounciness: 0.5
+  bounciness: 0
   bounceRandomMin: {x: 0, y: 0, z: 0}
   bounceRandomMax: {x: 0, y: 0, z: 0}
   colliders: []
@@ -30404,32 +30423,32 @@ MonoBehaviour:
   sourceTransform: {fileID: 4000011943634148}
   sourceTransforms:
   - transform: {fileID: 4000011943634148}
-    instanceID: 22588
+    instanceID: -21256
     available: 1
-    position: {x: 8.604991e-10, y: 0.000000057236534, z: 0}
-    localPosition: {x: 8.604991e-10, y: 0.000000057236534, z: 0}
-    previousPosition: {x: 8.604991e-10, y: 0.000000057236534, z: 0}
-    forward: {x: 0, y: -0.99999994, z: 0.000000059604645}
-    up: {x: 0, y: 0.000000059604645, z: 0.99999994}
-    right: {x: 1, y: 0, z: 0}
+    position: {x: -0.00000003544451, y: -0.000000001459226, z: -0.000000071314794}
+    localPosition: {x: -0.00000003544451, y: -0.000000001459226, z: -0.000000071314794}
+    previousPosition: {x: -0.00000003544451, y: -0.000000001459226, z: -0.000000071314794}
+    forward: {x: 0, y: -1, z: -0.000000031432137}
+    up: {x: -0.109104425, y: -0.000000031432137, z: -0.9940303}
+    right: {x: -0.99403036, y: 0, z: 0.109104425}
     rotation: {x: 0, y: 0, z: 0, w: 1}
-    inverseRotation: {x: -0.70710677, y: 0, z: 0, w: 0.70710677}
+    inverseRotation: {x: 0.03863194, y: -0.7060507, z: 0.7060507, w: -0.03863194}
     scaleMethod: 0
-    localScale: {x: 1.0493593, y: 1.0493597, z: 1.0493597}
-    lossyScale: {x: 1.0000001, y: 1.0000002, z: 1.0000001}
+    localScale: {x: 0.10447461, y: 0.278535, z: 0.104474545}
+    lossyScale: {x: 0.160868, y: 0.42888284, z: 0.1608679}
     transformMatrix:
-      e00: 1.0493593
+      e00: 0.10447461
       e01: 0
       e02: 0
-      e03: 8.604991e-10
+      e03: -0.00000003544451
       e10: 0
-      e11: 1.0493597
+      e11: 0.278535
       e12: 0
-      e13: 0.000000057236534
+      e13: -0.000000001459226
       e20: 0
       e21: 0
-      e22: 1.0493597
-      e23: 0
+      e22: 0.104474545
+      e23: -0.000000071314794
       e30: 0
       e31: 0
       e32: 0
@@ -32626,6 +32645,30 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
+--- !u!114 &114000010777707332
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011023113406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3faa78b5f5f13534a8f2b08ff99ae591, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_damagesOnHit: 0.1
+--- !u!114 &114000011162225200
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011041293674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3faa78b5f5f13534a8f2b08ff99ae591, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_damagesOnHit: 0.1
 --- !u!114 &114000011239900760
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -45585,7 +45628,7 @@ MonoBehaviour:
   m_goBullet: {fileID: 1000011178816630, guid: e1624b0f5a954f0459b57d2252d5455a, type: 2}
   m_fShootFrequence: 0.2
   m_fShootForce: 50
-  m_fMaxLife: 600
+  m_fMaxLife: 6000
   m_fMinSpeedToKill: 30
   m_fMaxBerzerkValue: 100
   m_goTabWeapons:
@@ -45658,18 +45701,18 @@ MonoBehaviour:
   positionOffset: {x: 0, y: 0, z: 0}
   splineTransform: {fileID: 4000011732838294}
   splineTransformMx:
-    e00: 0.50935656
-    e01: 0
-    e02: -0
-    e03: -3.7252904e-10
-    e10: -0
-    e11: 0.000000059604645
-    e12: -0.99999994
-    e13: 0.000000047683717
-    e20: 0
-    e21: 0.99999994
-    e22: 0.000000059604645
-    e23: 0.000000011920929
+    e00: -0.5063159
+    e01: -0.109104425
+    e02: 0
+    e03: -0.036305305
+    e10: 0
+    e11: 0
+    e12: -1
+    e13: 0.1857944
+    e20: 0.055573054
+    e21: -0.9940303
+    e22: 0
+    e23: -0.45469165
     e30: 0
     e31: 0
     e32: 0
@@ -45682,6 +45725,18 @@ MonoBehaviour:
   exportWithNodeStructure: 0
   drawGizmo: 1
   bezierWidth: 2
+--- !u!114 &114000013657600188
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011823971302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b564fc58a29748438883c0142f1048b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_damagesOnHit: 0.5
 --- !u!114 &114000013884822142
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -46492,6 +46547,42 @@ MonoBehaviour:
   prewarmTime: 1
   prewarmCycles: 16
   particleTimescale: 1
+--- !u!114 &114000014164656184
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010437007248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b564fc58a29748438883c0142f1048b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_damagesOnHit: 5
+--- !u!135 &135000011147495468
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010437007248}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.87
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &135000013884781346
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011636775566}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.45
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!146 &146000011126600576
 WheelCollider:
   m_ObjectHideFlags: 1
@@ -46658,7 +46749,7 @@ ParticleSystem:
   moveWithTransform: 0
   autoRandomSeed: 1
   scalingMode: 2
-  randomSeed: -553363213
+  randomSeed: -1876297631
   InitialModule:
     serializedVersion: 2
     enabled: 1
@@ -48412,7 +48503,7 @@ ParticleSystem:
   moveWithTransform: 1
   autoRandomSeed: 1
   scalingMode: 2
-  randomSeed: 1437563279
+  randomSeed: -1549034016
   InitialModule:
     serializedVersion: 2
     enabled: 1
@@ -53614,7 +53705,7 @@ ParticleSystem:
   moveWithTransform: 0
   autoRandomSeed: 1
   scalingMode: 2
-  randomSeed: -246865507
+  randomSeed: -1627095670
   InitialModule:
     serializedVersion: 2
     enabled: 1
@@ -63630,9 +63721,9 @@ ParticleSystem:
       minMaxState: 1
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 3
-    type: 0
+    type: 1
     collisionMode: 0
     plane0: {fileID: 0}
     plane1: {fileID: 0}
@@ -63676,7 +63767,7 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     m_Bounce:
-      scalar: 1
+      scalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -63747,14 +63838,14 @@ ParticleSystem:
       minMaxState: 0
     minKillSpeed: 0
     maxKillSpeed: 10000
-    radiusScale: 1
+    radiusScale: 0.5
     collidesWith:
       serializedVersion: 2
       m_Bits: 4294967295
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 1
   TriggerModule:
@@ -63828,7 +63919,7 @@ ParticleSystem:
   moveWithTransform: 1
   autoRandomSeed: 1
   scalingMode: 2
-  randomSeed: -1578823137
+  randomSeed: -623820132
   InitialModule:
     serializedVersion: 2
     enabled: 1
@@ -65334,9 +65425,9 @@ ParticleSystem:
       minMaxState: 1
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 3
-    type: 0
+    type: 1
     collisionMode: 0
     plane0: {fileID: 0}
     plane1: {fileID: 0}
@@ -65380,7 +65471,7 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     m_Bounce:
-      scalar: 1
+      scalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -65451,16 +65542,16 @@ ParticleSystem:
       minMaxState: 0
     minKillSpeed: 0
     maxKillSpeed: 10000
-    radiusScale: 1
+    radiusScale: 0.5
     collidesWith:
       serializedVersion: 2
       m_Bits: 4294967295
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
-    interiorCollisions: 1
+    interiorCollisions: 0
   TriggerModule:
     enabled: 0
     collisionShape0: {fileID: 0}

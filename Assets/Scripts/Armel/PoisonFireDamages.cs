@@ -13,11 +13,17 @@ public class PoisonFireDamages : MonoBehaviour {
     [SerializeField] protected float m_fireFrequency = 0.5f;
     [SerializeField] protected float m_fireDmgs = 0.5f;
 
+    [SerializeField] protected ParticleSystem m_poisonParticles;
+    [SerializeField] protected ParticleSystem m_burningParticles;
+
     private float time = 0f;
+    private int nbrTick = 1;
 
     // Use this for initialization
     void Start () {
-	
+
+        m_poisonParticles.Pause();
+        m_burningParticles.Pause();
 	}
 	
 	// Update is called once per frame
@@ -25,29 +31,43 @@ public class PoisonFireDamages : MonoBehaviour {
 	
         if (isPsn)
         {
+            m_poisonParticles.Play();
             if (time < m_poisonTime)
             {
                 time += Time.deltaTime;
-                if (time % m_poisonFrequency == 0) this.SendMessage("LoseLife", m_poisonDmgs);
+                if (time < m_poisonFrequency * nbrTick)
+                {
+                    this.SendMessage("LoseLife", m_poisonDmgs);
+                    ++nbrTick;
+                }
             }
             else
             {
+                m_poisonParticles.Pause();
                 time = 0;
                 isPsn = false;
+                nbrTick = 1;
             }
         }
 
         if (isFire)
         {
+            m_burningParticles.Play();
             if (time < m_fireTime)
             {
                 time += Time.deltaTime;
-                if (time % m_fireFrequency == 0) this.SendMessage("LoseLife", m_fireDmgs);
+                if (time < m_fireFrequency * nbrTick)
+                {
+                    this.SendMessage("LoseLife", m_fireDmgs);
+                    ++nbrTick;
+                }
             }
             else
             {
+                m_burningParticles.Pause();
                 time = 0;
                 isFire = false;
+                nbrTick = 1;
             }
         }
     }
