@@ -72,6 +72,7 @@ GameObject:
   - 114: {fileID: 114000013029162560}
   - 114: {fileID: 114000011415376266}
   - 114: {fileID: 114000013725468824}
+  - 82: {fileID: 82000010546363386}
   m_Layer: 9
   m_Name: Enemy2
   m_TagString: AI
@@ -696,7 +697,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010515047060}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.129088, y: 0.01, z: -2.170163}
+  m_LocalPosition: {x: 1.0179656, y: 0.01, z: -13.403952}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -1262,6 +1263,80 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!82 &82000010546363386
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010515047060}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95000013309251288
 Animator:
   serializedVersion: 3
@@ -2070,6 +2145,11 @@ MonoBehaviour:
   - {fileID: 1000014194524676, guid: 33f93424b3ca8aa48af36c5ad6fae380, type: 2}
   - {fileID: 1000013211983064, guid: a6ddcd72e940bee4da7ad143ed3cd8b0, type: 2}
   m_fMaxDistanceToShoot: 15
+  AIshootSound: {fileID: 8300000, guid: 48706c4356a7354459748b501ebbde96, type: 3}
+  smashSound1: {fileID: 8300000, guid: 14bc15381e56e824cbfb5d0a666cce6d, type: 3}
+  smashSound2: {fileID: 8300000, guid: bf60db6d0dcf6a3488c1017a26465ed6, type: 3}
+  smashSound3: {fileID: 8300000, guid: 90a660312f9184b41b28fce04d220864, type: 3}
+  smashSound4: {fileID: 8300000, guid: 8d2e1dfde92aa5043ae9b8089d86eabd, type: 3}
 --- !u!114 &114000012519015960
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -750,7 +750,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013239964468}
   m_LocalRotation: {x: -0.002230834, y: -0.25881836, z: -0.0005977489, w: 0.9659233}
-  m_LocalPosition: {x: -7.7529907, y: 0.01, z: -6.8979187}
+  m_LocalPosition: {x: 2.9240336, y: 0.01, z: -10.894276}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_LocalEulerAnglesHint: {x: -0.26200002, y: -30.016, z: 0}
   m_Children:
@@ -1273,7 +1273,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1282,7 +1282,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 1000
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -1325,7 +1325,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1397,7 +1397,11 @@ MonoBehaviour:
   - {fileID: 1000014194524676, guid: 33f93424b3ca8aa48af36c5ad6fae380, type: 2}
   - {fileID: 1000013211983064, guid: a6ddcd72e940bee4da7ad143ed3cd8b0, type: 2}
   m_fMaxDistanceToShoot: 15
-  AIshootSound: {fileID: 0}
+  AIshootSound: {fileID: 8300000, guid: 6c0c073c214bae3499d8bff8747b9fc6, type: 3}
+  smashSound1: {fileID: 8300000, guid: 14bc15381e56e824cbfb5d0a666cce6d, type: 3}
+  smashSound2: {fileID: 8300000, guid: bf60db6d0dcf6a3488c1017a26465ed6, type: 3}
+  smashSound3: {fileID: 8300000, guid: 90a660312f9184b41b28fce04d220864, type: 3}
+  smashSound4: {fileID: 8300000, guid: 8d2e1dfde92aa5043ae9b8089d86eabd, type: 3}
 --- !u!114 &114000012327367826
 MonoBehaviour:
   m_ObjectHideFlags: 1
