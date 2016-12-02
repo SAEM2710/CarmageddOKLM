@@ -3378,6 +3378,7 @@ GameObject:
   - 114: {fileID: 114000013073499378}
   - 114: {fileID: 114000012792440578}
   - 114: {fileID: 114000011699372756}
+  - 82: {fileID: 82000010009949752}
   m_Layer: 0
   m_Name: arme with effect
   m_TagString: Untagged
@@ -29421,6 +29422,80 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.6438896, y: 3.9715729, z: 0.6742961}
   m_Center: {x: 0.02492307, y: 2.405004, z: 0.048411008}
+--- !u!82 &82000010009949752
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011878591750}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!82 &82000010962302126
 AudioSource:
   m_ObjectHideFlags: 1
@@ -35097,6 +35172,7 @@ MonoBehaviour:
   m_fShootForce: 50
   m_fMaxLife: 0
   carRb: {fileID: 54000012535814870}
+  towerShotSound: {fileID: 8300000, guid: 5d455c55e628e5342b4329f26ceca9f6, type: 3}
 --- !u!114 &114000011717623394
 MonoBehaviour:
   m_ObjectHideFlags: 1
