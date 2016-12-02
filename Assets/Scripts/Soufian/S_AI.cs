@@ -20,7 +20,7 @@ public class S_AI : S_Character
     private GameObject m_goPlayer;
 
     private AudioClip[] smash;
-    private AudioSource audio;
+    private AudioSource m_asAudio;
 
 
     #region Getters/Setters
@@ -49,7 +49,7 @@ public class S_AI : S_Character
         m_bIsTouchingObstacle = false;
         m_iChanceToDrop = Random.Range(0, 10); //10%
         RandomShieldBonus();
-        audio = GetComponent<AudioSource>();
+        m_asAudio = GetComponent<AudioSource>();
         smash = new AudioClip[]
         {
             smashSound1, smashSound2, smashSound3, smashSound4
@@ -71,7 +71,7 @@ public class S_AI : S_Character
                 GameObject goProjectile;
                 goProjectile = Instantiate(_goBullet, m_v3PositionShoot, m_v3RotationShoot) as GameObject;
 
-                audio.PlayOneShot(AIshootSound);
+                m_asAudio.PlayOneShot(AIshootSound);
 
                 Rigidbody rProjectileRb = goProjectile.GetComponent<Rigidbody>();
                 rProjectileRb.velocity = transform.TransformDirection(Vector3.forward * m_fShootForce) + m_rRigidbody.velocity;
