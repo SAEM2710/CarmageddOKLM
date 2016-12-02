@@ -4,6 +4,13 @@ using UnityEngine.SceneManagement;
 
 public class S_Buttons : MonoBehaviour
 {
+    void Update()
+    {
+        Sstart();
+        Sexit();
+        Sskip();
+
+    }
     public void SPlay()
     {
         if (Time.timeScale != 1.0f)
@@ -30,7 +37,7 @@ public class S_Buttons : MonoBehaviour
 
     public void Sstart()
     {
-        if(Input.GetButtonDown("StartGame"))
+        if(Input.GetButtonDown("StartGame") && SceneManager.GetActiveScene().name == "MenuYu")
         {
             SceneManager.LoadScene("Tuto");
         }
@@ -38,9 +45,17 @@ public class S_Buttons : MonoBehaviour
 
     public void Sexit()
     {
-        if(Input.GetButtonDown("Cancel"))
+        if(Input.GetButtonDown("Cancel") && SceneManager.GetActiveScene().name == "MenuYu")
         {
             SQuit();
+        }
+    }
+
+    public void Sskip()
+    {
+        if (Input.GetButtonDown("StartGame") && SceneManager.GetActiveScene().name == "Tuto")
+        {
+            SceneManager.LoadScene("soufian3");
         }
     }
 }
