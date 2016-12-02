@@ -1124,6 +1124,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1000013478339332
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000010001281934}
+  m_Layer: 8
+  m_Name: ShootOrigin (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1000013479700142
 GameObject:
   m_ObjectHideFlags: 1
@@ -1284,6 +1299,8 @@ GameObject:
   - 4: {fileID: 4000012148081980}
   - 33: {fileID: 33000013730046518}
   - 23: {fileID: 23000012189834692}
+  - 114: {fileID: 114000014091401482}
+  - 82: {fileID: 82000012583507202}
   m_Layer: 0
   m_Name: tourelle
   m_TagString: Untagged
@@ -1411,6 +1428,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!4 &4000010001281934
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013478339332}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.0059, y: 0.0137, z: -0.2206}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000012148081980}
+  m_RootOrder: 0
 --- !u!4 &4000010038859092
 Transform:
   m_ObjectHideFlags: 1
@@ -1423,7 +1453,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000012148081980}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!4 &4000010077377930
 Transform:
   m_ObjectHideFlags: 1
@@ -1436,7 +1466,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000012148081980}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!4 &4000010096194872
 Transform:
   m_ObjectHideFlags: 1
@@ -1691,7 +1721,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000012148081980}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!4 &4000011248814456
 Transform:
   m_ObjectHideFlags: 1
@@ -1930,6 +1960,7 @@ Transform:
   m_LocalScale: {x: 4.039682, y: 4.039682, z: 4.039682}
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
   m_Children:
+  - {fileID: 4000010001281934}
   - {fileID: 4000012836659786}
   - {fileID: 4000012526038680}
   - {fileID: 4000010038859092}
@@ -2091,7 +2122,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000012148081980}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!4 &4000012595430950
 Transform:
   m_ObjectHideFlags: 1
@@ -2162,7 +2193,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000012148081980}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!4 &4000012807303822
 Transform:
   m_ObjectHideFlags: 1
@@ -2204,7 +2235,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000012148081980}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!4 &4000012858526142
 Transform:
   m_ObjectHideFlags: 1
@@ -2283,7 +2314,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000012148081980}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!4 &4000013106639520
 Transform:
   m_ObjectHideFlags: 1
@@ -2559,7 +2590,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000012148081980}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!4 &4000014210421120
 Transform:
   m_ObjectHideFlags: 1
@@ -4985,6 +5016,80 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!82 &82000012583507202
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013922905118}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!108 &108000011127686052
 Light:
   m_ObjectHideFlags: 1
@@ -5248,6 +5353,25 @@ MonoBehaviour:
   progressStyle: 0
   pointToPointThreshold: 0.2
   target: {fileID: 4000013490786832}
+--- !u!114 &114000014091401482
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013922905118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4762c47ba1f3ca14db3581c40cca5f1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_goFXDestruction: {fileID: 0}
+  m_goBullet: {fileID: 1000014059425614, guid: 4fa446f82f3ec244685846d23ec08df8, type: 2}
+  m_fShootFrequence: 0.2
+  m_fShootForce: 50
+  m_fMaxLife: 0
+  carRb: {fileID: 54000013209608784}
+  m_fMaxDistanceToShoot: 20
+  AIshootSound: {fileID: 8300000, guid: 5d455c55e628e5342b4329f26ceca9f6, type: 3}
 --- !u!135 &135000012948707654
 SphereCollider:
   m_ObjectHideFlags: 1

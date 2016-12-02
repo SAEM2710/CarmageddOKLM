@@ -121,7 +121,6 @@ public class S_Player : S_Character
                 IsDead = true;
                 Destroy(gameObject);
                 SceneManager.LoadScene("S_GameOver");
-
             }
         }
     }
@@ -147,9 +146,6 @@ public class S_Player : S_Character
         base.Update();
 
         ActivateBerzerk();
-        /*Debug.Log("CurrentShieldValue : " + m_fCurrentShieldValue);
-        Debug.Log("MaxShieldValue : " + m_fMaxShieldValue);
-        Debug.Log(m_bShieldActivated);*/
         DesactivateShield();
     }
 

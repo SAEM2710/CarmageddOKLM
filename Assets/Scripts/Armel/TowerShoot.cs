@@ -8,12 +8,12 @@ public class TowerShoot : S_Character {
     [SerializeField] protected AudioClip towerShotSound;
 
     private bool canShoot = true;
-    private AudioSource audio;
+    private AudioSource m_asAudio;
 
     // Use this for initialization
     protected override void Start () {
         base.Start();
-        audio = GetComponent<AudioSource>();
+        m_asAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -41,7 +41,7 @@ public class TowerShoot : S_Character {
                 goProjectile = Instantiate(_goBullet, m_v3PositionShoot, m_v3RotationShoot) as GameObject;
                 goProjectile.GetComponent<S_Bullet>().bIsSpawnByPlayer = true;
 
-                audio.PlayOneShot(towerShotSound);
+                m_asAudio.PlayOneShot(towerShotSound);
 
                 Rigidbody rProjectileRb = goProjectile.GetComponent<Rigidbody>();
                 rProjectileRb.velocity = transform.TransformDirection(Vector3.forward * m_fShootForce) + carRb.velocity;
