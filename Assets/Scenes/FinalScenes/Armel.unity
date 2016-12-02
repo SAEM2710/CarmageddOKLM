@@ -188,23 +188,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 72850149a261d52498b9cdd2f9c28af4, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &379492739 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000011636775566, guid: a0dcbf1dbcf5080409aea829de3cc0dc,
-    type: 2}
-  m_PrefabInternal: {fileID: 1256700179}
---- !u!114 &379492744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 379492739}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 880985bc216d0294f9b02e6d841c32fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_damagesOnHit: 10
 --- !u!1001 &391685827
 Prefab:
   m_ObjectHideFlags: 0
@@ -274,35 +257,6 @@ Prefab:
     - {fileID: 23000012764369308, guid: a826c93a12dd9b14ca16bb56f24c429f, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: a826c93a12dd9b14ca16bb56f24c429f, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &427418255 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000010030772486, guid: a0dcbf1dbcf5080409aea829de3cc0dc,
-    type: 2}
-  m_PrefabInternal: {fileID: 1256700179}
---- !u!114 &427418260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 427418255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 880985bc216d0294f9b02e6d841c32fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_damagesOnHit: 10
---- !u!135 &427418261
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 427418255}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.45
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &462608572
 GameObject:
   m_ObjectHideFlags: 0
@@ -1039,35 +993,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4633c4364f3869e4ca26f87b309e923b, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1469245955 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000012181885068, guid: a0dcbf1dbcf5080409aea829de3cc0dc,
-    type: 2}
-  m_PrefabInternal: {fileID: 1256700179}
---- !u!114 &1469245960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1469245955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 880985bc216d0294f9b02e6d841c32fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_damagesOnHit: 10
---- !u!135 &1469245961
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1469245955}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.45
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1560500334 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114000012333035710, guid: a0dcbf1dbcf5080409aea829de3cc0dc,
@@ -1594,35 +1519,6 @@ Mesh:
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
---- !u!1 &1977585549 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000013810452930, guid: a0dcbf1dbcf5080409aea829de3cc0dc,
-    type: 2}
-  m_PrefabInternal: {fileID: 1256700179}
---- !u!114 &1977585554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1977585549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 880985bc216d0294f9b02e6d841c32fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_damagesOnHit: 10
---- !u!135 &1977585555
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1977585549}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.45
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2013833128 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1000013528479098, guid: a826c93a12dd9b14ca16bb56f24c429f,

@@ -8,11 +8,20 @@ public class S_AI : S_Character
     [SerializeField] private GameObject m_goBloodPuddle;
     [SerializeField] private GameObject[] m_goTabShieldBonus;
     [SerializeField] private float m_fMaxDistanceToShoot;
+    [SerializeField] private AudioClip AIshootSound;
+    [SerializeField] protected AudioClip smashSound1;
+    [SerializeField] protected AudioClip smashSound2;
+    [SerializeField] protected AudioClip smashSound3;
+    [SerializeField] protected AudioClip smashSound4;
 
     private bool m_bIsTouchingObstacle;
     private int m_iChanceToDrop;
     private GameObject m_goShieldBonus;
     private GameObject m_goPlayer;
+
+    private AudioClip[] smash;
+    private AudioSource audio;
+
 
     #region Getters/Setters
 
@@ -40,6 +49,11 @@ public class S_AI : S_Character
         m_bIsTouchingObstacle = false;
         m_iChanceToDrop = Random.Range(0, 10); //10%
         RandomShieldBonus();
+        audio = GetComponent<AudioSource>();
+        smash = new AudioClip[]
+        {
+            smashSound1, smashSound2, smashSound3, smashSound4
+        };
     }
 
     protected override void Shoot(GameObject _goBullet)
@@ -57,7 +71,7 @@ public class S_AI : S_Character
                 GameObject goProjectile;
                 goProjectile = Instantiate(_goBullet, m_v3PositionShoot, m_v3RotationShoot) as GameObject;
 
-                //Play Sound
+                audio.PlayOneShot(AIshootSound);
 
                 Rigidbody rProjectileRb = goProjectile.GetComponent<Rigidbody>();
                 rProjectileRb.velocity = transform.TransformDirection(Vector3.forward * m_fShootForce) + m_rRigidbody.velocity;
@@ -78,6 +92,10 @@ public class S_AI : S_Character
             DropShield();
             ++S_GameManager.Instance.iKilledEnemies;
             --S_GameManager.Instance.iCurrentAICpt;
+
+            int number = Random.Range(0, smash.Length);
+            AudioSource.PlayClipAtPoint(smash[number], transform.position);
+
             Destroy(gameObject);
         }
     }
