@@ -25,9 +25,10 @@ GameObject:
   - 114: {fileID: 114000012504317336}
   - 114: {fileID: 114000012502607560}
   - 54: {fileID: 54000011279556206}
-  m_Layer: 0
-  m_Name: player projectile 1
-  m_TagString: Untagged
+  - 65: {fileID: 65000010432712918}
+  m_Layer: 10
+  m_Name: aiprojectile
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 127
@@ -58,7 +59,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 162abb780b4e890498456b04071ae3d5, type: 2}
+  - {fileID: 2100000, guid: d21b4837e9b1b4a4b8ffa458c24039bf, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
@@ -96,6 +97,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 4
   m_CollisionDetection: 0
+--- !u!65 &65000010432712918
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014059425614}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.41056275, y: 0.3943457, z: 0.8985101}
+  m_Center: {x: -0.00000011920929, y: 0.005244188, z: 0.0024674535}
 --- !u!114 &114000011132647774
 MonoBehaviour:
   m_ObjectHideFlags: 1

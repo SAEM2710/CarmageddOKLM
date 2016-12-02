@@ -226,6 +226,7 @@ public class S_Player : S_Character
             if (m_ccCarController.CurrentSpeed > m_fMinSpeedToKill)
             {
                 _cCollision.gameObject.GetComponent<S_AI>().LoseLife(10f);
+                LoseLife(5f);
                 m_fCurrentBerzerkValue += 5f;
             }
             else if(_cCollision.gameObject.GetComponent<S_AI>().bIsTouchingObstacle)

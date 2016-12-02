@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class S_UIManager : S_GenericSingleton<S_UIManager>
 {
@@ -61,7 +62,11 @@ public class S_UIManager : S_GenericSingleton<S_UIManager>
         m_cfCameraFilter.Blood_On_Screen = (1f * m_pPlayer.fCurrentBerzerkValue) / m_pPlayer.fMaxBerzerkValue;
 
         m_tKilledEnemiesText.text = "Killed Enemies : " + S_GameManager.Instance.iKilledEnemies.ToString();
-        m_tTimeText.text = Time.timeSinceLevelLoad.ToString();
+
+        //float fTimer = Time.timeSinceLevelLoad;
+        string fMinutes = Mathf.Floor(Time.timeSinceLevelLoad / 60).ToString("00");
+        string fSeconds = (Time.timeSinceLevelLoad % 60).ToString("00");
+        m_tTimeText.text = fMinutes + ":" + fSeconds;
 
         if (m_pPlayer.bShieldActivated)
         {

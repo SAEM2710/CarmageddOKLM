@@ -45701,7 +45701,7 @@ MonoBehaviour:
   m_fShootFrequence: 0.2
   m_fShootForce: 50
   m_fMaxLife: 600
-  m_fMinSpeedToKill: 30
+  m_fMinSpeedToKill: 10
   m_fMaxBerzerkValue: 100
   m_goTabWeapons:
   - {fileID: 1000011334852058}
