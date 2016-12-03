@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TowerShoot : S_Character
+public class S_AITowerShoot : S_Character
 {
-    // [SerializeField] protected float m_rotationSpeed;
-    [SerializeField] protected AudioClip towerShotSound;
+    [SerializeField] private float m_fMaxDistanceToShoot;
+    [SerializeField] private AudioClip AIshootSound;
 
-    private bool canShoot = true;
+    private GameObject m_goPlayer;
     private AudioSource m_asAudio;
 
     // Use this for initialization
@@ -18,45 +18,39 @@ public class TowerShoot : S_Character
         m_v3RotationShoot = transform.GetChild(0).rotation;
         m_rRigidbody = GetComponentInParent<Rigidbody>();
         //m_fCurrentLife = m_fMaxLife;
+
+        m_goPlayer = GameObject.FindGameObjectWithTag("Player");
         m_asAudio = GetComponent<AudioSource>();
+    }
+
+    // Update is called once per frame
+    protected override void FixedUpdate()
+    {
+        transform.LookAt(m_goPlayer.transform);
+        base.FixedUpdate();     
     }
 
     protected override void Shoot(GameObject _goBullet)
     {
         base.Shoot(_goBullet);
-        float x = Input.GetAxis("FireHorizontal");
-        float y = -Input.GetAxis("FireVertical");
 
-        if (x != 0.0f || y != 0.0f)
+        float fDistance;
+        fDistance = Vector3.Distance(m_goPlayer.transform.position, transform.position);
+        if (fDistance <= m_fMaxDistanceToShoot)
         {
-
-            transform.eulerAngles = new Vector3(transform.eulerAngles.x, Mathf.Atan2(x, y) * Mathf.Rad2Deg, transform.eulerAngles.z);
-
-            if (m_fTime > m_fShootFrequence && canShoot)
+            if (m_fTime > m_fShootFrequence)
             {
                 m_fTime = 0f;
-          
+
                 GameObject goProjectile;
                 goProjectile = Instantiate(_goBullet, m_v3PositionShoot, m_v3RotationShoot) as GameObject;
-                goProjectile.GetComponent<S_Bullet>().bIsSpawnByPlayer = true;
 
-                m_asAudio.PlayOneShot(towerShotSound);
+                m_asAudio.PlayOneShot(AIshootSound);
 
                 Rigidbody rProjectileRb = goProjectile.GetComponent<Rigidbody>();
                 rProjectileRb.velocity = transform.TransformDirection(Vector3.forward * m_fShootForce) + m_rRigidbody.velocity;
             }
-    
             m_fTime += Time.deltaTime;
         }
-    }
-
-    public void CancelShoot()
-    {
-        canShoot = false;
-    }
-
-    public void ActiveShoot()
-    {
-        canShoot = true;
     }
 }

@@ -2146,10 +2146,11 @@ MonoBehaviour:
   - {fileID: 1000013211983064, guid: a6ddcd72e940bee4da7ad143ed3cd8b0, type: 2}
   m_fMaxDistanceToShoot: 15
   AIshootSound: {fileID: 8300000, guid: 48706c4356a7354459748b501ebbde96, type: 3}
-  smashSound1: {fileID: 8300000, guid: 14bc15381e56e824cbfb5d0a666cce6d, type: 3}
-  smashSound2: {fileID: 8300000, guid: bf60db6d0dcf6a3488c1017a26465ed6, type: 3}
-  smashSound3: {fileID: 8300000, guid: 90a660312f9184b41b28fce04d220864, type: 3}
-  smashSound4: {fileID: 8300000, guid: 8d2e1dfde92aa5043ae9b8089d86eabd, type: 3}
+  m_acTabSmash:
+  - {fileID: 8300000, guid: 6cc62faecbc6b054485a20890a80ad33, type: 3}
+  - {fileID: 8300000, guid: 4e6aa6cb2c38dc84d946af64cfc2f38c, type: 3}
+  - {fileID: 8300000, guid: 50ebecbee5d4602469333733eba52e55, type: 3}
+  - {fileID: 8300000, guid: 2ce48305129ee054aa0229312056caa8, type: 3}
 --- !u!114 &114000012519015960
 MonoBehaviour:
   m_ObjectHideFlags: 1

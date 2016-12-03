@@ -16,7 +16,6 @@ public class S_GameManager : S_GenericSingleton<S_GameManager>
     private int m_iWavesCpt;
     private GameObject[] m_goTabSpawns;
     private int m_iCurrentAICpt;
-    private int m_iWave;
     private bool m_bIsBossSpawned;
     //private float m_fTime;
 
@@ -55,7 +54,7 @@ public class S_GameManager : S_GenericSingleton<S_GameManager>
         m_goTabSpawns = GameObject.FindGameObjectsWithTag("Spawn");
 
         Spawn();
-        m_iWave = 1;
+        m_iWavesCpt = 1;
         //m_iCurrentAICpt = GameObject.FindGameObjectsWithTag("AI").Length;
     }
 
@@ -69,7 +68,7 @@ public class S_GameManager : S_GenericSingleton<S_GameManager>
         {
             m_iTotalEnemiesCpt += 10;
             Spawn();
-            ++m_iWave;
+            ++m_iWavesCpt;
         }
         SpawnBoss();
     }
@@ -78,12 +77,12 @@ public class S_GameManager : S_GenericSingleton<S_GameManager>
     {
         if (!m_bIsBossSpawned)
         {
-            if (m_iWave >= m_iWaveSpawnBoss)
+            if (m_iWavesCpt >= m_iWaveSpawnBoss)
             {
-                /*int iRandomSpawn;
+                int iRandomSpawn;
                 iRandomSpawn = Random.Range(0, m_goTabSpawns.Length);
-                GameObject goBoss;
-                goBoss = Instantiate(m_goBoss, m_goTabSpawns[iRandomSpawn].transform.position, m_goTabSpawns[iRandomSpawn].transform.rotation) as GameObject;*/
+                m_goBoss.transform.position = m_goTabSpawns[iRandomSpawn].transform.position;
+                m_goBoss.transform.rotation = m_goTabSpawns[iRandomSpawn].transform.rotation;
                 m_goBoss.SetActive(true);
                 m_bIsBossSpawned = true;
             }

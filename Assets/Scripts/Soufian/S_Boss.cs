@@ -3,54 +3,38 @@ using System.Collections;
 
 public class S_Boss : S_Character
 {
-    [SerializeField] protected Rigidbody carRb;
-    [SerializeField] private float m_fMaxDistanceToShoot;
-    [SerializeField] private AudioClip AIshootSound;
+    [SerializeField] private AudioClip m_acAudioClip;
 
-    private GameObject m_goPlayer;
-    private AudioSource m_asAudio;
-
-    // Use this for initialization
-    protected override void Start ()
+    /*protected override void Start ()
     {
-        //base.Start();
-        m_fTime = 0f;
-        m_v3PositionShoot = transform.GetChild(0).position;
-        m_v3RotationShoot = transform.GetChild(0).rotation;
-        m_fCurrentLife = m_fMaxLife;
-
-        m_goPlayer = GameObject.FindGameObjectWithTag("Player");
-        m_asAudio = GetComponent<AudioSource>();
-    }
+        base.Start();
+    }*/
 
     // Update is called once per frame
-    protected override void Update()
+    protected override void Update ()
     {
-        transform.LookAt(m_goPlayer.transform);
-        base.Update();     
+        base.Update();
+
+        Debug.Log("MaxLife : " + m_fMaxLife);
+        Debug.Log("CurrentLife : " + m_fCurrentLife);
+
     }
 
-    protected override void Shoot(GameObject _goBullet)
+    public override void Death()
     {
-        base.Shoot(_goBullet);
+        base.Death();
 
-        float fDistance;
-        fDistance = Vector3.Distance(m_goPlayer.transform.position, transform.position);
-        if (fDistance <= m_fMaxDistanceToShoot)
+        if (m_fCurrentLife <= 0f)
         {
-            if (m_fTime > m_fShootFrequence)
-            {
-                m_fTime = 0f;
+            GameObject goFXDestruction;
+            goFXDestruction = Instantiate(m_goFXDestruction, transform.position, m_goFXDestruction.transform.rotation) as GameObject;
+            ++S_GameManager.Instance.iKilledEnemies;
+            --S_GameManager.Instance.iCurrentAICpt;
 
-                GameObject goProjectile;
-                goProjectile = Instantiate(_goBullet, m_v3PositionShoot, m_v3RotationShoot) as GameObject;
+            AudioSource.PlayClipAtPoint(m_acAudioClip, transform.position);
 
-                m_asAudio.PlayOneShot(AIshootSound);
-
-                Rigidbody rProjectileRb = goProjectile.GetComponent<Rigidbody>();
-                rProjectileRb.velocity = transform.TransformDirection(Vector3.forward * m_fShootForce) + carRb.velocity;
-            }
-            m_fTime += Time.deltaTime;
+            Destroy(gameObject);
         }
     }
+
 }

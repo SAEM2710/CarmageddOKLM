@@ -54,7 +54,7 @@ public class S_Character : S_Entity
         m_fCurrentLife = m_fMaxLife;
     }
 	
-    protected void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         Shoot(m_goBullet);
     }
@@ -90,6 +90,14 @@ public class S_Character : S_Entity
                 if (bBullet.bIsSpawnByPlayer)
                 {
                     GetComponent<S_AI>().LoseLife(10f);
+                    Destroy(_cCollision.gameObject);
+                }
+            }
+            else
+            {
+                if (bBullet.bIsSpawnByPlayer)
+                {
+                    GetComponent<S_Boss>().LoseLife(10f);
                     Destroy(_cCollision.gameObject);
                 }
             }
