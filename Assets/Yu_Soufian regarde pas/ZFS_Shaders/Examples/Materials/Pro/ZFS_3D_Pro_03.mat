@@ -9,7 +9,7 @@ Material:
   m_Name: ZFS_3D_Pro_03
   m_Shader: {fileID: 4800000, guid: c9e994a922c6d9b43bfe84b1c9c9593c, type: 3}
   m_ShaderKeywords: _EDGE_DETECTION_FAKE_ON _EDGE_DETECTION_ON _FRESNEL_ON _GRADIENT_OR_SOLID_COLOR_ON
-    _SOFT_TEXTURE_ON
+    _MAKE_SAME_AS_FRESNEL_ON
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -55,13 +55,13 @@ Material:
     m_Floats:
     - first:
         name: _Brightness
-      second: 1
+      second: 0.69
     - first:
         name: _Cutoff
       second: 0.5
     - first:
         name: _Decay
-      second: 0.357
+      second: 0.512
     - first:
         name: _Edge_Detection
       second: 1
@@ -82,13 +82,13 @@ Material:
       second: 1
     - first:
         name: _Intensity
-      second: 1
+      second: 0.59
     - first:
         name: _Make_Same_As_Fresnel
-      second: 0
+      second: 1
     - first:
         name: _Pan_Speed
-      second: 1
+      second: 7.62
     - first:
         name: _Pan_SpeedX
       second: 0
@@ -97,7 +97,7 @@ Material:
       second: 0.1
     - first:
         name: _Soft_Texture
-      second: 1
+      second: 0
     - first:
         name: _Transparency
       second: 2
