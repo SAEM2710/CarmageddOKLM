@@ -75,10 +75,10 @@ Material:
       second: 0.5
     - first:
         name: _FaceDilate
-      second: 0.2
+      second: 0.1
     - first:
         name: _FaceShininess
-      second: 1
+      second: 0.512
     - first:
         name: _FaceUVSpeedX
       second: 0
@@ -117,7 +117,7 @@ Material:
       second: 1
     - first:
         name: _OutlineSoftness
-      second: 0
+      second: 0.185
     - first:
         name: _OutlineUVSpeedX
       second: 0
@@ -126,7 +126,7 @@ Material:
       second: 0
     - first:
         name: _OutlineWidth
-      second: 0.4
+      second: 0.253
     - first:
         name: _PerspectiveFilter
       second: 0.875
@@ -138,7 +138,7 @@ Material:
       second: 0.90909094
     - first:
         name: _ScaleRatioB
-      second: 0.72727275
+      second: 0.8181818
     - first:
         name: _ScaleRatioC
       second: 0.90909094
@@ -190,7 +190,7 @@ Material:
       second: {r: 0, g: 0, b: 0, a: 0}
     - first:
         name: _FaceColor
-      second: {r: 1, g: 1, b: 1, a: 1}
+      second: {r: 0.8235294, g: 0.24826989, b: 0.24826989, a: 1}
     - first:
         name: _GlowColor
       second: {r: 1, g: 0.6344826, b: 0, a: 0.5019608}
@@ -199,7 +199,7 @@ Material:
       second: {r: 0, g: 0, b: 0, a: 0}
     - first:
         name: _OutlineColor
-      second: {r: 1, g: 1, b: 1, a: 1}
+      second: {r: 0.3897059, g: 0.3897059, b: 0.3897059, a: 1}
     - first:
         name: _ReflectFaceColor
       second: {r: 0, g: 0, b: 0, a: 1}
