@@ -11,14 +11,14 @@ public class S_Boss : S_Character
     }*/
 
     // Update is called once per frame
-    protected override void Update ()
+    /*protected override void Update ()
     {
         base.Update();
 
         Debug.Log("MaxLife : " + m_fMaxLife);
         Debug.Log("CurrentLife : " + m_fCurrentLife);
 
-    }
+    }*/
 
     public override void Death()
     {
