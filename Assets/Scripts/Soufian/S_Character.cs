@@ -97,6 +97,7 @@ public class S_Character : S_Entity
             {
                 if (bBullet.bIsSpawnByPlayer)
                 {
+                    StartCoroutine(GetComponent<S_Boss>().ShieldFeedback());
                     GetComponent<S_Boss>().LoseLife(10f);
                     Destroy(_cCollision.gameObject);
                 }

@@ -5299,6 +5299,9 @@ MonoBehaviour:
   m_fShootForce: 0
   m_fMaxLife: 100
   m_acAudioClip: {fileID: 8300000, guid: 70f511b58799ddb4d976972ac8d997fa, type: 3}
+  m_goShield: {fileID: 1000011382344116}
+  m_fMaxShieldValue: 100
+  m_rRenderer: {fileID: 23000011824372410}
 --- !u!114 &114000010974951584
 MonoBehaviour:
   m_ObjectHideFlags: 1

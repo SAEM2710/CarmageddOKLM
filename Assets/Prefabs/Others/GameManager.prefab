@@ -69,7 +69,7 @@ MonoBehaviour:
   - {fileID: 1000013239964468, guid: 8cf15522c3322544c864063cc2f5983b, type: 2}
   - {fileID: 1000010515047060, guid: 1f9f949bd6f85ad4faa0d7e0b0c86fb4, type: 2}
   m_goBoss: {fileID: 0}
-  m_iWaveSpawnBoss: 1
+  m_iWaveSpawnBoss: 7
 --- !u!114 &114000013459777302
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -29566,8 +29566,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.02, y: 3.585273, z: 0.9799999}
-  m_Center: {x: 0.030000037, y: 1.1833649, z: 0.04}
+  m_Size: {x: 3.02, y: 5.3712564, z: 0.9799999}
+  m_Center: {x: 0.030000037, y: 2.076361, z: 0.04}
 --- !u!65 &65000014107442124
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -35420,7 +35420,6 @@ MonoBehaviour:
   m_fShootFrequence: 0.2
   m_fShootForce: 50
   m_fMaxLife: 0
-  carRb: {fileID: 54000012535814870}
   towerShotSound: {fileID: 8300000, guid: 5d455c55e628e5342b4329f26ceca9f6, type: 3}
 --- !u!114 &114000011717623394
 MonoBehaviour:
@@ -46043,7 +46042,7 @@ MonoBehaviour:
   m_goBullet: {fileID: 0}
   m_fShootFrequence: 0.2
   m_fShootForce: 50
-  m_fMaxLife: 600
+  m_fMaxLife: 6000
   m_fMinSpeedToKill: 10
   m_fMaxBerzerkValue: 100
   m_goTabWeapons:
@@ -46055,6 +46054,8 @@ MonoBehaviour:
   - {fileID: 1000010437007248}
   - {fileID: 1000013324697334}
   m_goTurret: {fileID: 1000011878591750}
+  m_fMaxShieldValue: 100
+  m_aSpecialPower: {fileID: 95000013112897584}
 --- !u!114 &114000013333191414
 MonoBehaviour:
   m_ObjectHideFlags: 1
