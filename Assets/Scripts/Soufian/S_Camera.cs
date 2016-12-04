@@ -21,9 +21,12 @@ public class S_Camera : MonoBehaviour
 
     void PlacementCamera()
     {
-        Vector3 v3CameraPosition = new Vector3();
-        v3CameraPosition = m_goPlayer.transform.position;
-        v3CameraPosition.y = m_fCameraHeight;
-        transform.position = v3CameraPosition;
+        if (m_goPlayer)
+        {
+            Vector3 v3CameraPosition = new Vector3();
+            v3CameraPosition = m_goPlayer.transform.position;
+            v3CameraPosition.y = m_fCameraHeight;
+            transform.position = v3CameraPosition;
+        }
     }
 }

@@ -46504,6 +46504,18 @@ MonoBehaviour:
   specialPowerSound: {fileID: 8300000, guid: c461fb4e77f5aa64887a1cc4797e74e7, type: 3}
   specialPowerReady: {fileID: 8300000, guid: 7d0f7d31f42dffb41baab80a0eb968c7, type: 3}
   careForLife: {fileID: 8300000, guid: 63222b43b2faf1f469699995ae6774f5, type: 3}
+  gameOverSounds:
+  - {fileID: 8300000, guid: efb652a5a17a83c49bb0fddb40a660e6, type: 3}
+  - {fileID: 8300000, guid: 7bbef2d5d3311ae4eb90c5e29028861a, type: 3}
+  - {fileID: 8300000, guid: 289feec71a95cc34fb5667931b307bdc, type: 3}
+  - {fileID: 8300000, guid: 3b52205a85424754ab8597e8c4d32c19, type: 3}
+  - {fileID: 8300000, guid: 212e3f3ffbc1378458a126180082d88c, type: 3}
+  - {fileID: 8300000, guid: 1d814f5dfea99454b93179e2143d91d9, type: 3}
+  - {fileID: 8300000, guid: d522eb65111e3a542a809e7618ac1945, type: 3}
+  - {fileID: 8300000, guid: c75924e1b22e82a4f96540844cac6004, type: 3}
+  - {fileID: 8300000, guid: 3d9a807f32be3df40a77222f1c0bcce9, type: 3}
+  - {fileID: 8300000, guid: c97d86fa4d3791b4ca795420ffa1b7c6, type: 3}
+  deathSound: {fileID: 8300000, guid: 70f511b58799ddb4d976972ac8d997fa, type: 3}
 --- !u!114 &114000013333191414
 MonoBehaviour:
   m_ObjectHideFlags: 1

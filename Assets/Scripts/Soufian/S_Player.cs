@@ -16,6 +16,8 @@ public class S_Player : S_Character
     [SerializeField] protected AudioClip specialPowerSound;
     [SerializeField] protected AudioClip specialPowerReady;
     [SerializeField] protected AudioClip careForLife;
+    [SerializeField] protected AudioClip[] gameOverSounds;
+    [SerializeField] protected AudioClip deathSound;
 
     private AudioSource m_asAudio;
 
@@ -27,6 +29,8 @@ public class S_Player : S_Character
     private ShieldType m_stShieldType;
     private bool isReadySoundPlayed = false;
     private bool isCareSoundPlayed = false;
+    private float timeBeforeGO;
+    private float timecpt = 0f;
 
     #region Getters/Setters
 
@@ -141,14 +145,26 @@ public class S_Player : S_Character
         {
             if (!IsDead)
             {
-                //Play Sound
+                int number = Random.Range(0, gameOverSounds.Length);
+                m_asAudio.PlayOneShot(gameOverSounds[number], 5.0f);
+                AudioSource.PlayClipAtPoint(deathSound, transform.position);
                 GameObject goFXDestruction;
                 goFXDestruction = Instantiate(m_goFXDestruction, transform.position, m_goFXDestruction.transform.rotation) as GameObject;
                 SetScore();
                 IsDead = true;
-                Destroy(gameObject);
-                SceneManager.LoadScene("S_GameOver");
+                timeBeforeGO = gameOverSounds[number].length + 2.0f;
+                transform.Find("voiture").gameObject.SetActive(false);
             }
+        }
+    }
+
+    private void goToGO()
+    {
+        timecpt += Time.deltaTime;
+        if (timecpt >= timeBeforeGO)
+        {
+            Destroy(gameObject);
+            SceneManager.LoadScene("S_GameOver");
         }
     }
 
@@ -177,6 +193,11 @@ public class S_Player : S_Character
 
         ActivateBerzerk();
         DesactivateShield();
+        if (IsDead)
+        {
+            Debug.Log("IsDead");
+            goToGO();
+        }
     }
 
     //MUST CLEAN IT

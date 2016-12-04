@@ -49,24 +49,26 @@ public class S_AI : S_Character
     protected override void Shoot(GameObject _goBullet)
     {
         base.Shoot(_goBullet);
-
-        float fDistance;
-        fDistance = Vector3.Distance(m_goPlayer.transform.position, transform.position);
-        if (fDistance <= m_fMaxDistanceToShoot)
+        if (m_goPlayer)
         {
-            if (m_fTime > m_fShootFrequence)
+            float fDistance;
+            fDistance = Vector3.Distance(m_goPlayer.transform.position, transform.position);
+            if (fDistance <= m_fMaxDistanceToShoot)
             {
-                m_fTime = 0f;
+                if (m_fTime > m_fShootFrequence)
+                {
+                    m_fTime = 0f;
 
-                GameObject goProjectile;
-                goProjectile = Instantiate(_goBullet, m_v3PositionShoot, m_v3RotationShoot) as GameObject;
+                    GameObject goProjectile;
+                    goProjectile = Instantiate(_goBullet, m_v3PositionShoot, m_v3RotationShoot) as GameObject;
 
-                m_asAudio.PlayOneShot(AIshootSound);
+                    m_asAudio.PlayOneShot(AIshootSound);
 
-                Rigidbody rProjectileRb = goProjectile.GetComponent<Rigidbody>();
-                rProjectileRb.velocity = transform.TransformDirection(Vector3.forward * m_fShootForce) + m_rRigidbody.velocity;
+                    Rigidbody rProjectileRb = goProjectile.GetComponent<Rigidbody>();
+                    rProjectileRb.velocity = transform.TransformDirection(Vector3.forward * m_fShootForce) + m_rRigidbody.velocity;
+                }
+                m_fTime += Time.deltaTime;
             }
-            m_fTime += Time.deltaTime;
         }
     }
 
