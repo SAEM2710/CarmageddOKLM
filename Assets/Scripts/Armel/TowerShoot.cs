@@ -4,7 +4,7 @@ using System.Collections;
 public class TowerShoot : S_Character
 {
     // [SerializeField] protected float m_rotationSpeed;
-    [SerializeField] protected AudioClip towerShotSound;
+    [SerializeField] protected AudioClip [] towerShotSound;
 
     private bool canShoot = true;
     private AudioSource m_asAudio;
@@ -40,7 +40,8 @@ public class TowerShoot : S_Character
                 goProjectile = Instantiate(_goBullet, m_v3PositionShoot, m_v3RotationShoot) as GameObject;
                 goProjectile.GetComponent<S_Bullet>().bIsSpawnByPlayer = true;
 
-                m_asAudio.PlayOneShot(towerShotSound);
+                int number = Random.Range(0, towerShotSound.Length);
+                m_asAudio.PlayOneShot(towerShotSound[number]);
 
                 Rigidbody rProjectileRb = goProjectile.GetComponent<Rigidbody>();
                 rProjectileRb.velocity = transform.TransformDirection(Vector3.forward * m_fShootForce) + m_rRigidbody.velocity;
