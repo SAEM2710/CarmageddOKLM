@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44692492, g: 0.4967869, b: 0.57508546, a: 1}
+  m_IndirectSpecularColor: {r: 0.44692534, g: 0.49678725, b: 0.5750856, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -2453,6 +2453,10 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 1000012476698976, guid: 8ff6767b25447e7448abd0c1fc56016b, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8ff6767b25447e7448abd0c1fc56016b, type: 2}
   m_IsPrefabParent: 0
@@ -2666,7 +2670,7 @@ Prefab:
         type: 2}
       propertyPath: m_sLifeUI
       value: 
-      objectReference: {fileID: 616243431}
+      objectReference: {fileID: 0}
     - target: {fileID: 114000013459777302, guid: 418ef5ce424ed1c469f662dc8f85c6a3,
         type: 2}
       propertyPath: m_tKilledEnemiesText
@@ -2677,7 +2681,28 @@ Prefab:
       propertyPath: m_tTimeText
       value: 
       objectReference: {fileID: 1232664605}
-    m_RemovedComponents: []
+    - target: {fileID: 114000013459777302, guid: 418ef5ce424ed1c469f662dc8f85c6a3,
+        type: 2}
+      propertyPath: m_iLifeUI
+      value: 
+      objectReference: {fileID: 862057898}
+    - target: {fileID: 114000013459777302, guid: 418ef5ce424ed1c469f662dc8f85c6a3,
+        type: 2}
+      propertyPath: m_iTabShieldUI.Array.data[0]
+      value: 
+      objectReference: {fileID: 1673965163}
+    - target: {fileID: 114000013459777302, guid: 418ef5ce424ed1c469f662dc8f85c6a3,
+        type: 2}
+      propertyPath: m_iTabShieldUI.Array.data[1]
+      value: 
+      objectReference: {fileID: 1843013991}
+    - target: {fileID: 114000013459777302, guid: 418ef5ce424ed1c469f662dc8f85c6a3,
+        type: 2}
+      propertyPath: m_iTabShieldUI.Array.data[2]
+      value: 
+      objectReference: {fileID: 1982046061}
+    m_RemovedComponents:
+    - {fileID: 114000011828560162, guid: 418ef5ce424ed1c469f662dc8f85c6a3, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 418ef5ce424ed1c469f662dc8f85c6a3, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &548043355 stripped
@@ -3316,12 +3341,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ae03db13602621e41a8aa26dca908d91, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &616243431 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114000012289509134, guid: 8ff6767b25447e7448abd0c1fc56016b,
-    type: 2}
-  m_PrefabInternal: {fileID: 525419342}
-  m_Script: {fileID: -113659843, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &620114623
 GameObject:
   m_ObjectHideFlags: 0
@@ -4606,6 +4625,12 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0.039}
   m_TimeToStationary: 0.5
+--- !u!114 &862057898 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000010072123588, guid: 8ff6767b25447e7448abd0c1fc56016b,
+    type: 2}
+  m_PrefabInternal: {fileID: 525419342}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1001 &874635564
 Prefab:
   m_ObjectHideFlags: 0
@@ -7640,6 +7665,12 @@ Transform:
   - {fileID: 242375403}
   m_Father: {fileID: 0}
   m_RootOrder: 6
+--- !u!114 &1673965163 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000013179348304, guid: 8ff6767b25447e7448abd0c1fc56016b,
+    type: 2}
+  m_PrefabInternal: {fileID: 525419342}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!114 &1675486904 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114000011013744208, guid: 418ef5ce424ed1c469f662dc8f85c6a3,
@@ -8292,7 +8323,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   Priority: 128
@@ -8341,7 +8372,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -8657,6 +8688,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4000011548134832, guid: e0748ce4a9d9e064288b4f8ca0b7c9c8,
     type: 2}
   m_PrefabInternal: {fileID: 1951369146}
+--- !u!114 &1843013991 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000011312217896, guid: 8ff6767b25447e7448abd0c1fc56016b,
+    type: 2}
+  m_PrefabInternal: {fileID: 525419342}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &1851613810 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1000011007538024, guid: ae03db13602621e41a8aa26dca908d91,
@@ -8687,7 +8724,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-1542626
+  m_Name: pb_Mesh-1825580
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -9223,6 +9260,12 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0.060000002, y: 0.158, z: 0.223}
   m_TimeToStationary: 0.5
+--- !u!114 &1982046061 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000010964298918, guid: 8ff6767b25447e7448abd0c1fc56016b,
+    type: 2}
+  m_PrefabInternal: {fileID: 525419342}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1001 &1998336709
 Prefab:
   m_ObjectHideFlags: 0

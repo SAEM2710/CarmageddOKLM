@@ -2009,7 +2009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_goFXDestruction: {fileID: 1000012870390754, guid: b70cff7f8010efa4bac26c9673779dd5,
     type: 2}
-  m_fSecondsBeforeDestruction: 5
+  m_fSecondsBeforeDestruction: 7
   m_goFeedBack: {fileID: 1000012963748494, guid: 5e1891ef481f4ff49a57e4b55e778b81,
     type: 2}
   m_fRotationSpeed: 50
