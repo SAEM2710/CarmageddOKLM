@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44692492, g: 0.4967869, b: 0.57508546, a: 1}
+  m_IndirectSpecularColor: {r: 0.44692534, g: 0.49678725, b: 0.5750856, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -332,24 +332,19 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 33000011219981026, guid: a0dcbf1dbcf5080409aea829de3cc0dc,
-        type: 2}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 1867857933}
     - target: {fileID: 33000011134112798, guid: a0dcbf1dbcf5080409aea829de3cc0dc,
         type: 2}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1085257830}
+    - target: {fileID: 33000011219981026, guid: a0dcbf1dbcf5080409aea829de3cc0dc,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 1867857933}
     - target: {fileID: 1000012134359928, guid: a0dcbf1dbcf5080409aea829de3cc0dc, type: 2}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013206945490, guid: a0dcbf1dbcf5080409aea829de3cc0dc,
-        type: 2}
-      propertyPath: m_fMaxLife
-      value: 600
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a0dcbf1dbcf5080409aea829de3cc0dc, type: 2}
@@ -637,6 +632,11 @@ Prefab:
       objectReference: {fileID: 251426712}
     - target: {fileID: 114000013459777302, guid: 418ef5ce424ed1c469f662dc8f85c6a3,
         type: 2}
+      propertyPath: m_iSpecialPowerUI
+      value: 
+      objectReference: {fileID: 1309547185}
+    - target: {fileID: 114000013459777302, guid: 418ef5ce424ed1c469f662dc8f85c6a3,
+        type: 2}
       propertyPath: m_iTabShieldUI.Array.data[0]
       value: 
       objectReference: {fileID: 587139714}
@@ -660,11 +660,6 @@ Prefab:
       propertyPath: m_tTimeText
       value: 
       objectReference: {fileID: 1232664605}
-    - target: {fileID: 114000011828560162, guid: 418ef5ce424ed1c469f662dc8f85c6a3,
-        type: 2}
-      propertyPath: m_iWaveSpawnBoss
-      value: 7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 418ef5ce424ed1c469f662dc8f85c6a3, type: 2}
   m_IsPrefabParent: 0
@@ -1042,6 +1037,12 @@ GameObject:
   m_PrefabParentObject: {fileID: 1000014130885532, guid: 5fdbfb04b6a25f54784f32a6392e0f1b,
     type: 2}
   m_PrefabInternal: {fileID: 104655181}
+--- !u!114 &1309547185 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000012694690844, guid: 8ff6767b25447e7448abd0c1fc56016b,
+    type: 2}
+  m_PrefabInternal: {fileID: 120705402}
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!114 &1560500334 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114000012333035710, guid: a0dcbf1dbcf5080409aea829de3cc0dc,
@@ -1530,7 +1531,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-113072
+  m_Name: pb_Mesh-3700826
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
