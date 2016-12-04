@@ -39,7 +39,10 @@ public class S_UIManager : S_GenericSingleton<S_UIManager>
         m_pPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<S_Player>();
         m_iLifeUI.fillAmount = m_pPlayer.fCurrentLife / m_pPlayer.fMaxLife;
 
-        m_cfCameraFilter.Blood_On_Screen = (1f * m_pPlayer.fCurrentBerzerkValue) / m_pPlayer.fMaxBerzerkValue;
+        if (m_pPlayer.fCurrentBerzerkValue < m_pPlayer.fMaxBerzerkValue)
+        {
+            m_cfCameraFilter.Blood_On_Screen = (1f * m_pPlayer.fCurrentBerzerkValue) / m_pPlayer.fMaxBerzerkValue;
+        }
 
         if(m_pPlayer.bShieldActivated)
         {
@@ -81,7 +84,10 @@ public class S_UIManager : S_GenericSingleton<S_UIManager>
 	void Update ()
     {
         m_iLifeUI.fillAmount = m_pPlayer.fCurrentLife / m_pPlayer.fMaxLife;
-        m_cfCameraFilter.Blood_On_Screen = (1f * m_pPlayer.fCurrentBerzerkValue) / m_pPlayer.fMaxBerzerkValue;
+        if (m_pPlayer.fCurrentBerzerkValue < m_pPlayer.fMaxBerzerkValue)
+        {
+            m_cfCameraFilter.Blood_On_Screen = (1f * m_pPlayer.fCurrentBerzerkValue) / m_pPlayer.fMaxBerzerkValue;
+        }
 
         m_tKilledEnemiesText.text = "Killed Enemies : " + S_GameManager.Instance.iKilledEnemies.ToString();
 
