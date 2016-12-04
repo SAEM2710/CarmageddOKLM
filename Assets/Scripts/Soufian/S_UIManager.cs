@@ -8,6 +8,7 @@ public class S_UIManager : S_GenericSingleton<S_UIManager>
 {
     [SerializeField] private Image m_iPauseUI;
     [SerializeField] private Image m_iLifeUI;
+    [SerializeField] private Image m_iSpecialPowerUI;
     [SerializeField] private Image[] m_iTabShieldUI;
     [SerializeField] private Text m_tKilledEnemiesText;
     [SerializeField] private Text m_tTimeText;
@@ -78,11 +79,29 @@ public class S_UIManager : S_GenericSingleton<S_UIManager>
                 m_iTabShieldUI[i].gameObject.SetActive(false);
             }
         }
+
+        if (m_pPlayer.fCurrentBerzerkValue == m_pPlayer.fMaxBerzerkValue)
+        {
+            m_iSpecialPowerUI.gameObject.SetActive(true);
+        }
+        else
+        {
+            m_iSpecialPowerUI.gameObject.SetActive(false);
+        }
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
+        if(m_pPlayer.fCurrentBerzerkValue == m_pPlayer.fMaxBerzerkValue)
+        {
+            m_iSpecialPowerUI.gameObject.SetActive(true);
+        }
+        else
+        {
+            m_iSpecialPowerUI.gameObject.SetActive(false);
+        }
+
         m_iLifeUI.fillAmount = m_pPlayer.fCurrentLife / m_pPlayer.fMaxLife;
         if (m_pPlayer.fCurrentBerzerkValue < m_pPlayer.fMaxBerzerkValue)
         {

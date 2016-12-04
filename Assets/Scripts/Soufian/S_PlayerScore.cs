@@ -24,7 +24,7 @@ public class S_PlayerScore : MonoBehaviour
 
         int iScore = PlayerPrefs.GetInt("KilledEnemies");
 
-        m_tTimeText.text = fMinutes + ":" + fSeconds + "of your life were wasted forever";
+        m_tTimeText.text = fMinutes + ":" + fSeconds + " of your life were wasted forever";
         m_tScoreText.text = iScore.ToString() + " innocent people died during this game";
 
         /*if(PlayerPrefs.GetFloat("BestTime") == null)

@@ -159,6 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_iPauseUI: {fileID: 0}
   m_iLifeUI: {fileID: 0}
+  m_iSpecialPowerUI: {fileID: 0}
   m_iTabShieldUI:
   - {fileID: 0}
   - {fileID: 0}
