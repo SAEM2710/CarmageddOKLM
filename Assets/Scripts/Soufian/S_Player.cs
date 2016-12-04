@@ -12,7 +12,7 @@ public class S_Player : S_Character
     [SerializeField] private GameObject[] m_goTabShields;
     [SerializeField] private GameObject m_goTurret;
     [SerializeField] private float m_fMaxShieldValue;
-    [SerializeField] private Animator m_aSpecialPower;
+    [SerializeField] private GameObject m_goSpecialPower;
     [SerializeField] protected AudioClip specialPowerSound;
     [SerializeField] protected AudioClip specialPowerReady;
     [SerializeField] protected AudioClip careForLife;
@@ -114,7 +114,6 @@ public class S_Player : S_Character
         m_ccCarController = GetComponent<UnityStandardAssets.Vehicles.Car.CarController>();
         IsDead = false;
         m_bShieldActivated = false;
-        m_aSpecialPower.Stop();
     }
 
     public override void LoseLife(float _fDamage)
@@ -235,7 +234,7 @@ public class S_Player : S_Character
                 m_asAudio.PlayOneShot(specialPowerSound);
                 isReadySoundPlayed = false;
                 //Instantiate effect
-                m_aSpecialPower.Play("animation super power");
+                Instantiate(m_goSpecialPower, transform.position, transform.rotation);
                 GameObject[] goTabAI = GameObject.FindGameObjectsWithTag("AI");
                 for (int i = 0; i < goTabAI.Length; ++i)
                 {

@@ -3726,6 +3726,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000011884251446}
+  - 114: {fileID: 114000010894256574}
   m_Layer: 0
   m_Name: mort voiture
   m_TagString: Untagged
@@ -27855,6 +27856,18 @@ Light:
   m_BounceIntensity: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114000010894256574
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012290977702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d52b4879b634ef4f82bd8d4307767f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_fSecondsBeforeDestroy: 10
 --- !u!114 &114000011239354864
 MonoBehaviour:
   m_ObjectHideFlags: 1
