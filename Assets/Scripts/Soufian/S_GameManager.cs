@@ -71,10 +71,16 @@ public class S_GameManager : S_GenericSingleton<S_GameManager>
         if(m_iCurrentAICpt <= 0)
         {
             m_iTotalEnemiesCpt += 10;
-            Spawn();
+            if (m_goTabSpawns.Length > 0)
+            {
+                Spawn();
+            }
             ++m_iWavesCpt;
         }
-        SpawnBoss();
+        if (m_goTabSpawns.Length > 0)
+        {
+            SpawnBoss();
+        }
     }
 
     private void SpawnBoss()
