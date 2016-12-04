@@ -9,6 +9,7 @@ public class S_Buttons : MonoBehaviour
         Sstart();
         Sexit();
         Sskip();
+        SgoToMenu();
 
     }
     public void SPlay()
@@ -56,6 +57,18 @@ public class S_Buttons : MonoBehaviour
         if (Input.GetButtonDown("StartGame") && SceneManager.GetActiveScene().name == "Tuto")
         {
             SceneManager.LoadScene("soufian3");
+        }
+    }
+
+    public void SgoToMenu()
+    {
+        if (Input.GetButtonDown("StartGame") && SceneManager.GetActiveScene().name == "S_GameOver")
+        {
+            SceneManager.LoadScene("MenuYu");
+        }
+        if (AudioListener.pause && Input.GetButtonDown("StartGame") && SceneManager.GetActiveScene().name == "soufian3")
+        {
+            SceneManager.LoadScene("MenuYu");
         }
     }
 }
