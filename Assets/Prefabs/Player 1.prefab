@@ -46585,6 +46585,9 @@ MonoBehaviour:
   m_goTurret: {fileID: 1000011878591750}
   m_fMaxShieldValue: 100
   m_aSpecialPower: {fileID: 95000013112897584}
+  specialPowerSound: {fileID: 8300000, guid: c461fb4e77f5aa64887a1cc4797e74e7, type: 3}
+  specialPowerReady: {fileID: 8300000, guid: 7d0f7d31f42dffb41baab80a0eb968c7, type: 3}
+  careForLife: {fileID: 8300000, guid: 63222b43b2faf1f469699995ae6774f5, type: 3}
 --- !u!114 &114000013333191414
 MonoBehaviour:
   m_ObjectHideFlags: 1
