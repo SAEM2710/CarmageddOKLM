@@ -146,6 +146,13 @@ MonoBehaviour:
   m_goBoss: {fileID: 0}
   m_iWaveSpawnBoss: 7
   spawnSound: {fileID: 8300000, guid: a51a0f7273466984abfc158c583bb79d, type: 3}
+  voicesOnSpawn:
+  - {fileID: 8300000, guid: 2cb506501b291e54180a6760bb3fa23f, type: 3}
+  - {fileID: 8300000, guid: d6bc886fe2e0426459e57d7b9a9b9d76, type: 3}
+  - {fileID: 8300000, guid: 40a6c10a8d511b444aaf7014f5ffd97f, type: 3}
+  - {fileID: 8300000, guid: 5e5b39f409736ce4884f71b438abf76c, type: 3}
+  - {fileID: 8300000, guid: 982b241a2aaa0784c8054d4d6036e29a, type: 3}
+  - {fileID: 8300000, guid: f516941cc5548f84bbb7c1f7e0dba26f, type: 3}
 --- !u!114 &114000013459777302
 MonoBehaviour:
   m_ObjectHideFlags: 1

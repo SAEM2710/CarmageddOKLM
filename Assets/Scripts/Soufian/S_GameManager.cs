@@ -11,6 +11,7 @@ public class S_GameManager : S_GenericSingleton<S_GameManager>
     [SerializeField] private GameObject m_goBoss;
     [SerializeField] private int m_iWaveSpawnBoss;
     [SerializeField] protected AudioClip spawnSound;
+    [SerializeField] protected AudioClip[] voicesOnSpawn;
 
     private int m_iKilledEnemies;
     private bool m_bIsPaused;
@@ -20,6 +21,7 @@ public class S_GameManager : S_GenericSingleton<S_GameManager>
     private bool m_bIsBossSpawned;
     private AudioSource m_asAudio;
     private bool spawnSoundDone = false;
+    private bool firstRound = true;
     //private float m_fTime;
 
     public int iKilledEnemies
@@ -144,7 +146,14 @@ public class S_GameManager : S_GenericSingleton<S_GameManager>
                     if (!spawnSoundDone)
                     {
                         m_asAudio.PlayOneShot(spawnSound);
+                        if (!firstRound)
+                        {
+                            int number = Random.Range(0, voicesOnSpawn.Length);
+                            m_asAudio.PlayOneShot(voicesOnSpawn[number], 5.0f);
+                        }
+                        
                         spawnSoundDone = true;
+                        firstRound = false; 
                     }
 
                     goIA = Instantiate(RandomAI, m_goTabSpawns[i].transform.position, m_goTabSpawns[i].transform.rotation) as GameObject;
@@ -153,8 +162,9 @@ public class S_GameManager : S_GenericSingleton<S_GameManager>
                 //}
                 //m_fTime += Time.deltaTime;
             }
-            spawnSoundDone = false;
+            
             iCurrentAICptBySpawn = 0;
         }
+        spawnSoundDone = false;
     }
 }
