@@ -3291,6 +3291,7 @@ GameObject:
   - 114: {fileID: 114000010436841542}
   - 65: {fileID: 65000014107442124}
   - 114: {fileID: 114000011768085078}
+  - 82: {fileID: 82000010440697080}
   m_Layer: 0
   m_Name: Fire canon
   m_TagString: Untagged
@@ -29655,6 +29656,80 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!82 &82000010440697080
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011823971302}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 41de0af03dd8fca449e0d79d8e5d423d, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!82 &82000010962302126
 AudioSource:
   m_ObjectHideFlags: 1
@@ -30858,7 +30933,7 @@ MonoBehaviour:
   sourceTransform: {fileID: 4000011943634148}
   sourceTransforms:
   - transform: {fileID: 4000011943634148}
-    instanceID: -21256
+    instanceID: -27608
     available: 1
     position: {x: -3.8603804e-14, y: -1.236083e-11, z: -0.00000003727563}
     localPosition: {x: -3.8603804e-14, y: -1.236083e-11, z: -0.00000003727563}
@@ -49065,7 +49140,7 @@ ParticleSystem:
   moveWithTransform: 1
   autoRandomSeed: 1
   scalingMode: 2
-  randomSeed: -597196870
+  randomSeed: 1199512595
   InitialModule:
     serializedVersion: 2
     enabled: 1
