@@ -782,12 +782,48 @@ Prefab:
     - target: {fileID: 224000011070599484, guid: 8ff6767b25447e7448abd0c1fc56016b,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -155.6
+      value: -199
       objectReference: {fileID: 0}
     - target: {fileID: 224000011070599484, guid: 8ff6767b25447e7448abd0c1fc56016b,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -55.8
+      value: -84
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012908513266, guid: 8ff6767b25447e7448abd0c1fc56016b,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 687dcec43b2f746efa5a1ceaf3ba0276,
+        type: 3}
+    - target: {fileID: 114000012908513266, guid: 8ff6767b25447e7448abd0c1fc56016b,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012908513266, guid: 8ff6767b25447e7448abd0c1fc56016b,
+        type: 2}
+      propertyPath: m_FontData.m_MinSize
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000012771517486, guid: 8ff6767b25447e7448abd0c1fc56016b,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000012771517486, guid: 8ff6767b25447e7448abd0c1fc56016b,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000012771517486, guid: 8ff6767b25447e7448abd0c1fc56016b,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -132.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012908513266, guid: 8ff6767b25447e7448abd0c1fc56016b,
+        type: 2}
+      propertyPath: m_FontData.m_MaxSize
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8ff6767b25447e7448abd0c1fc56016b, type: 2}
@@ -1585,7 +1621,7 @@ GameObject:
   - 114: {fileID: 1677780436}
   - 114: {fileID: 1677780435}
   m_Layer: 5
-  m_Name: mask
+  m_Name: maskVIE ET BOUCLIER
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2030,7 +2066,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 1
+  m_FillAmount: 0.936
   m_FillClockwise: 1
   m_FillOrigin: 0
 --- !u!222 &1752425696
