@@ -25,7 +25,7 @@ GameObject:
   - 208: {fileID: 208000012171936422}
   m_Layer: 0
   m_Name: Car probs decore2 (1)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,7 +43,7 @@ GameObject:
   - 208: {fileID: 208000012698003560}
   m_Layer: 0
   m_Name: palmier (1)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,7 +76,7 @@ GameObject:
   - 208: {fileID: 208000011239761346}
   m_Layer: 0
   m_Name: palmier (2)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -177,7 +177,7 @@ GameObject:
   - 208: {fileID: 208000012450742108}
   m_Layer: 0
   m_Name: Cactus2 (2)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -240,7 +240,7 @@ GameObject:
   - 208: {fileID: 208000010181565202}
   m_Layer: 0
   m_Name: Bone2
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -341,7 +341,7 @@ GameObject:
   - 208: {fileID: 208000011707868214}
   m_Layer: 0
   m_Name: palmier
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -422,7 +422,7 @@ GameObject:
   - 208: {fileID: 208000013112008894}
   m_Layer: 0
   m_Name: Bone1 (1)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -501,7 +501,7 @@ GameObject:
   - 136: {fileID: 136000010855134964}
   m_Layer: 0
   m_Name: Cactus2 (4)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -535,7 +535,7 @@ GameObject:
   - 23: {fileID: 23000010514641462}
   m_Layer: 0
   m_Name: Voiture camion mesh
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -667,7 +667,7 @@ GameObject:
   - 23: {fileID: 23000011785627138}
   m_Layer: 0
   m_Name: Roue avant
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -686,7 +686,7 @@ GameObject:
   - 64: {fileID: 64000013624856752}
   m_Layer: 0
   m_Name: Big rock (2)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -755,7 +755,7 @@ GameObject:
   - 23: {fileID: 23000013542946590}
   m_Layer: 0
   m_Name: Roue arriere
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -773,7 +773,7 @@ GameObject:
   - 208: {fileID: 208000012070360516}
   m_Layer: 0
   m_Name: Cactus2 (3)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -822,7 +822,7 @@ GameObject:
   - 136: {fileID: 136000013065806498}
   m_Layer: 0
   m_Name: Cactus (2)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -869,7 +869,7 @@ GameObject:
   - 4: {fileID: 4000012998487612}
   m_Layer: 0
   m_Name: porte
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -903,7 +903,7 @@ GameObject:
   - 23: {fileID: 23000013359421724}
   m_Layer: 0
   m_Name: Roue arriere
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -939,7 +939,7 @@ GameObject:
   - 208: {fileID: 208000010449359730}
   m_Layer: 0
   m_Name: Car probs decore (2)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -957,7 +957,7 @@ GameObject:
   - 64: {fileID: 64000011850778836}
   m_Layer: 0
   m_Name: pCube20
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1006,7 +1006,7 @@ GameObject:
   - 136: {fileID: 136000010150371844}
   m_Layer: 0
   m_Name: Cactus (1)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1215,7 +1215,7 @@ GameObject:
   - 208: {fileID: 208000011175437778}
   m_Layer: 0
   m_Name: lamp_01
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1233,7 +1233,7 @@ GameObject:
   - 208: {fileID: 208000013507139240}
   m_Layer: 0
   m_Name: Car probs decore2
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1282,7 +1282,7 @@ GameObject:
   - 136: {fileID: 136000013110640988}
   m_Layer: 0
   m_Name: Cactus (3)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1318,7 +1318,7 @@ GameObject:
   - 208: {fileID: 208000012161758944}
   m_Layer: 0
   m_Name: Car probs decore2 (2)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1366,7 +1366,7 @@ GameObject:
   - 208: {fileID: 208000012684252808}
   m_Layer: 0
   m_Name: Cactus2
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1449,7 +1449,7 @@ GameObject:
   - 64: {fileID: 64000011316944536}
   m_Layer: 0
   m_Name: pCube24
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1596,7 +1596,7 @@ GameObject:
   - 208: {fileID: 208000013633688206}
   m_Layer: 0
   m_Name: Big rock
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1646,7 +1646,7 @@ GameObject:
   - 4: {fileID: 4000011799863436}
   m_Layer: 0
   m_Name: Arene
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1746,7 +1746,7 @@ GameObject:
   - 136: {fileID: 136000013720616504}
   m_Layer: 0
   m_Name: Cactus
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1779,7 +1779,7 @@ GameObject:
   - 208: {fileID: 208000010576066026}
   m_Layer: 0
   m_Name: Cactus (4)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1877,7 +1877,7 @@ GameObject:
   - 23: {fileID: 23000012787048118}
   m_Layer: 0
   m_Name: Roue avant
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1979,7 +1979,7 @@ GameObject:
   - 64: {fileID: 64000011854556532}
   m_Layer: 0
   m_Name: pCube19
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1997,7 +1997,7 @@ GameObject:
   - 208: {fileID: 208000010811906656}
   m_Layer: 0
   m_Name: Car probs decore (1)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2014,7 +2014,7 @@ GameObject:
   - 23: {fileID: 23000011427960374}
   m_Layer: 0
   m_Name: Roue arriere
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2032,7 +2032,7 @@ GameObject:
   - 64: {fileID: 64000013357431926}
   m_Layer: 0
   m_Name: pCube17
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2163,7 +2163,7 @@ GameObject:
   - 64: {fileID: 64000013952934756}
   m_Layer: 0
   m_Name: pCube22
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2211,7 +2211,7 @@ GameObject:
   - 208: {fileID: 208000013358787586}
   m_Layer: 0
   m_Name: Big rock (1)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2244,7 +2244,7 @@ GameObject:
   - 208: {fileID: 208000010581339992}
   m_Layer: 0
   m_Name: lamp_02
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2281,7 +2281,7 @@ GameObject:
   - 136: {fileID: 136000013221747972}
   m_Layer: 0
   m_Name: palmier (3)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2346,7 +2346,7 @@ GameObject:
   - 208: {fileID: 208000010544012120}
   m_Layer: 0
   m_Name: palmier (5)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2379,7 +2379,7 @@ GameObject:
   - 208: {fileID: 208000010807710338}
   m_Layer: 0
   m_Name: Bone1
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2412,7 +2412,7 @@ GameObject:
   - 208: {fileID: 208000014072108718}
   m_Layer: 0
   m_Name: Car probs decore
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2462,7 +2462,7 @@ GameObject:
   - 23: {fileID: 23000011451313050}
   m_Layer: 0
   m_Name: Roue avant
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2495,7 +2495,7 @@ GameObject:
   - 208: {fileID: 208000010274823640}
   m_Layer: 0
   m_Name: Cactus2 (1)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2530,7 +2530,7 @@ GameObject:
   - 23: {fileID: 23000010300621004}
   m_Layer: 0
   m_Name: Voiture camion mesh
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2766,7 +2766,7 @@ GameObject:
   - 23: {fileID: 23000013973324242}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2802,7 +2802,7 @@ GameObject:
   - 64: {fileID: 64000013665325782}
   m_Layer: 0
   m_Name: pCube18
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2819,7 +2819,7 @@ GameObject:
   - 23: {fileID: 23000010683577698}
   m_Layer: 0
   m_Name: Voiture camion mesh
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2981,7 +2981,7 @@ GameObject:
   - 64: {fileID: 64000011063558440}
   m_Layer: 0
   m_Name: pCube23
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3096,7 +3096,7 @@ GameObject:
   - 64: {fileID: 64000012929252600}
   m_Layer: 0
   m_Name: pCube21
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3165,7 +3165,7 @@ GameObject:
   - 208: {fileID: 208000010635861234}
   m_Layer: 0
   m_Name: palmier (4)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10373,7 +10373,7 @@ CapsuleCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011482632954}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 9f93f63d068b08c459038c40fce897d8, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 7.821898
