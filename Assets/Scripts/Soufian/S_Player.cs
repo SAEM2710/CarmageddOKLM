@@ -19,8 +19,21 @@ public class S_Player : S_Character
     private UnityStandardAssets.Vehicles.Car.CarController m_ccCarController;
     private float m_fCurrentShieldValue;
     private bool m_bShieldActivated;
+    private ShieldType m_stShieldType;
 
     #region Getters/Setters
+
+    public ShieldType stShieldType
+    {
+        get
+        {
+            return m_stShieldType;
+        }
+        set
+        {
+            m_stShieldType = value;
+        }
+    }
 
     public bool bShieldActivated
     {
@@ -267,9 +280,8 @@ public class S_Player : S_Character
         {
             m_bShieldActivated = true;
             m_fCurrentShieldValue = m_fMaxShieldValue;
-            ShieldType shieldtype;
-            shieldtype = _cCollider.gameObject.GetComponent<S_Shield>().btShield;
-            SetShield(shieldtype);
+            m_stShieldType = _cCollider.gameObject.GetComponent<S_Shield>().btShield;
+            SetShield(m_stShieldType);
             _cCollider.gameObject.GetComponent<S_Shield>().Death();
         }
     }

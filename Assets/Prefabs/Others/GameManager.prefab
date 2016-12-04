@@ -82,7 +82,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_iPauseUI: {fileID: 0}
-  m_sLifeUI: {fileID: 0}
-  m_sShieldUI: {fileID: 0}
+  m_iLifeUI: {fileID: 0}
+  m_iTabShieldUI:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   m_tKilledEnemiesText: {fileID: 0}
   m_tTimeText: {fileID: 0}
