@@ -16,12 +16,13 @@ public class PoisonFireDamages : MonoBehaviour {
     [SerializeField] protected ParticleSystem m_poisonParticles;
     [SerializeField] protected ParticleSystem m_burningParticles;
 
-    private float time = 0f;
-    private int nbrTick = 1;
+    private float time;
+    private int nbrTick;
 
     // Use this for initialization
     void Start () {
-
+        time = 0f;
+        nbrTick = 1;
         m_poisonParticles.Pause();
         m_burningParticles.Pause();
 	}
@@ -31,6 +32,7 @@ public class PoisonFireDamages : MonoBehaviour {
 	
         if (isPsn)
         {
+            Debug.Log("PSN");
             m_poisonParticles.Play();
             if (time < m_poisonTime)
             {
@@ -52,6 +54,7 @@ public class PoisonFireDamages : MonoBehaviour {
 
         if (isFire)
         {
+            Debug.Log("FIRE");
             m_burningParticles.Play();
             if (time < m_fireTime)
             {

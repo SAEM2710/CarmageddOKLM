@@ -36014,7 +36014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b564fc58a29748438883c0142f1048b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_damagesOnHit: 5
+  m_damagesOnHit: 1
 --- !u!114 &114000011862065290
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -46788,7 +46788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3faa78b5f5f13534a8f2b08ff99ae591, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_damagesOnHit: 0.1
+  m_damagesOnHit: 0.01
 --- !u!114 &114000013884822142
 MonoBehaviour:
   m_ObjectHideFlags: 1
