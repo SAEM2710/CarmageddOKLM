@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37356448, g: 0.3811204, b: 0.35887685, a: 1}
+  m_IndirectSpecularColor: {r: 0.37356424, g: 0.3811201, b: 0.35887662, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -9196,17 +9196,17 @@ Prefab:
     - target: {fileID: 198000011634302904, guid: 1eb0ef4c93e1bf844acf0102e58fd07b,
         type: 2}
       propertyPath: randomSeed
-      value: -9895066
+      value: 302983931
       objectReference: {fileID: 0}
     - target: {fileID: 198000013591934624, guid: 1eb0ef4c93e1bf844acf0102e58fd07b,
         type: 2}
       propertyPath: randomSeed
-      value: -1787340105
+      value: -2128114539
       objectReference: {fileID: 0}
     - target: {fileID: 198000010509553260, guid: 1eb0ef4c93e1bf844acf0102e58fd07b,
         type: 2}
       propertyPath: randomSeed
-      value: -1562656522
+      value: 1465322822
       objectReference: {fileID: 0}
     - target: {fileID: 4000011884251446, guid: 1eb0ef4c93e1bf844acf0102e58fd07b, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -13853,6 +13853,7 @@ GameObject:
   - 114: {fileID: 1747627816}
   - 114: {fileID: 1747627817}
   - 82: {fileID: 1747627815}
+  - 114: {fileID: 1747627818}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -14062,6 +14063,19 @@ MonoBehaviour:
   shader: {fileID: 4800000, guid: e9ba2083ad114a07d000fbfb8d76c639, type: 3}
   blurAmount: 0.214
   extraBlur: 0
+--- !u!114 &1747627818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1747627809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 338e4a1645a211744a0e06935033590d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeOutTexture: {fileID: 2800000, guid: bf29a38a2dadf8744bdfccc70100c581, type: 3}
+  fadeSpeed: 0.8
 --- !u!1 &1760260103
 GameObject:
   m_ObjectHideFlags: 0
