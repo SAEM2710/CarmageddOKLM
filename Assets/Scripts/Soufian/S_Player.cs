@@ -13,6 +13,11 @@ public class S_Player : S_Character
     [SerializeField] private GameObject m_goTurret;
     [SerializeField] private float m_fMaxShieldValue;
     [SerializeField] private Animator m_aSpecialPower;
+    [SerializeField] protected AudioClip specialPowerSound;
+    [SerializeField] protected AudioClip specialPowerReady;
+    [SerializeField] protected AudioClip careForLife;
+
+    private AudioSource m_asAudio;
 
     private float m_fCurrentBerzerkValue;
     private bool IsDead;
@@ -20,6 +25,8 @@ public class S_Player : S_Character
     private float m_fCurrentShieldValue;
     private bool m_bShieldActivated;
     private ShieldType m_stShieldType;
+    private bool isReadySoundPlayed = false;
+    private bool isCareSoundPlayed = false;
 
     #region Getters/Setters
 
@@ -102,6 +109,7 @@ public class S_Player : S_Character
     {
         base.Start();
 
+        m_asAudio = GetComponent<AudioSource>();
         m_fCurrentBerzerkValue = 0f;
         m_ccCarController = GetComponent<UnityStandardAssets.Vehicles.Car.CarController>();
         IsDead = false;
@@ -118,6 +126,11 @@ public class S_Player : S_Character
         else
         {
             m_fCurrentLife -= _fDamage;
+        }
+        if (m_fCurrentLife < m_fMaxLife/4 && !isCareSoundPlayed)
+        {
+            m_asAudio.PlayOneShot(careForLife);
+            isCareSoundPlayed = true;
         }
     }
 
@@ -210,10 +223,17 @@ public class S_Player : S_Character
     {
         if(m_fCurrentBerzerkValue >= m_fMaxBerzerkValue)
         {
+            if (!isReadySoundPlayed)
+            {
+                m_asAudio.PlayOneShot(specialPowerReady);
+                isReadySoundPlayed = true;
+            }
+
             m_fCurrentBerzerkValue = m_fMaxBerzerkValue;
             if(Input.GetButtonDown("Fire1"))
             {
-                //Play Sound
+                m_asAudio.PlayOneShot(specialPowerSound);
+                isReadySoundPlayed = false;
                 //Instantiate effect
                 m_aSpecialPower.Play("animation super power");
                 GameObject[] goTabAI = GameObject.FindGameObjectsWithTag("AI");
