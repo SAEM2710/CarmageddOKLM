@@ -18,6 +18,7 @@ public class S_Player : S_Character
     [SerializeField] protected AudioClip careForLife;
     [SerializeField] protected AudioClip[] gameOverSounds;
     [SerializeField] protected AudioClip deathSound;
+    [SerializeField] protected AudioClip[] voicesOnShieldLoss;
 
     private AudioSource m_asAudio;
 
@@ -183,6 +184,8 @@ public class S_Player : S_Character
                 m_bShieldActivated = false;
                 DesactivateShieldAndWeapon();
                 m_goTurret.GetComponent<TowerShoot>().ActiveShoot();
+                int number = Random.Range(0, voicesOnShieldLoss.Length);
+                m_asAudio.PlayOneShot(voicesOnShieldLoss[number], 5.0f);
             }
         }
     }

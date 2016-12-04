@@ -1732,8 +1732,8 @@ GameObject:
   - 198: {fileID: 198000013983172732}
   - 199: {fileID: 199000010186253800}
   - 114: {fileID: 114000011589313516}
-  - 82: {fileID: 82000013282833516}
   - 82: {fileID: 82000011880259976}
+  - 82: {fileID: 82000013282833516}
   - 114: {fileID: 114000013634935964}
   m_Layer: 0
   m_Name: PoisonCloud
@@ -29985,8 +29985,8 @@ AudioSource:
   Spatialize: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 990.099
+  MaxDistance: 1000
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -30029,7 +30029,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -30133,8 +30133,8 @@ AudioSource:
   Spatialize: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 990.099
+  MaxDistance: 1000
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -46602,17 +46602,27 @@ MonoBehaviour:
   specialPowerReady: {fileID: 8300000, guid: 7d0f7d31f42dffb41baab80a0eb968c7, type: 3}
   careForLife: {fileID: 8300000, guid: 63222b43b2faf1f469699995ae6774f5, type: 3}
   gameOverSounds:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: efb652a5a17a83c49bb0fddb40a660e6, type: 3}
+  - {fileID: 8300000, guid: 7bbef2d5d3311ae4eb90c5e29028861a, type: 3}
+  - {fileID: 8300000, guid: 289feec71a95cc34fb5667931b307bdc, type: 3}
+  - {fileID: 8300000, guid: 3b52205a85424754ab8597e8c4d32c19, type: 3}
+  - {fileID: 8300000, guid: 212e3f3ffbc1378458a126180082d88c, type: 3}
+  - {fileID: 8300000, guid: 1d814f5dfea99454b93179e2143d91d9, type: 3}
+  - {fileID: 8300000, guid: d522eb65111e3a542a809e7618ac1945, type: 3}
+  - {fileID: 8300000, guid: c75924e1b22e82a4f96540844cac6004, type: 3}
+  - {fileID: 8300000, guid: 3d9a807f32be3df40a77222f1c0bcce9, type: 3}
+  - {fileID: 8300000, guid: c97d86fa4d3791b4ca795420ffa1b7c6, type: 3}
   deathSound: {fileID: 8300000, guid: 70f511b58799ddb4d976972ac8d997fa, type: 3}
+  voicesOnShieldLoss:
+  - {fileID: 8300000, guid: 3a9699cf4df8b7f4fa057ab29e6d1763, type: 3}
+  - {fileID: 8300000, guid: fc03f5f4b34defb42b441e0ec29e6db9, type: 3}
+  - {fileID: 8300000, guid: aa1903721bafb224cb09fd67c782005c, type: 3}
+  - {fileID: 8300000, guid: a8d7ab604e209ca4ba04c955c11fa2f0, type: 3}
+  - {fileID: 8300000, guid: 8023b94a1f27eb646a304f3f5b8388c6, type: 3}
+  - {fileID: 8300000, guid: e28a93e47a568364faa32ab5a79d83d4, type: 3}
+  - {fileID: 8300000, guid: 99c91171916a41e43b4874ac549019eb, type: 3}
+  - {fileID: 8300000, guid: c650bc3687bec3e44a1d8973f10e0ff2, type: 3}
+  - {fileID: 8300000, guid: 57b4524b5811bc74096ce631ffcfe8ab, type: 3}
 --- !u!114 &114000013333191414
 MonoBehaviour:
   m_ObjectHideFlags: 1

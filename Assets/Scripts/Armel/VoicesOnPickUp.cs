@@ -22,13 +22,12 @@ public class VoicesOnPickUp : MonoBehaviour {
 
     void OnEnable()
     {
-        Debug.Log("pass1");
         int number = Random.Range(0, 3);
         if (number == 1)
         {
-            Debug.Log("pass2");
             int number2 = Random.Range(0, voicesOnPickup.Length);
             m_asAudio.PlayOneShot(voicesOnPickup[number2], 5.0f);
         }
     }
+
 }
