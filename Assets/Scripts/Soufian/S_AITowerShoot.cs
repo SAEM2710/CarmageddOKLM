@@ -5,9 +5,11 @@ public class S_AITowerShoot : S_Character
 {
     [SerializeField] private float m_fMaxDistanceToShoot;
     [SerializeField] private AudioClip AIshootSound;
+    [SerializeField] private GameObject[] m_goShootOrigin;
 
     private GameObject m_goPlayer;
     private AudioSource m_asAudio;
+
 
     // Use this for initialization
     protected override void Start ()
@@ -32,7 +34,7 @@ public class S_AITowerShoot : S_Character
 
     protected override void Shoot(GameObject _goBullet)
     {
-        base.Shoot(_goBullet);
+        //base.Shoot(_goBullet);
 
         float fDistance;
         fDistance = Vector3.Distance(m_goPlayer.transform.position, transform.position);
@@ -43,12 +45,14 @@ public class S_AITowerShoot : S_Character
                 m_fTime = 0f;
 
                 GameObject goProjectile;
-                goProjectile = Instantiate(_goBullet, m_v3PositionShoot, m_v3RotationShoot) as GameObject;
+                for(int i = 0; i < m_goShootOrigin.Length; ++i)
+                {
+                    goProjectile = Instantiate(_goBullet, m_goShootOrigin[i].transform.position, m_goShootOrigin[i].transform.rotation) as GameObject;
+                    Rigidbody rProjectileRb = goProjectile.GetComponent<Rigidbody>();
+                    rProjectileRb.velocity = transform.TransformDirection(Vector3.forward * m_fShootForce) + m_rRigidbody.velocity;
+                }
 
                 m_asAudio.PlayOneShot(AIshootSound);
-
-                Rigidbody rProjectileRb = goProjectile.GetComponent<Rigidbody>();
-                rProjectileRb.velocity = transform.TransformDirection(Vector3.forward * m_fShootForce) + m_rRigidbody.velocity;
             }
             m_fTime += Time.deltaTime;
         }

@@ -46486,7 +46486,7 @@ MonoBehaviour:
   m_goBullet: {fileID: 0}
   m_fShootFrequence: 0.2
   m_fShootForce: 50
-  m_fMaxLife: 6000
+  m_fMaxLife: 2500
   m_fMinSpeedToKill: 10
   m_fMaxBerzerkValue: 100
   m_goTabWeapons:
