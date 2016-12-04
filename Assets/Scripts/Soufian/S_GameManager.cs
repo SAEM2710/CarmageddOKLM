@@ -10,6 +10,7 @@ public class S_GameManager : S_GenericSingleton<S_GameManager>
     [SerializeField] private GameObject[] m_goTabAI;
     [SerializeField] private GameObject m_goBoss;
     [SerializeField] private int m_iWaveSpawnBoss;
+    [SerializeField] protected AudioClip spawnSound;
 
     private int m_iKilledEnemies;
     private bool m_bIsPaused;
@@ -17,6 +18,8 @@ public class S_GameManager : S_GenericSingleton<S_GameManager>
     private GameObject[] m_goTabSpawns;
     private int m_iCurrentAICpt;
     private bool m_bIsBossSpawned;
+    private AudioSource m_asAudio;
+    private bool spawnSoundDone = false;
     //private float m_fTime;
 
     public int iKilledEnemies
@@ -45,6 +48,7 @@ public class S_GameManager : S_GenericSingleton<S_GameManager>
 
     void Start()
     {
+        m_asAudio = GetComponent<AudioSource>();
         m_bIsBossSpawned = false;
         m_iWavesCpt = 0;
         m_bIsPaused = false;
@@ -130,12 +134,20 @@ public class S_GameManager : S_GenericSingleton<S_GameManager>
                     //m_fTime = 0f;
 
                     GameObject goIA;
+
+                    if (!spawnSoundDone)
+                    {
+                        m_asAudio.PlayOneShot(spawnSound);
+                        spawnSoundDone = true;
+                    }
+
                     goIA = Instantiate(RandomAI, m_goTabSpawns[i].transform.position, m_goTabSpawns[i].transform.rotation) as GameObject;
                     ++iCurrentAICptBySpawn;
                     ++m_iCurrentAICpt;
                 //}
                 //m_fTime += Time.deltaTime;
             }
+            spawnSoundDone = false;
             iCurrentAICptBySpawn = 0;
         }
     }
