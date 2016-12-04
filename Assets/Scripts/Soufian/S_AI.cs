@@ -9,19 +9,13 @@ public class S_AI : S_Character
     [SerializeField] private GameObject[] m_goTabShieldBonus;
     [SerializeField] private float m_fMaxDistanceToShoot;
     [SerializeField] private AudioClip AIshootSound;
-    [SerializeField] protected AudioClip smashSound1;
-    [SerializeField] protected AudioClip smashSound2;
-    [SerializeField] protected AudioClip smashSound3;
-    [SerializeField] protected AudioClip smashSound4;
+    [SerializeField] private AudioClip[] m_acTabSmash;
 
     private bool m_bIsTouchingObstacle;
     private int m_iChanceToDrop;
     private GameObject m_goShieldBonus;
     private GameObject m_goPlayer;
-
-    private AudioClip[] smash;
     private AudioSource m_asAudio;
-
 
     #region Getters/Setters
 
@@ -50,10 +44,6 @@ public class S_AI : S_Character
         m_iChanceToDrop = Random.Range(0, 10); //10%
         RandomShieldBonus();
         m_asAudio = GetComponent<AudioSource>();
-        smash = new AudioClip[]
-        {
-            smashSound1, smashSound2, smashSound3, smashSound4
-        };
     }
 
     protected override void Shoot(GameObject _goBullet)
@@ -93,8 +83,8 @@ public class S_AI : S_Character
             ++S_GameManager.Instance.iKilledEnemies;
             --S_GameManager.Instance.iCurrentAICpt;
 
-            int number = Random.Range(0, smash.Length);
-            AudioSource.PlayClipAtPoint(smash[number], transform.position);
+            int number = Random.Range(0, m_acTabSmash.Length);
+            AudioSource.PlayClipAtPoint(m_acTabSmash[number], transform.position);
 
             Destroy(gameObject);
         }

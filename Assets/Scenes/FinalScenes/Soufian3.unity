@@ -567,6 +567,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 114000011828560162, guid: 418ef5ce424ed1c469f662dc8f85c6a3,
+        type: 2}
+      propertyPath: m_goBoss
+      value: 
+      objectReference: {fileID: 2112635846}
     - target: {fileID: 114000013459777302, guid: 418ef5ce424ed1c469f662dc8f85c6a3,
         type: 2}
       propertyPath: m_iPauseUI
@@ -579,6 +584,11 @@ Prefab:
       objectReference: {fileID: 616243431}
     - target: {fileID: 114000013459777302, guid: 418ef5ce424ed1c469f662dc8f85c6a3,
         type: 2}
+      propertyPath: m_sShieldUI
+      value: 
+      objectReference: {fileID: 337580395}
+    - target: {fileID: 114000013459777302, guid: 418ef5ce424ed1c469f662dc8f85c6a3,
+        type: 2}
       propertyPath: m_tKilledEnemiesText
       value: 
       objectReference: {fileID: 516450031}
@@ -587,21 +597,6 @@ Prefab:
       propertyPath: m_tTimeText
       value: 
       objectReference: {fileID: 1232664605}
-    - target: {fileID: 114000011828560162, guid: 418ef5ce424ed1c469f662dc8f85c6a3,
-        type: 2}
-      propertyPath: m_fFrequence
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013459777302, guid: 418ef5ce424ed1c469f662dc8f85c6a3,
-        type: 2}
-      propertyPath: m_sShieldUI
-      value: 
-      objectReference: {fileID: 337580395}
-    - target: {fileID: 114000011828560162, guid: 418ef5ce424ed1c469f662dc8f85c6a3,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 418ef5ce424ed1c469f662dc8f85c6a3, type: 2}
   m_IsPrefabParent: 0
@@ -833,7 +828,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-3272
+  m_Name: pb_Mesh-5088
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -995,16 +990,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 33000011219981026, guid: a0dcbf1dbcf5080409aea829de3cc0dc,
-        type: 2}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 1867857933}
     - target: {fileID: 33000011134112798, guid: a0dcbf1dbcf5080409aea829de3cc0dc,
         type: 2}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1085257830}
+    - target: {fileID: 33000011219981026, guid: a0dcbf1dbcf5080409aea829de3cc0dc,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 1867857933}
     - target: {fileID: 1000012134359928, guid: a0dcbf1dbcf5080409aea829de3cc0dc, type: 2}
       propertyPath: m_Name
       value: Player
@@ -1412,7 +1407,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pb_Mesh-611234
+  m_Name: pb_Mesh-4382
   serializedVersion: 8
   m_SubMeshes:
   - serializedVersion: 2
@@ -1593,7 +1588,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000012663902348, guid: 5fdbfb04b6a25f54784f32a6392e0f1b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 5.4918523
+      value: 0.91
       objectReference: {fileID: 0}
     - target: {fileID: 4000012663902348, guid: 5fdbfb04b6a25f54784f32a6392e0f1b, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1601,7 +1596,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012663902348, guid: 5fdbfb04b6a25f54784f32a6392e0f1b, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -27.4
+      value: 38.7
       objectReference: {fileID: 0}
     - target: {fileID: 4000012663902348, guid: 5fdbfb04b6a25f54784f32a6392e0f1b, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1631,3 +1626,8 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5fdbfb04b6a25f54784f32a6392e0f1b, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2112635846 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000014130885532, guid: 5fdbfb04b6a25f54784f32a6392e0f1b,
+    type: 2}
+  m_PrefabInternal: {fileID: 2084905623}

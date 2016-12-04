@@ -4,19 +4,19 @@ using UnityEngine.UI;
 
 public class S_GameManager : S_GenericSingleton<S_GameManager>
 {
-    [SerializeField]
-    private int m_iTotalEnemiesCpt;
+    [SerializeField] private int m_iTotalEnemiesCpt;
     //[SerializeField]
     //private float m_fFrequence;
-    [SerializeField]
-    private GameObject[] m_goTabAI;
+    [SerializeField] private GameObject[] m_goTabAI;
+    [SerializeField] private GameObject m_goBoss;
+    [SerializeField] private int m_iWaveSpawnBoss;
 
     private int m_iKilledEnemies;
     private bool m_bIsPaused;
     private int m_iWavesCpt;
     private GameObject[] m_goTabSpawns;
     private int m_iCurrentAICpt;
-    private int m_iWave;
+    private bool m_bIsBossSpawned;
     //private float m_fTime;
 
     public int iKilledEnemies
@@ -45,6 +45,7 @@ public class S_GameManager : S_GenericSingleton<S_GameManager>
 
     void Start()
     {
+        m_bIsBossSpawned = false;
         m_iWavesCpt = 0;
         m_bIsPaused = false;
         m_iKilledEnemies = 0;
@@ -53,7 +54,7 @@ public class S_GameManager : S_GenericSingleton<S_GameManager>
         m_goTabSpawns = GameObject.FindGameObjectsWithTag("Spawn");
 
         Spawn();
-        m_iWave = 1;
+        m_iWavesCpt = 1;
         //m_iCurrentAICpt = GameObject.FindGameObjectsWithTag("AI").Length;
     }
 
@@ -67,7 +68,24 @@ public class S_GameManager : S_GenericSingleton<S_GameManager>
         {
             m_iTotalEnemiesCpt += 10;
             Spawn();
-            ++m_iWave;
+            ++m_iWavesCpt;
+        }
+        SpawnBoss();
+    }
+
+    private void SpawnBoss()
+    {
+        if (!m_bIsBossSpawned)
+        {
+            if (m_iWavesCpt >= m_iWaveSpawnBoss)
+            {
+                int iRandomSpawn;
+                iRandomSpawn = Random.Range(0, m_goTabSpawns.Length);
+                m_goBoss.transform.position = m_goTabSpawns[iRandomSpawn].transform.position;
+                m_goBoss.transform.rotation = m_goTabSpawns[iRandomSpawn].transform.rotation;
+                m_goBoss.SetActive(true);
+                m_bIsBossSpawned = true;
+            }
         }
     }
 

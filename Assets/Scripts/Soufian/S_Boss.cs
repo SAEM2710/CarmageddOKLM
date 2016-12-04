@@ -3,54 +3,101 @@ using System.Collections;
 
 public class S_Boss : S_Character
 {
-    [SerializeField] protected Rigidbody carRb;
-    [SerializeField] private float m_fMaxDistanceToShoot;
-    [SerializeField] private AudioClip AIshootSound;
+    [SerializeField] private AudioClip m_acAudioClip;
+    [SerializeField] private GameObject m_goShield;
+    [SerializeField] private float m_fMaxShieldValue;
+    [SerializeField] private Renderer m_rRenderer;
 
-    private GameObject m_goPlayer;
-    private AudioSource m_asAudio;
+    private bool m_bShieldActivated;
+    private float m_fCurrentShieldValue;
+    private Color m_cStartColor;
 
-    // Use this for initialization
     protected override void Start ()
     {
-        //base.Start();
-        m_fTime = 0f;
-        m_v3PositionShoot = transform.GetChild(0).position;
-        m_v3RotationShoot = transform.GetChild(0).rotation;
-        m_fCurrentLife = m_fMaxLife;
-
-        m_goPlayer = GameObject.FindGameObjectWithTag("Player");
-        m_asAudio = GetComponent<AudioSource>();
+        base.Start();
+        m_bShieldActivated = true;
+        m_fCurrentShieldValue = m_fMaxShieldValue;
+        m_cStartColor = m_rRenderer.material.GetColor("_Solid_Color");
     }
 
     // Update is called once per frame
-    protected override void Update()
+    protected override void Update ()
     {
-        transform.LookAt(m_goPlayer.transform);
-        base.Update();     
+        base.Update();
+
+        DesactivateShield();
     }
 
-    protected override void Shoot(GameObject _goBullet)
+    public override void Death()
     {
-        base.Shoot(_goBullet);
+        base.Death();
 
-        float fDistance;
-        fDistance = Vector3.Distance(m_goPlayer.transform.position, transform.position);
-        if (fDistance <= m_fMaxDistanceToShoot)
+        if (m_fCurrentLife <= 0f)
         {
-            if (m_fTime > m_fShootFrequence)
-            {
-                m_fTime = 0f;
+            GameObject goFXDestruction;
+            goFXDestruction = Instantiate(m_goFXDestruction, transform.position, m_goFXDestruction.transform.rotation) as GameObject;
+            ++S_GameManager.Instance.iKilledEnemies;
+            --S_GameManager.Instance.iCurrentAICpt;
 
-                GameObject goProjectile;
-                goProjectile = Instantiate(_goBullet, m_v3PositionShoot, m_v3RotationShoot) as GameObject;
+            AudioSource.PlayClipAtPoint(m_acAudioClip, transform.position);
 
-                m_asAudio.PlayOneShot(AIshootSound);
-
-                Rigidbody rProjectileRb = goProjectile.GetComponent<Rigidbody>();
-                rProjectileRb.velocity = transform.TransformDirection(Vector3.forward * m_fShootForce) + carRb.velocity;
-            }
-            m_fTime += Time.deltaTime;
+            Destroy(gameObject);
         }
+    }
+
+    public override void LoseLife(float _fDamage)
+    {
+        if (m_bShieldActivated)
+        {
+            m_fCurrentShieldValue -= _fDamage;
+        }
+        else
+        {
+            m_fCurrentLife -= _fDamage;
+        }
+    }
+
+    private void DesactivateShield()
+    {
+        if (m_bShieldActivated)
+        {
+            if (m_fCurrentShieldValue <= 0)
+            {
+                m_bShieldActivated = false;
+                StartCoroutine(DestroyShield());
+            }
+        }
+    }
+
+    public IEnumerator ShieldFeedback(/*Renderer _rRenderer*/)
+    {
+        Color cNewColor = new Color(1.0f, 0f, 0f);
+        //yield return new WaitForSeconds(1.0f);
+        if (m_rRenderer.material.GetFloat("_Brightness") <= 1.0f)
+        {
+            m_rRenderer.material.SetFloat("_Brightness", 1.5f);
+            m_rRenderer.material.SetFloat("_Intensity", 1.5f);
+            m_rRenderer.material.SetColor("_Solid_Color", cNewColor);
+            yield return new WaitForSeconds(0.19f);
+        }
+        else if (m_rRenderer.material.GetFloat("_Brightness") >= 1.5f)
+        {
+            m_rRenderer.material.SetFloat("_Brightness", 1.0f);
+            m_rRenderer.material.SetFloat("_Intensity", 1.0f);
+            m_rRenderer.material.SetColor("_Solid_Color", m_cStartColor);
+            yield return new WaitForSeconds(0.19f);
+        }
+    }
+
+    public IEnumerator DestroyShield()
+    {
+        float fCpt = 0f;
+        while (fCpt > 1.0f)
+        {
+            fCpt -= 0.005f;
+            m_rRenderer.material.SetFloat("_Intensity", fCpt);
+            yield return new WaitForSeconds(0.005f);
+        }
+        m_goShield.SetActive(false);
     }
 }

@@ -1,25 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TowerShoot : S_Character {
-
+public class TowerShoot : S_Character
+{
     // [SerializeField] protected float m_rotationSpeed;
-    [SerializeField] protected Rigidbody carRb;
     [SerializeField] protected AudioClip towerShotSound;
 
     private bool canShoot = true;
     private AudioSource m_asAudio;
 
     // Use this for initialization
-    protected override void Start () {
-        base.Start();
-        m_asAudio = GetComponent<AudioSource>();
-    }
-
-    // Update is called once per frame
-    protected override void Update()
+    protected override void Start ()
     {
-        base.Update();
+        //base.Start();
+        m_fTime = 0f;
+        m_v3PositionShoot = transform.GetChild(0).position;
+        m_v3RotationShoot = transform.GetChild(0).rotation;
+        m_rRigidbody = GetComponentInParent<Rigidbody>();
+        //m_fCurrentLife = m_fMaxLife;
+        m_asAudio = GetComponent<AudioSource>();
     }
 
     protected override void Shoot(GameObject _goBullet)
@@ -44,7 +43,7 @@ public class TowerShoot : S_Character {
                 m_asAudio.PlayOneShot(towerShotSound);
 
                 Rigidbody rProjectileRb = goProjectile.GetComponent<Rigidbody>();
-                rProjectileRb.velocity = transform.TransformDirection(Vector3.forward * m_fShootForce) + carRb.velocity;
+                rProjectileRb.velocity = transform.TransformDirection(Vector3.forward * m_fShootForce) + m_rRigidbody.velocity;
             }
     
             m_fTime += Time.deltaTime;

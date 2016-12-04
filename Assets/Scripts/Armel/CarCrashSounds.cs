@@ -1,18 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CarCrashSounds : MonoBehaviour {
+public class CarCrashSounds : MonoBehaviour
+{
 
     [SerializeField] protected AudioClip crashSound1;
     [SerializeField] protected AudioClip crashSound2;
     [SerializeField] protected AudioClip crashSound3;
 
     private AudioClip[] crashes;
-    private AudioSource audio;
+    private AudioSource m_asAudio;
 
     // Use this for initialization
-    void Start () {
-        audio = GetComponent<AudioSource>();
+    void Start ()
+    {
+        m_asAudio = GetComponent<AudioSource>();
         crashes = new AudioClip[]
         {
             crashSound1, crashSound2, crashSound3
@@ -20,7 +22,8 @@ public class CarCrashSounds : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 	
 	}
 
@@ -29,7 +32,7 @@ public class CarCrashSounds : MonoBehaviour {
         if (_cCollision.gameObject.CompareTag("Obstacle"))
         {
             int number = Random.Range(0, crashes.Length);
-            audio.PlayOneShot(crashes[number]);
+            m_asAudio.PlayOneShot(crashes[number]);
         }
     }
 }
