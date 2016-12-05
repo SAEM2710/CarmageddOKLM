@@ -32,6 +32,7 @@ public class S_Player : S_Character
     private bool isCareSoundPlayed = false;
     private float timeBeforeGO;
     private float timecpt = 0f;
+    
 
     #region Getters/Setters
 
@@ -155,6 +156,10 @@ public class S_Player : S_Character
                 IsDead = true;
                 timeBeforeGO = gameOverSounds[number].length + 2.0f;
                 transform.Find("voiture").gameObject.SetActive(false);
+                transform.Find("arme").gameObject.SetActive(false);
+                //(GetComponent("Car Controller") as MonoBehaviour).enabled = false;
+                GetComponent<UnityStandardAssets.Vehicles.Car.CarUserControl>().enabled = false;
+                GetComponent<UnityStandardAssets.Vehicles.Car.CarAudio>().enabled = false;
             }
         }
     }
