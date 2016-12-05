@@ -68,6 +68,8 @@ public class S_Buttons : MonoBehaviour
         }
         if (AudioListener.pause && Input.GetButtonDown("StartGame") && SceneManager.GetActiveScene().name == "soufian3")
         {
+            AudioListener.pause = false;
+            Time.timeScale = 1.0f;
             SceneManager.LoadScene("MenuYu");
         }
     }
